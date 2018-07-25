@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="css">
+    <meta name="description" content="CSS世界的诞生就是为图文信息展示服务的。 1. 流“流”是CSS中一种基本的定位和布局机制,它引导着HTML中元素的排列和定位。HTML默认采用流体布局，我们也可以通过破坏”流”来实现特殊布局。默认的流向是从左向右、自上而下，但这种流向我们也是可以改变的。 1. 流体布局:指的是利用元素”流”的特性实现的各类布局效果。因为”流”本身具有自适应特性，所以流体布局是具有自适应性的。(注意: 自适应">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《CSS世界》读书笔记">
+<meta property="og:url" content="http://www.lolimay.cn/2018/02/27/《CSS世界》读书笔记/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="CSS世界的诞生就是为图文信息展示服务的。 1. 流“流”是CSS中一种基本的定位和布局机制,它引导着HTML中元素的排列和定位。HTML默认采用流体布局，我们也可以通过破坏”流”来实现特殊布局。默认的流向是从左向右、自上而下，但这种流向我们也是可以改变的。 1. 流体布局:指的是利用元素”流”的特性实现的各类布局效果。因为”流”本身具有自适应特性，所以流体布局是具有自适应性的。(注意: 自适应">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-27/46102049.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-27/27007055.jpg">
+<meta property="og:updated_time" content="2018-07-06T15:45:06.695Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《CSS世界》读书笔记">
+<meta name="twitter:description" content="CSS世界的诞生就是为图文信息展示服务的。 1. 流“流”是CSS中一种基本的定位和布局机制,它引导着HTML中元素的排列和定位。HTML默认采用流体布局，我们也可以通过破坏”流”来实现特殊布局。默认的流向是从左向右、自上而下，但这种流向我们也是可以改变的。 1. 流体布局:指的是利用元素”流”的特性实现的各类布局效果。因为”流”本身具有自适应特性，所以流体布局是具有自适应性的。(注意: 自适应">
+<meta name="twitter:image" content="http://p40kjburh.bkt.clouddn.com/18-2-27/46102049.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">《CSS世界》读书笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-02-27T02:18:19.000Z" itemprop="datePublished" class="page-time">
+  2018-02-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/css/">css</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-流"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-流体布局"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 流体布局:</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-lt-table-gt-标签"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. &lt;table&gt;标签</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-CSS3新特性"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. CSS3新特性:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-CSS的专业术语"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">2. CSS的专业术语</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-未定义行为"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">3. 未定义行为</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-流、元素与基本尺寸"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">4. 流、元素与基本尺寸</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#知识点"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">知识点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-利用上下边框颜色的叠加实现凹陷效果"><span class="post-toc-number">1.3.4.1.</span> <span class="post-toc-text">1. 利用上下边框颜色的叠加实现凹陷效果</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-2-width-height作用的具体细节"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">3.2 width/height作用的具体细节</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-1-深藏不露的-width-auto"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">3.2.1 深藏不露的 width:auto</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-《CSS世界》读书笔记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">《CSS世界》读书笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-02-27 10:18:19" datetime="2018-02-27T02:18:19.000Z"  itemprop="datePublished">2018-02-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/css/">css</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <hr>
+<p>CSS世界的诞生就是为图文信息展示服务的。</p>
+<h1 id="1-流"><a href="#1-流" class="headerlink" title="1. 流"></a>1. 流</h1><p>“流”是CSS中一种基本的<strong>定位</strong>和<strong>布局</strong>机制,它引导着HTML中元素的<strong>排列</strong>和<strong>定位</strong>。HTML默认采用<strong>流体布局</strong>，我们也可以通过破坏”流”来实现特殊布局。默认的流向是<strong>从左向右、自上而下</strong>，但这种流向我们也是可以改变的。</p>
+<h2 id="1-流体布局"><a href="#1-流体布局" class="headerlink" title="1. 流体布局:"></a>1. <strong>流体布局</strong>:</h2><p>指的是利用元素”流”的特性实现的各类布局效果。因为”流”本身具有自适应特性，所以流体布局是具有自适应性的。(注意: 自适应布局是对具有自适应特性的一类布局的统称，它包括流体布局)</p>
+<h2 id="2-lt-table-gt-标签"><a href="#2-lt-table-gt-标签" class="headerlink" title="2. &lt;table&gt;标签"></a>2. <strong><code>&lt;table&gt;</code>标签</strong></h2><p> “流”的特性对<code>&lt;table&gt;</code>并不适用，因为它不属于CSS。</p>
+<h2 id="3-CSS3新特性"><a href="#3-CSS3新特性" class="headerlink" title="3. CSS3新特性:"></a>3. <strong>CSS3新特性</strong>:</h2><p>① 布局更丰富: </p>
+<ul>
+<li>移动端的崛起，催生了<strong>CSS3媒介查询、许多响应式布局特性</strong></li>
+<li>弹性盒子布局(flexible box layout)</li>
+<li>格栅布局(grid layout)</li>
+</ul>
+<p>② 视觉表现长足进步:</p>
+<ul>
+<li>圆角、阴影和渐变让元素更有质感</li>
+<li>transform变换让元素有更多可能</li>
+<li>filter滤镜和混合模式让Web轻松变为在线的Photoshop</li>
+<li>animation让动画变得简单</li>
+</ul>
+<p>由于CSS3设计初衷是为了实现更丰富、更复杂的网页，所以基本上和”流”的关系并不大。</p>
+<h3 id="2-CSS的专业术语"><a href="#2-CSS的专业术语" class="headerlink" title="2. CSS的专业术语"></a>2. CSS的专业术语</h3><ol>
+<li>属性 (height、color、width等)</li>
+<li>值 (整数值、数值、百分比值、长度值、颜色值、字符串值、角度值、频率值、时间值等)</li>
+<li>关键字 (transparent、solid、inherit等)</li>
+<li>变量 (currentColor等)</li>
+<li>长度单位 (相对字体长度单位:em、ex 相对视区长度单位:vh、vw、vmin、vmax 绝对长度单位:px等)</li>
+<li>功能符 (rgba、hsla、url、calc、scale等)</li>
+<li>属性值</li>
+<li>声明、声明块</li>
+<li>规则、规则集</li>
+<li>选择器 (类选择器、ID选择器、属性选择器、伪类选择器、伪元素选择器、关系选择器: 后代选择器、相邻后代选择器、兄弟选择器、相邻兄弟选择器)</li>
+<li>@规则</li>
+</ol>
+<h3 id="3-未定义行为"><a href="#3-未定义行为" class="headerlink" title="3. 未定义行为"></a>3. 未定义行为</h3><p>指的是规范顾及不到的细枝末节的实现，就称为”未定义行为”</p>
+<p>如: firefox认为:active发生在mousedown事件之后，而IE/Chrome认为:active发生在mousedown事件之前。</p>
+<h3 id="4-流、元素与基本尺寸"><a href="#4-流、元素与基本尺寸" class="headerlink" title="4. 流、元素与基本尺寸"></a>4. 流、元素与基本尺寸</h3><p>我们通常把HTML标签分为两类: <strong>块级元素</strong>(block-level element)和<strong>内联元素</strong>(inline element)</p>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><h4 id="1-利用上下边框颜色的叠加实现凹陷效果"><a href="#1-利用上下边框颜色的叠加实现凹陷效果" class="headerlink" title="1. 利用上下边框颜色的叠加实现凹陷效果"></a>1. 利用上下边框颜色的叠加实现凹陷效果</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/18-2-27/46102049.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-bottom</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#b70000</span>;</span><br><span class="line"><span class="selector-tag">border-top</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#de3636</span>;</span><br></pre></td></tr></table></figure>
+<p>让我们分析一下为什么会这么神奇:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/18-2-27/27007055.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p align="center">放大400%后的效果</p>
+
+<p>原来是利用上下边框的颜色深浅差异,给人一种凹陷的错觉。</p>
+<p>参考链接：<a href="http://demo.cssworld.cn/3/2-3.php" target="_blank" rel="noopener">http://demo.cssworld.cn/3/2-3.php</a></p>
+<h2 id="3-2-width-height作用的具体细节"><a href="#3-2-width-height作用的具体细节" class="headerlink" title="3.2 width/height作用的具体细节"></a>3.2 width/height作用的具体细节</h2><h3 id="3-2-1-深藏不露的-width-auto"><a href="#3-2-1-深藏不露的-width-auto" class="headerlink" title="3.2.1 深藏不露的 width:auto"></a>3.2.1 深藏不露的 width:auto</h3><p><code>width:auto</code> 包含了4种不同的宽度表现:</p>
+<ul>
+<li>充分利用可用空间(块级元素的宽度默认100%于父级元素)</li>
+<li>收缩与包裹(收缩到合适)</li>
+<li>收缩到最小(文字能断就断: 中文随便断、英文单词不能断)</li>
+<li>超出容器限制(内容很长的连续的英文或数字、或者内联元素被设置了white-space:nowrap)</li>
+</ul>
+<p>充分利用可用空间是唯一的外部尺寸, 其余都是内部尺寸, 而这唯一的外部尺寸,是<strong>流</strong>的精髓所在。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-07-06T15:45:06.695Z" itemprop="dateUpdated">2018-07-06 23:45:06</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/02/27/AHK定时器的标准写法/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">[no title]</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/02/25/让你的Android应用申请root权限/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">让你的Android应用申请root权限</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

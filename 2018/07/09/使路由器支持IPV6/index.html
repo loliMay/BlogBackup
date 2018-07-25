@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="路由器">
+    <meta name="description" content="原理 NAT6步骤预热 为固件刷上openwrt或基于openwrt的固件(如潘多拉、lede等) 地址栏输入192.168.1.1配置好后台密码并开启ssh 在终端中ssh root@192.168.1.1连接进openwrt  安装kmod-iptnat61opkg update &amp;amp;&amp;amp; opkg install kmod-ipt-nat6 将IPv6 ULA Prefix由f改">
+<meta name="keywords" content="路由器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使路由器支持IPV6">
+<meta property="og:url" content="http://www.lolimay.cn/2018/07/09/使路由器支持IPV6/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="原理 NAT6步骤预热 为固件刷上openwrt或基于openwrt的固件(如潘多拉、lede等) 地址栏输入192.168.1.1配置好后台密码并开启ssh 在终端中ssh root@192.168.1.1连接进openwrt  安装kmod-iptnat61opkg update &amp;amp;&amp;amp; opkg install kmod-ipt-nat6 将IPv6 ULA Prefix由f改">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-24T16:11:08.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使路由器支持IPV6">
+<meta name="twitter:description" content="原理 NAT6步骤预热 为固件刷上openwrt或基于openwrt的固件(如潘多拉、lede等) 地址栏输入192.168.1.1配置好后台密码并开启ssh 在终端中ssh root@192.168.1.1连接进openwrt  安装kmod-iptnat61opkg update &amp;amp;&amp;amp; opkg install kmod-ipt-nat6 将IPv6 ULA Prefix由f改">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">使路由器支持IPV6</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-07-09T04:25:55.000Z" itemprop="datePublished" class="page-time">
+  2018-07-09
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#原理-NAT6"><span class="post-toc-number">1.</span> <span class="post-toc-text">原理 NAT6</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">2.</span> <span class="post-toc-text">步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#预热"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">预热</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装kmod-iptnat6"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">安装kmod-iptnat6</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将IPv6-ULA-Prefix由f改为d"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">将IPv6 ULA Prefix由f改为d</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将DHCP服务器设置为总是广播默认路由"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">将DHCP服务器设置为总是广播默认路由</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生成NAT6脚本"><span class="post-toc-number">2.0.5.</span> <span class="post-toc-text">生成NAT6脚本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#防火墙配置Allow-ICMPv6-Forward"><span class="post-toc-number">2.0.6.</span> <span class="post-toc-text">防火墙配置Allow-ICMPv6-Forward</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#接收广播并开启IPv6转发"><span class="post-toc-number">2.0.7.</span> <span class="post-toc-text">接收广播并开启IPv6转发</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加入转发规则"><span class="post-toc-number">2.0.8.</span> <span class="post-toc-text">加入转发规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置每日定时重启-可选"><span class="post-toc-number">2.0.9.</span> <span class="post-toc-text">设置每日定时重启(可选)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重启路由器"><span class="post-toc-number">2.0.10.</span> <span class="post-toc-text">重启路由器</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-使路由器支持IPV6"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">使路由器支持IPV6</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-07-09 12:25:55" datetime="2018-07-09T04:25:55.000Z"  itemprop="datePublished">2018-07-09</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="原理-NAT6"><a href="#原理-NAT6" class="headerlink" title="原理 NAT6"></a>原理 NAT6</h1><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h3 id="预热"><a href="#预热" class="headerlink" title="预热"></a>预热</h3><ol>
+<li>为固件刷上<code>openwrt</code>或基于<code>openwrt</code>的固件(如潘多拉、<code>lede</code>等)</li>
+<li>地址栏输入<code>192.168.1.1</code>配置好后台密码并开启<code>ssh</code></li>
+<li>在终端中<code>ssh root@192.168.1.1</code>连接进<code>openwrt</code></li>
+</ol>
+<h3 id="安装kmod-iptnat6"><a href="#安装kmod-iptnat6" class="headerlink" title="安装kmod-iptnat6"></a>安装<code>kmod-iptnat6</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg update &amp;&amp; opkg install kmod-ipt-nat6</span><br></pre></td></tr></table></figure>
+<h3 id="将IPv6-ULA-Prefix由f改为d"><a href="#将IPv6-ULA-Prefix由f改为d" class="headerlink" title="将IPv6 ULA Prefix由f改为d"></a>将<code>IPv6 ULA Prefix</code>由<code>f</code>改为<code>d</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uci <span class="built_in">set</span> network.globals.ula_prefix=<span class="string">"<span class="variable">$(uci get network.globals.ula_prefix | sed 's/^./d/')</span>"</span> &amp;&amp; uci commit network</span><br></pre></td></tr></table></figure>
+<h3 id="将DHCP服务器设置为总是广播默认路由"><a href="#将DHCP服务器设置为总是广播默认路由" class="headerlink" title="将DHCP服务器设置为总是广播默认路由"></a>将DHCP服务器设置为<strong>总是广播默认路由</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uci <span class="built_in">set</span> dhcp.lan.ra_default=<span class="string">'1'</span> &amp;&amp; uci commit dhcp</span><br></pre></td></tr></table></figure>
+<h3 id="生成NAT6脚本"><a href="#生成NAT6脚本" class="headerlink" title="生成NAT6脚本"></a>生成<code>NAT6</code>脚本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch /etc/init.d/nat6 &amp;&amp; vi /etc/init.d/nat6</span><br></pre></td></tr></table></figure>
+<p>将<a href="http://p40kjburh.bkt.clouddn.com/nat6" target="_blank" rel="noopener"><strong>链接</strong></a>中的内容复制进去并保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /etc/init.d/nat6 &amp;&amp; /etc/init.d/nat6 <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="防火墙配置Allow-ICMPv6-Forward"><a href="#防火墙配置Allow-ICMPv6-Forward" class="headerlink" title="防火墙配置Allow-ICMPv6-Forward"></a>防火墙配置<code>Allow-ICMPv6-Forward</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uci <span class="built_in">set</span> firewall.@rule[<span class="string">"<span class="variable">$(uci show firewall | grep 'Allow-ICMPv6-Forward' | cut -d'[' -f2 | cut -d']' -f1)</span>"</span>].enabled=<span class="string">'0'</span> &amp;&amp; uci commit firewall</span><br></pre></td></tr></table></figure>
+<h3 id="接收广播并开启IPv6转发"><a href="#接收广播并开启IPv6转发" class="headerlink" title="接收广播并开启IPv6转发"></a>接收广播并开启IPv6转发</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysctl.conf</span><br></pre></td></tr></table></figure>
+<p>修改<code>/etc/sysctl.conf</code>文件, 把文件中相关内容改为以下内容，没有的话就添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">net.ipv6.conf.default.forwarding=2 </span><br><span class="line">net.ipv6.conf.all.forwarding=2 </span><br><span class="line">net.ipv6.conf.default.accept_ra=2 </span><br><span class="line">net.ipv6.conf.all.accept_ra=2</span><br></pre></td></tr></table></figure></p>
+<h3 id="加入转发规则"><a href="#加入转发规则" class="headerlink" title="加入转发规则"></a>加入转发规则</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/firewall.user</span><br></pre></td></tr></table></figure>
+<p>修改<code>/etc/firewall.user</code>文件, 末尾添加一下内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip6tables -t nat -I POSTROUTING -s $(uci get network.globals.ula_prefix) -j MASQUERADE</span><br></pre></td></tr></table></figure></p>
+<h3 id="设置每日定时重启-可选"><a href="#设置每日定时重启-可选" class="headerlink" title="设置每日定时重启(可选)"></a>设置每日定时重启(可选)</h3><p>由于路由器每过一段时间LAN口和wifi会打不开IPv6站点, 重启后恢复。(目前不知道原因, 知道原因的也可评论告知我, 万分感谢), 所以需要设置每日定时重启<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br><span class="line">30 4 * * * sleep 1m &amp;&amp; touch /etc/banner &amp;&amp; reboot -f 2&gt;/dev/null</span><br></pre></td></tr></table></figure></p>
+<h3 id="重启路由器"><a href="#重启路由器" class="headerlink" title="重启路由器"></a>重启路由器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<p>此时你的手机连上wifi后应该能连上六维空间等IPv6站点了, 恭喜折腾成功!</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-07-24T16:11:08.573Z" itemprop="dateUpdated">2018-07-25 00:11:08</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/路由器/">路由器</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/07/10/流、元素与基本尺寸-中/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">流、元素与基本尺寸(中)</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/07/09/流、元素与基本尺寸-上/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">流、元素与基本尺寸(上)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

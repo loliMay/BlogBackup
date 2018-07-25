@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="前端,jQuery">
+    <meta name="description" content="一、背景知识编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发效率。jQuery 的插件一共分为 3 种类型 封装对象方法的插件(最常见的一种插件) 封装全局函数的插件 选择器插件  二、编写插件1. 编写插件应在闭包中进行1234(function($) &amp;#123;  //此处将$作为匿名函数的形参  /* 这里放置插件的代码 */&amp;#125;)">
+<meta name="keywords" content="前端,jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery插件的编写和使用">
+<meta property="og:url" content="http://www.lolimay.cn/2018/06/20/jQuery插件的编写和使用/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="一、背景知识编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发效率。jQuery 的插件一共分为 3 种类型 封装对象方法的插件(最常见的一种插件) 封装全局函数的插件 选择器插件  二、编写插件1. 编写插件应在闭包中进行1234(function($) &amp;#123;  //此处将$作为匿名函数的形参  /* 这里放置插件的代码 */&amp;#125;)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-20T14:57:01.786Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery插件的编写和使用">
+<meta name="twitter:description" content="一、背景知识编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发效率。jQuery 的插件一共分为 3 种类型 封装对象方法的插件(最常见的一种插件) 封装全局函数的插件 选择器插件  二、编写插件1. 编写插件应在闭包中进行1234(function($) &amp;#123;  //此处将$作为匿名函数的形参  /* 这里放置插件的代码 */&amp;#125;)">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">jQuery插件的编写和使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-20T13:28:15.000Z" itemprop="datePublished" class="page-time">
+  2018-06-20
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、背景知识"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、背景知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发效率。"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发效率。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#jQuery-的插件一共分为-3-种类型"><span class="post-toc-number">1.0.0.2.</span> <span class="post-toc-text">jQuery 的插件一共分为 3 种类型</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、编写插件"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、编写插件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-编写插件应在闭包中进行"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 编写插件应在闭包中进行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-jQuery-插件的机制"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. jQuery 插件的机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-jQuery提供的两个方法"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">(1) jQuery提供的两个方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-jQuery-extend-方法"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">(2) jQuery.extend()方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-编写封装对象方法的插件"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3. 编写封装对象方法的插件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-代码模板"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">(1) 代码模板</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-jQuery插件的编写和使用"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">jQuery插件的编写和使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-20 21:28:15" datetime="2018-06-20T13:28:15.000Z"  itemprop="datePublished">2018-06-20</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="一、背景知识"><a href="#一、背景知识" class="headerlink" title="一、背景知识"></a>一、背景知识</h1><h4 id="编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发效率。"><a href="#编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发效率。" class="headerlink" title="编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发效率。"></a>编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发效率。</h4><h4 id="jQuery-的插件一共分为-3-种类型"><a href="#jQuery-的插件一共分为-3-种类型" class="headerlink" title="jQuery 的插件一共分为 3 种类型"></a>jQuery 的插件一共分为 3 种类型</h4><ol>
+<li>封装对象方法的插件(最常见的一种插件)</li>
+<li>封装全局函数的插件</li>
+<li>选择器插件</li>
+</ol>
+<h1 id="二、编写插件"><a href="#二、编写插件" class="headerlink" title="二、编写插件"></a>二、编写插件</h1><h2 id="1-编写插件应在闭包中进行"><a href="#1-编写插件应在闭包中进行" class="headerlink" title="1. 编写插件应在闭包中进行"></a>1. 编写插件应在闭包中进行</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//此处将$作为匿名函数的形参</span></span><br><span class="line">  <span class="comment">/* 这里放置插件的代码 */</span></span><br><span class="line">&#125;)(jQuery); <span class="comment">//这里将jQuery作为实参传递给匿名函数</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-jQuery-插件的机制"><a href="#2-jQuery-插件的机制" class="headerlink" title="2. jQuery 插件的机制"></a>2. jQuery 插件的机制</h2><h3 id="1-jQuery提供的两个方法"><a href="#1-jQuery提供的两个方法" class="headerlink" title="(1) jQuery提供的两个方法"></a>(1) jQuery提供的两个方法</h3><p>jQuery 提供两个用于扩展 jQuery 功能的方法,<code>jQuery.fn.extend()</code>方法和<code>jQuery.extend()</code>方法。</p>
+<ul>
+<li>jQuery.fn.extend() 用于拓展 jQuery 第一类插件，即封装对象方法的插件</li>
+<li>jQuery.extend() 用于拓展 jQuery 后两类插件，即封装全局函数的插件和选择器插件。</li>
+</ul>
+<p>这两个方法都接受一个参数，类型为Object，Object对象的”名/值对”分别代表”函数或方法名/函数主体”。</p>
+<h3 id="2-jQuery-extend-方法"><a href="#2-jQuery-extend-方法" class="headerlink" title="(2) jQuery.extend()方法"></a>(2) jQuery.extend()方法</h3><p>jQuery.extend()方法除了可以用于拓展 jQuery 对象之外，还有一个很强大的功能，就是用于拓展已有的 Object 对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jQuery.extend(target, obj1, obj2, ..., objn)</span><br></pre></td></tr></table></figure>
+<p><strong>例</strong> 合并 settings 对象和 options 对象，修改并返回 settings 对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> settings  = &#123; <span class="attr">validate</span>: <span class="literal">false</span>, <span class="attr">limit</span>: <span class="number">5</span> , <span class="attr">name</span>: <span class="string">'foo'</span> &#125;</span><br><span class="line"><span class="keyword">var</span> options = &#123; <span class="attr">validate</span>: <span class="literal">true</span>, <span class="attr">name</span>: <span class="string">'bar'</span> &#125;</span><br><span class="line"><span class="keyword">var</span> newOptions = jQuery.extend(settings, options)</span><br><span class="line"><span class="comment">// 结果: newOptions = &#123; validate: true, limit: 5, name: 'bar' &#125;</span></span><br></pre></td></tr></table></figure>
+<p><strong>因此，jQuery.extend()方法经常被用于设置插件方法的一系列默认参数：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">  options = jQuery.extend(&#123;</span><br><span class="line">    name: <span class="string">'bar'</span>,</span><br><span class="line">    length: <span class="number">5</span>,</span><br><span class="line">    dataType: <span class="string">'xml'</span> <span class="comment">/* 默认参数 */</span></span><br><span class="line">  &#125;, options) <span class="comment">/* options为传递的传递的参数 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 用户调用 foo()方法的时候，在传递的参数options对象中设置了相应的值</span></span><br><span class="line"><span class="comment">// 那么就使用设置的值，否则使用默认值</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="3-编写封装对象方法的插件"><a href="#3-编写封装对象方法的插件" class="headerlink" title="3. 编写封装对象方法的插件"></a>3. 编写封装对象方法的插件</h2><ul>
+<li>编写设置和获取颜色的插件</li>
+<li>待实现功能：</li>
+</ul>
+<ol>
+<li>设置匹配元素的颜色</li>
+<li>获取匹配的第一个元素的颜色</li>
+</ol>
+<h3 id="1-代码模板"><a href="#1-代码模板" class="headerlink" title="(1) 代码模板"></a>(1) 代码模板</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</span><br><span class="line">  $.fn.extend(&#123;</span><br><span class="line">    color(value) &#123;</span><br><span class="line">      <span class="comment">// 这里编写插件代码</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)(jQuery)</span><br><span class="line"><span class="comment">// 这里给这个方法提供一个参数value, 如果调用方法的时候传递了value这个参数, 那么就是用这个</span></span><br><span class="line"><span class="comment">// 值来设置字体颜色; 否则就是获取匹配元素字体颜色的值</span></span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-06-20T14:57:01.786Z" itemprop="dateUpdated">2018-06-20 22:57:01</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/06/21/JavaScript中如何实现深复制/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JavaScript中如何实现深复制</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/06/20/Epside1-时间复杂度的计算/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Epside1-时间复杂度的计算</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

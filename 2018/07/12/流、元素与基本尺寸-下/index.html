@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="CSS,CSS读书笔记">
+    <meta name="description" content="min-width/max-width/min-height/max-height为流体而生的min-width/max-width1234.container &amp;#123;  min-width: 1200px;  max-width: 1400px;&amp;#125; 超越 !important12&amp;lt;img src=&quot;1.jpg&quot; style=&quot;width:480px!important&quot;&amp;g">
+<meta name="keywords" content="CSS,CSS读书笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="流、元素与基本尺寸(下)">
+<meta property="og:url" content="http://www.lolimay.cn/2018/07/12/流、元素与基本尺寸-下/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="min-width/max-width/min-height/max-height为流体而生的min-width/max-width1234.container &amp;#123;  min-width: 1200px;  max-width: 1400px;&amp;#125; 超越 !important12&amp;lt;img src=&quot;1.jpg&quot; style=&quot;width:480px!important&quot;&amp;g">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-7-12/11993312.jpg">
+<meta property="og:updated_time" content="2018-07-25T00:57:12.189Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="流、元素与基本尺寸(下)">
+<meta name="twitter:description" content="min-width/max-width/min-height/max-height为流体而生的min-width/max-width1234.container &amp;#123;  min-width: 1200px;  max-width: 1400px;&amp;#125; 超越 !important12&amp;lt;img src=&quot;1.jpg&quot; style=&quot;width:480px!important&quot;&amp;g">
+<meta name="twitter:image" content="http://p40kjburh.bkt.clouddn.com/18-7-12/11993312.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">流、元素与基本尺寸(下)</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-07-11T18:21:58.000Z" itemprop="datePublished" class="page-time">
+  2018-07-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#min-width-max-width-min-height-max-height"><span class="post-toc-number">1.</span> <span class="post-toc-text">min-width/max-width/min-height/max-height</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#为流体而生的min-width-max-width"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">为流体而生的min-width/max-width</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#超越-important"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">超越 !important</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#超越最大"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">超越最大</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#再谈内联元素"><span class="post-toc-number">2.</span> <span class="post-toc-text">再谈内联元素</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内联盒模型"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">内联盒模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-内容区域-content-area"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">1. 内容区域(content area)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-内联盒子-inline-box"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">2. 内联盒子(inline box)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-行框盒子-line-box"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">3. 行框盒子(line box)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-包含块-containing-box"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">4. 包含块(containing box)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#幽灵空白结点-特别重要"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">幽灵空白结点(特别重要)</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-流、元素与基本尺寸-下"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">流、元素与基本尺寸(下)</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-07-12 02:21:58" datetime="2018-07-11T18:21:58.000Z"  itemprop="datePublished">2018-07-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="min-width-max-width-min-height-max-height"><a href="#min-width-max-width-min-height-max-height" class="headerlink" title="min-width/max-width/min-height/max-height"></a>min-width/max-width/min-height/max-height</h1><h2 id="为流体而生的min-width-max-width"><a href="#为流体而生的min-width-max-width" class="headerlink" title="为流体而生的min-width/max-width"></a>为流体而生的min-width/max-width</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">1200px</span>;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">1400px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="超越-important"><a href="#超越-important" class="headerlink" title="超越 !important"></a>超越 !important</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src="1.jpg" style="width:480px!important"&gt;</span><br><span class="line"><span class="selector-tag">img</span> &#123; <span class="attribute">max-width</span>: <span class="number">256px</span>; &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="超越最大"><a href="#超越最大" class="headerlink" title="超越最大"></a>超越最大</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  min-width: 1400px;</span><br><span class="line">  max-width: 1200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="再谈内联元素"><a href="#再谈内联元素" class="headerlink" title="再谈内联元素"></a>再谈内联元素</h1><p>外在盒子是内联盒子的元素称为内联元素</p>
+<h2 id="内联盒模型"><a href="#内联盒模型" class="headerlink" title="内联盒模型"></a>内联盒模型</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;这是一行普通的文字，这里有个 &lt;em&gt;em&lt;/em&gt; 标签。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/18-7-12/11993312.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="1-内容区域-content-area"><a href="#1-内容区域-content-area" class="headerlink" title="1. 内容区域(content area)"></a>1. 内容区域(content area)</h3><p>通常情况下，文字的选中背景可以反映出内容区域的范围(排除垂直padding的情况)。</p>
+<h3 id="2-内联盒子-inline-box"><a href="#2-内联盒子-inline-box" class="headerlink" title="2. 内联盒子(inline box)"></a>2. 内联盒子(inline box)</h3><p>内联盒子不会让内容成块显示，而是排成一行，直到这行空间不够再换行。</p>
+<ul>
+<li>内联盒子</li>
+<li>匿名内联盒子(光秃秃的文字)<h3 id="3-行框盒子-line-box"><a href="#3-行框盒子-line-box" class="headerlink" title="3. 行框盒子(line box)"></a>3. 行框盒子(line box)</h3>每一行就是一个行框盒子<h3 id="4-包含块-containing-box"><a href="#4-包含块-containing-box" class="headerlink" title="4. 包含块(containing box)"></a>4. 包含块(containing box)</h3>包含块由一个或多个行框盒子组成，这里的包含块就是<code>&lt;p&gt;</code>标签</li>
+</ul>
+<h2 id="幽灵空白结点-特别重要"><a href="#幽灵空白结点-特别重要" class="headerlink" title="幽灵空白结点(特别重要)"></a>幽灵空白结点(特别重要)</h2><blockquote>
+<p>Each line box starts with a zero-width inline box with the element’s font and line height properties. We call that imaginary box a “strut”.</p>
+</blockquote>
+<p>每个行框盒子的前面有一个空白结点，这个空白结点永远透明，不占据任何宽度，看不见也无法通过脚本获取。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&gt;<span class="selector-tag">span</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#666</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-07-25T00:57:12.189Z" itemprop="dateUpdated">2018-07-25 08:57:12</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS读书笔记/">CSS读书笔记</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/07/14/替换元素与非替换元素/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">替换元素与非替换元素</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/07/10/流、元素与基本尺寸-中/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">流、元素与基本尺寸(中)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

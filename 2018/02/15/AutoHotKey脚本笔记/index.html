@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="AutoHotKey,AHK">
+    <meta name="description" content="这篇文章主要记录我在使用AutoHotKey脚本的过程中的一些心得, 方便自己以后查阅~">
+<meta name="keywords" content="AutoHotKey,AHK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AutoHotKey脚本笔记">
+<meta property="og:url" content="http://www.lolimay.cn/2018/02/15/AutoHotKey脚本笔记/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="这篇文章主要记录我在使用AutoHotKey脚本的过程中的一些心得, 方便自己以后查阅~">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-16T07:33:29.704Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AutoHotKey脚本笔记">
+<meta name="twitter:description" content="这篇文章主要记录我在使用AutoHotKey脚本的过程中的一些心得, 方便自己以后查阅~">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">AutoHotKey脚本笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-02-14T23:29:16.000Z" itemprop="datePublished" class="page-time">
+  2018-02-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/AutoHotKey/">AutoHotKey</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#超长字符串赋值"><span class="post-toc-number">1.</span> <span class="post-toc-text">超长字符串赋值</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-AutoHotKey脚本笔记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">AutoHotKey脚本笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-02-15 07:29:16" datetime="2018-02-14T23:29:16.000Z"  itemprop="datePublished">2018-02-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/AutoHotKey/">AutoHotKey</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <hr>
+<p>这篇文章主要记录我在使用AutoHotKey脚本的过程中的一些心得, 方便自己以后查阅~<a id="more"></a></p>
+<ol>
+<li><h4 id="超长字符串赋值"><a href="#超长字符串赋值" class="headerlink" title="超长字符串赋值"></a>超长字符串赋值</h4></li>
+</ol>
+<p>示例代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">text=</span><br><span class="line">(</span><br><span class="line">热字串和自动替换</span><br><span class="line"></span><br><span class="line">入门和简单示例</span><br><span class="line"></span><br><span class="line">尽管热字串主要用于在您输入缩写时进行扩展(自动替换), 但是它们也可以用来运行任何脚本动作. 从这个角度看, 它们类似于 热键, 只是它们通常由多个字符组成(即字符串).</span><br><span class="line"></span><br><span class="line">要定义热字串, 请用两个双冒号包围用来触发的缩写, 例如:</span><br><span class="line"></span><br><span class="line">::btw::by the way</span><br><span class="line">在上面的例子中, 每当您输入缩写 btw 时会被自动替换为 &quot;by the way&quot;(不过, 默认情况下您必须在输入 btw 后输入 终止符, 例如空格, 句点或回车).</span><br><span class="line"></span><br><span class="line">上面的 &quot;by the way&quot; 示例被称为自动替换热字串, 因为输入的文本被自动替换为第二个双冒号后指定的字符串. 与之相比, 热字串还可以定义用来执行任何自定义动作, 例如. 注意命令必须放在热字串的 下面.</span><br><span class="line"></span><br><span class="line">S↓</span><br><span class="line">::btw::</span><br><span class="line">MsgBox You typed &quot;btw&quot;.</span><br><span class="line">return</span><br><span class="line"></span><br><span class="line">:*:]d::  ; 此热字串通过后面的命令把 &quot;]d&quot; 替换成当前日期和时间.</span><br><span class="line">FormatTime, CurrentDateTime,, M/d/yyyy h:mm tt  ; 看起来会像 9/1/2005 3:53 PM 这样</span><br><span class="line">SendInput %CurrentDateTime%</span><br><span class="line">return</span><br><span class="line">尽管上面的两个例子不是自动替换的热字串, 但默认情况下您输入的缩写也会被擦除. 这是通过自动退格来实现的, 此特性可以通过 b0 选项 禁用.</span><br><span class="line"></span><br><span class="line">终止符</span><br><span class="line"></span><br><span class="line">除非使用了 星号选项, 否则您必须在热字串cd /d &amp;&amp; clear</span><br><span class="line">的缩写后输入 终止符 才能触发它. 开始时终止符包含下列字符: -()[]&#123;&#125;&apos;:;&quot;/\,.?!`n `t(注意 `n 是回车, `t 是 Tab, 且在它们之间还有一个原义的空格). 通过编辑下列示例可以改变这个字符集合, 这个例子中为 所有的 热字串设置新的终止符, 而不仅是在它下面的那些.</span><br><span class="line"></span><br><span class="line">S↓</span><br><span class="line">#Hotstring EndChars -()[]&#123;&#125;:;&apos;&quot;/\,.?!`n `t</span><br><span class="line">选项</span><br><span class="line"></span><br><span class="line">可以使用下面的两种方式改变热字串的默认行为:</span><br><span class="line">)</span><br><span class="line">FileAppend, %text%, 1.txt</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-02-16T07:33:29.704Z" itemprop="dateUpdated">2018-02-16 15:33:29</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AHK/">AHK</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AutoHotKey/">AutoHotKey</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/02/15/nodejs笔记/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">nodejs笔记 </h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/02/14/Bat脚本笔记/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Bat脚本笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

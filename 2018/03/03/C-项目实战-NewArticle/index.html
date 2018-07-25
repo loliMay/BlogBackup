@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="C#">
+    <meta name="description" content="花了一晚上做了一个快速新建Hexo文章的软件，预计支持的功能主要有: 快捷键呼出，输入文章标题后按下Enter键打开Typora编辑器编辑新的Markdown文件。这篇文章记录的是我在制作该软件的过程中的笔记，主要用于个人以后查阅，对其他的人可能可读性不高，大家凑合着看吧，或许会有能够帮到你的也不一定哦~">
+<meta name="keywords" content="C#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#项目实战：NewArticle">
+<meta property="og:url" content="http://www.lolimay.cn/2018/03/03/C-项目实战-NewArticle/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="花了一晚上做了一个快速新建Hexo文章的软件，预计支持的功能主要有: 快捷键呼出，输入文章标题后按下Enter键打开Typora编辑器编辑新的Markdown文件。这篇文章记录的是我在制作该软件的过程中的笔记，主要用于个人以后查阅，对其他的人可能可读性不高，大家凑合着看吧，或许会有能够帮到你的也不一定哦~">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-3-3/68359822.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/2018-03-03_23-24-25.gif">
+<meta property="og:updated_time" content="2018-07-25T01:02:05.363Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C#项目实战：NewArticle">
+<meta name="twitter:description" content="花了一晚上做了一个快速新建Hexo文章的软件，预计支持的功能主要有: 快捷键呼出，输入文章标题后按下Enter键打开Typora编辑器编辑新的Markdown文件。这篇文章记录的是我在制作该软件的过程中的笔记，主要用于个人以后查阅，对其他的人可能可读性不高，大家凑合着看吧，或许会有能够帮到你的也不一定哦~">
+<meta name="twitter:image" content="http://p40kjburh.bkt.clouddn.com/18-3-3/68359822.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">C#项目实战：NewArticle</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-02T16:25:23.000Z" itemprop="datePublished" class="page-time">
+  2018-03-03
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-窗口启动居中"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 窗口启动居中</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-使用DMSkinUI库"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 使用DMSkinUI库</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-无边框拖动-配合DMSkin使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 无边框拖动(配合DMSkin使用)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-DMSkin常见接口"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. DMSkin常见接口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-隐藏窗体最大化、最小化按钮"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">1. 隐藏窗体最大化、最小化按钮</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-设置窗体四周边框阴影的大小"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">2. 设置窗体四周边框阴影的大小</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-其它属性"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">3. 其它属性</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-TextBox相关设置"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. TextBox相关设置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-将TextBox的边框设置为圆角"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">1. 将TextBox的边框设置为圆角</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-将TextBox的光标居中"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">2. 将TextBox的光标居中</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-指定TextBox的光标颜色"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">3. 指定TextBox的光标颜色</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-添加Enter事件"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">4. 添加Enter事件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-cmd执行类"><span class="post-toc-number">6.</span> <span class="post-toc-text">6. cmd执行类</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-正则匹配"><span class="post-toc-number">7.</span> <span class="post-toc-text">7. 正则匹配</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#8-判断文件是否存在"><span class="post-toc-number">8.</span> <span class="post-toc-text">8. 判断文件是否存在</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#9-延迟几秒再执行"><span class="post-toc-number">9.</span> <span class="post-toc-text">9. 延迟几秒再执行</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#10-退出程序"><span class="post-toc-number">10.</span> <span class="post-toc-text">10. 退出程序</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-C-项目实战-NewArticle"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">C#项目实战：NewArticle</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-03 00:25:23" datetime="2018-03-02T16:25:23.000Z"  itemprop="datePublished">2018-03-03</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <hr>
+<p>花了一晚上做了一个快速新建Hexo文章的软件，预计支持的功能主要有: 快捷键呼出，输入文章标题后按下Enter键打开Typora编辑器编辑新的Markdown文件。这篇文章记录的是我在制作该软件的过程中的笔记，主要用于个人以后查阅，对其他的人可能可读性不高，大家凑合着看吧，或许会有能够帮到你的也不一定哦~<a id="more"></a></p>
+<h1 id="1-窗口启动居中"><a href="#1-窗口启动居中" class="headerlink" title="1. 窗口启动居中"></a>1. 窗口启动居中</h1><p>修改<code>MainWindow.xaml</code>文件，给Window元素添加属性<code>WindowStartupLocation=&quot;CenterScreen&quot;</code></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/18-3-3/68359822.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h1 id="2-使用DMSkinUI库"><a href="#2-使用DMSkinUI库" class="headerlink" title="2. 使用DMSkinUI库"></a>2. 使用<code>DMSkin</code>UI库</h1><p><em>Step1</em> 引用右键-&gt;添加引用-&gt;导入<code>DMSkin.WPF.Small.dll</code></p>
+<p><em>Step2</em> <code>using DMSkin.WPF.Small</code>以及继承<code>DMSkinWindow</code></p>
+<p>如:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> DMSkin.WPF.Small;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MyFirstWpf</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> MainWindow.xaml 的交互逻辑</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">MainWindow</span> : <span class="title">DMSkinWindow</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">MainWindow</span>(<span class="params"></span>) </span>=&gt; InitializeComponent();	<span class="comment">//初始化</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>Step3</em> 修改<code>MainWindow.xaml</code>文件</p>
+<p>将<code>&lt;Window x:Class=&quot;projectName.MainWindow&quot;</code>换成<code>&lt;DMSkin:DMSkinWindow x:Class=&quot;projectName.MainWindow&quot;</code>这时会提示缺少引用，将光标移至划波浪线处，Alt+Enter自动补全引用</p>
+<p>如:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">DMSkin:DMSkinWindow</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:DMSkin</span>=<span class="string">"clr-namespace:DMSkin.WPF.Small;assembly=DMSkin.WPF.Small"</span> <span class="attr">x:Class</span>=<span class="string">"NewArticle.MainWindow"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns</span>=<span class="string">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:x</span>=<span class="string">"http://schemas.microsoft.com/winfx/2006/xaml"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:d</span>=<span class="string">"http://schemas.microsoft.com/expression/blend/2008"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:mc</span>=<span class="string">"http://schemas.openxmlformats.org/markup-compatibility/2006"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:local</span>=<span class="string">"clr-namespace:NewArticle"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">mc:Ignorable</span>=<span class="string">"d"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">WindowStartupLocation</span>=<span class="string">"CenterScreen"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">Title</span>=<span class="string">"MainWindow"</span> <span class="attr">Height</span>=<span class="string">"350"</span> <span class="attr">Width</span>=<span class="string">"525"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Grid</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Grid.ColumnDefinitions</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ColumnDefinition</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">Grid.ColumnDefinitions</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Grid</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">DMSkin:DMSkinWindow</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-无边框拖动-配合DMSkin使用"><a href="#3-无边框拖动-配合DMSkin使用" class="headerlink" title="3. 无边框拖动(配合DMSkin使用)"></a>3. 无边框拖动(配合<code>DMSkin</code>使用)</h1><p><em>Step1</em> 在<code>MainWindow.xaml.cs</code>中添加<code>Window_MouseDown</code>事件</p>
+<p>如：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Window_MouseDown</span>(<span class="params"><span class="keyword">object</span> sender, MouseButtonEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        DragMove();		<span class="comment">//实现无边框窗体的拖动</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// do nothing</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注：用try..catch语句是因为防止抛异常</p>
+<p><em>Step2</em> 在<code>MainWindow.xaml</code>中绑定事件<code>MouseDown=&quot;Window_MouseDown&quot;</code></p>
+<h1 id="4-DMSkin常见接口"><a href="#4-DMSkin常见接口" class="headerlink" title="4. DMSkin常见接口"></a>4. <code>DMSkin</code>常见接口</h1><h2 id="1-隐藏窗体最大化、最小化按钮"><a href="#1-隐藏窗体最大化、最小化按钮" class="headerlink" title="1. 隐藏窗体最大化、最小化按钮"></a>1. 隐藏窗体最大化、最小化按钮</h2><p>修改<code>MainWindow.xaml</code>文件，添加以下属性</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DMShowMax="False"</span><br><span class="line">DMShowMin="False"</span><br></pre></td></tr></table></figure>
+<h2 id="2-设置窗体四周边框阴影的大小"><a href="#2-设置窗体四周边框阴影的大小" class="headerlink" title="2. 设置窗体四周边框阴影的大小"></a>2. 设置窗体四周边框阴影的大小</h2><p>修改<code>MainWindow.xaml</code>文件，添加以下属性</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DMWindowShadowSize="20"			<span class="comment">&lt;!--四周边框阴影大小--&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-其它属性"><a href="#3-其它属性" class="headerlink" title="3. 其它属性"></a>3. 其它属性</h2><p>DMShowClose    是否显示关闭窗口按钮</p>
+<h1 id="5-TextBox相关设置"><a href="#5-TextBox相关设置" class="headerlink" title="5. TextBox相关设置"></a>5. TextBox相关设置</h1><h2 id="1-将TextBox的边框设置为圆角"><a href="#1-将TextBox的边框设置为圆角" class="headerlink" title="1. 将TextBox的边框设置为圆角"></a>1. 将TextBox的边框设置为圆角</h2><p>将修改的样式写在TextBox的resource中</p>
+<p>如:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextBox</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;<span class="name">TextBox.Resources</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">Style</span> <span class="attr">TargetType</span>=<span class="string">"&#123;x:Type Border&#125;"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">              <span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"CornerRadius"</span> <span class="attr">Value</span>=<span class="string">"4"</span>/&gt;</span></span></span><br><span class="line"><span class="xml">              <span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"BorderBrush"</span> <span class="attr">Value</span>=<span class="string">"#c1d0dc"</span>/&gt;</span></span></span><br><span class="line"><span class="undefined">           </span><span class="tag">&lt;/<span class="name">Style</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">TextBox.Resources</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">TextBox</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-将TextBox的光标居中"><a href="#2-将TextBox的光标居中" class="headerlink" title="2. 将TextBox的光标居中"></a>2. 将TextBox的光标居中</h2><p>设置TextBox的属性为<code>VerticalContentAlignment=&quot;Center&quot;</code></p>
+<p>如:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextBox</span> <span class="attr">VerticalContentAlignment</span>=<span class="string">"Center"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-指定TextBox的光标颜色"><a href="#3-指定TextBox的光标颜色" class="headerlink" title="3. 指定TextBox的光标颜色"></a>3. 指定TextBox的光标颜色</h2><p>设置TextBox的属性为<code>CaretBrush=&quot;#c2c3c9&quot;</code></p>
+<p>如:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextBox</span> <span class="attr">CaretBrush</span>=<span class="string">"#c2c3c9"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-添加Enter事件"><a href="#4-添加Enter事件" class="headerlink" title="4. 添加Enter事件"></a>4. 添加Enter事件</h2><p><em>Step1</em> 添加<code>keydown</code>事件</p>
+<p><em>Step2</em> 判断按下的键是否是Enter键</p>
+<p>如:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">TextBox_col_KeyDown</span>(<span class="params"><span class="keyword">object</span> sender, KeyEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (e.Key == Key.Enter)</span><br><span class="line">    &#123;</span><br><span class="line">       <span class="comment">//Here is your code</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="6-cmd执行类"><a href="#6-cmd执行类" class="headerlink" title="6. cmd执行类"></a>6. cmd执行类</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Diagnostics;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">NewArticle</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Cmd</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">string</span> CmdPath = <span class="string">@"C:\Windows\System32\cmd.exe"</span>;</span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 执行cmd命令</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 多命令请使用批处理命令连接符：</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;![CDATA[</span></span></span><br><span class="line"><span class="comment"><span class="doctag">        /// &amp;:同时执行两个命令</span></span></span><br><span class="line"><span class="comment"><span class="doctag">        /// |:将上一个命令的输出,作为下一个命令的输入</span></span></span><br><span class="line"><span class="comment"><span class="doctag">        /// &amp;&amp;：当&amp;&amp;前的命令成功时,才执行&amp;&amp;后的命令</span></span></span><br><span class="line"><span class="comment"><span class="doctag">        /// ||：当||前的命令失败时,才执行||后的命令]]&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 其他请百度</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="cmd"&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="output"&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">RunCmd</span>(<span class="params"><span class="keyword">string</span> cmd, <span class="keyword">out</span> <span class="keyword">string</span> output</span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            cmd = cmd.Trim().TrimEnd(<span class="string">'&amp;'</span>) + <span class="string">"&amp;exit"</span>;<span class="comment">//说明：不管命令是否成功均执行exit命令，否则当调用ReadToEnd()方法时，会处于假死状态</span></span><br><span class="line">            <span class="keyword">using</span> (Process p = <span class="keyword">new</span> Process())</span><br><span class="line">            &#123;</span><br><span class="line">                p.StartInfo.StandardOutputEncoding = Encoding.UTF8; <span class="comment">// 使用UTF-8编码</span></span><br><span class="line">                p.StartInfo.FileName = CmdPath;</span><br><span class="line">                p.StartInfo.UseShellExecute = <span class="literal">false</span>;        <span class="comment">//是否使用操作系统shell启动</span></span><br><span class="line">                p.StartInfo.RedirectStandardInput = <span class="literal">true</span>;   <span class="comment">//接受来自调用程序的输入信息</span></span><br><span class="line">                p.StartInfo.RedirectStandardOutput = <span class="literal">true</span>;  <span class="comment">//由调用程序获取输出信息</span></span><br><span class="line">                p.StartInfo.RedirectStandardError = <span class="literal">true</span>;   <span class="comment">//重定向标准错误输出</span></span><br><span class="line">                p.StartInfo.CreateNoWindow = <span class="literal">true</span>;          <span class="comment">//不显示程序窗口</span></span><br><span class="line">                p.Start();<span class="comment">//启动程序</span></span><br><span class="line"></span><br><span class="line">                <span class="comment">//向cmd窗口写入命令</span></span><br><span class="line">                p.StandardInput.WriteLine(cmd);</span><br><span class="line">                p.StandardInput.AutoFlush = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">                <span class="comment">//获取cmd窗口的输出信息</span></span><br><span class="line">                output = p.StandardOutput.ReadToEnd();</span><br><span class="line">                p.WaitForExit();<span class="comment">//等待程序执行完退出进程</span></span><br><span class="line">                p.Close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="7-正则匹配"><a href="#7-正则匹配" class="headerlink" title="7. 正则匹配"></a>7. 正则匹配</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">foreach</span> (Match match <span class="keyword">in</span> Regex.Matches(<span class="keyword">string</span>,pattern))</span><br><span class="line">&#123;</span><br><span class="line">    pos = match.Index;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="8-判断文件是否存在"><a href="#8-判断文件是否存在" class="headerlink" title="8. 判断文件是否存在"></a>8. 判断文件是否存在</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File.Exists(<span class="keyword">string</span> directory)</span><br></pre></td></tr></table></figure>
+<h1 id="9-延迟几秒再执行"><a href="#9-延迟几秒再执行" class="headerlink" title="9. 延迟几秒再执行"></a>9. 延迟几秒再执行</h1><p><em>Step1</em> 将方法改成异步（async），并且用Action封装一个方法，再用await Task.Run()指定异步方法</p>
+<p>如:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">async</span> <span class="keyword">void</span> <span class="title">label1_Click</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    message1.Show();</span><br><span class="line">    <span class="comment">//用Action封装一个方法，再用await Task.Run()执行异步方法</span></span><br><span class="line">    Action action= AsyncMethod;	</span><br><span class="line">    <span class="keyword">await</span> Task.Run(action);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>Step2</em> 创建异步方法AsyncMethod</p>
+<p>如:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">AsyncMethod</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Thread.Sleep(<span class="number">2000</span>);		<span class="comment">//延时2秒</span></span><br><span class="line">    message1.Text = <span class="string">"抱歉，未检查到新版本！"</span>;</span><br><span class="line">    Thread.Sleep(<span class="number">2000</span>);</span><br><span class="line">    version_message1.Hide();</span><br><span class="line">    message1.Text = <span class="string">"正在检查更新..."</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注: WPF程序不允许非UI线程更新UI内容,但可以通过委托曲线救国:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">控件名.Dispatcher.Invoke(<span class="keyword">new</span> System.Action(<span class="keyword">delegate</span> &#123; 控件名.IsEnabled = <span class="literal">false</span>; &#125;));</span><br></pre></td></tr></table></figure>
+<h1 id="10-退出程序"><a href="#10-退出程序" class="headerlink" title="10. 退出程序"></a>10. 退出程序</h1><ol>
+<li><p><code>this.Close();</code>   只是关闭当前窗口，若不是主窗体的话，是无法退出程序的，另外若有托管线程（非主线程），也无法干净地退出；</p>
+</li>
+<li><p><code>Application.Exit();</code>  强制所有消息中止，退出所有的窗体，但是若有托管线程（非主线程），也无法干净地退出；</p>
+</li>
+<li><p><code>Application.ExitThread();</code> 强制中止调用线程上的所有消息，同样面临其它线程无法正确退出的问题；</p>
+</li>
+<li><p><code>System.Environment.Exit(0);</code>  这是最彻底的退出方式，不管什么线程都被强制退出，把程序结束的很干净。</p>
+<p>值得注意的是：    this.Close();  仅仅是关闭当前窗体，如果窗体中有循环，循环仍会继续运行。</p>
+</li>
+</ol>
+<hr>
+<p>最后，展示一下我的成品<code>^_^</code></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/2018-03-03_23-24-25.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-07-25T01:02:05.363Z" itemprop="dateUpdated">2018-07-25 09:02:05</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/03/04/CSS3学习笔记/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">CSS3学习笔记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/03/02/Android项目实战-课程表/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Android项目实战：课程表</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="CSS,CSS新世界读书笔记">
+    <meta name="description" content="content与替换元素替换元素(replaced element): 元素内容是否可替换。 根据外在盒子是内联还是块级我们可以把元素分为内联元素还是块级元素，而根据元素内容是否可替换，把元素分为替换元素和非替换元素。 如:1&amp;lt;img&amp;gt;、&amp;lt;object&amp;gt;、&amp;lt;video&amp;gt;、&amp;lt;iframe&amp;gt;、&amp;lt;textarea&amp;gt;、&amp;lt;input&amp;gt;、">
+<meta name="keywords" content="CSS,CSS新世界读书笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="替换元素与非替换元素">
+<meta property="og:url" content="http://www.lolimay.cn/2018/07/14/替换元素与非替换元素/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="content与替换元素替换元素(replaced element): 元素内容是否可替换。 根据外在盒子是内联还是块级我们可以把元素分为内联元素还是块级元素，而根据元素内容是否可替换，把元素分为替换元素和非替换元素。 如:1&amp;lt;img&amp;gt;、&amp;lt;object&amp;gt;、&amp;lt;video&amp;gt;、&amp;lt;iframe&amp;gt;、&amp;lt;textarea&amp;gt;、&amp;lt;input&amp;gt;、">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-7-14/44203237.jpg">
+<meta property="og:updated_time" content="2018-07-25T00:57:56.563Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="替换元素与非替换元素">
+<meta name="twitter:description" content="content与替换元素替换元素(replaced element): 元素内容是否可替换。 根据外在盒子是内联还是块级我们可以把元素分为内联元素还是块级元素，而根据元素内容是否可替换，把元素分为替换元素和非替换元素。 如:1&amp;lt;img&amp;gt;、&amp;lt;object&amp;gt;、&amp;lt;video&amp;gt;、&amp;lt;iframe&amp;gt;、&amp;lt;textarea&amp;gt;、&amp;lt;input&amp;gt;、">
+<meta name="twitter:image" content="http://p40kjburh.bkt.clouddn.com/18-7-14/44203237.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">替换元素与非替换元素</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-07-14T04:59:58.000Z" itemprop="datePublished" class="page-time">
+  2018-07-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#content与替换元素"><span class="post-toc-number">1.</span> <span class="post-toc-text">content与替换元素</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#替换元素的性质"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">替换元素的性质</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#替换元素的尺寸计算规则"><span class="post-toc-number">2.</span> <span class="post-toc-text">替换元素的尺寸计算规则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#替换元素的object-fit"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">替换元素的object-fit</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#替换元素与流动性"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">替换元素与流动性</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-替换元素与非替换元素"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">替换元素与非替换元素</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-07-14 12:59:58" datetime="2018-07-14T04:59:58.000Z"  itemprop="datePublished">2018-07-14</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="content与替换元素"><a href="#content与替换元素" class="headerlink" title="content与替换元素"></a>content与替换元素</h1><p>替换元素(replaced element): <strong>元素内容是否可替换。</strong></p>
+<p>根据外在盒子是内联还是块级我们可以把元素分为内联元素还是块级元素，而根据元素内容是否可替换，把元素分为替换元素和非替换元素。</p>
+<p>如:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">img</span>&gt;、&lt;<span class="selector-tag">object</span>&gt;、&lt;<span class="selector-tag">video</span>&gt;、&lt;<span class="selector-tag">iframe</span>&gt;、&lt;<span class="selector-tag">textarea</span>&gt;、&lt;<span class="selector-tag">input</span>&gt;、&lt;<span class="selector-tag">select</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="替换元素的性质"><a href="#替换元素的性质" class="headerlink" title="替换元素的性质"></a>替换元素的性质</h2><ul>
+<li><p>内容的外观不受页面上的CSS的影响</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type='checkbox']</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有自己的尺寸</p>
+</li>
+</ul>
+<p>大部分替换元素的默认尺寸是<strong>300x150px</strong>，少部分替换元素的默认尺寸为<strong>0x0px</strong>，表单替换元素的尺寸则和浏览器有关。</p>
+<ul>
+<li>在很多CSS属性上有自己的一套表现规则<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">bottom</span>; <span class="comment">/* 基线是元素的下边缘 */</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="替换元素的尺寸计算规则"><a href="#替换元素的尺寸计算规则" class="headerlink" title="替换元素的尺寸计算规则"></a>替换元素的尺寸计算规则</h1><p>内联替换元素和块级替换元素使用一下同一套尺寸计算规则。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/18-7-14/44203237.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li><strong>固有尺寸</strong></li>
+</ul>
+<p>替换内容原本的尺寸(图片、视频原本的尺寸、表单元素的固有尺寸由浏览器定义)</p>
+<ul>
+<li><strong>HTML尺寸</strong></li>
+</ul>
+<p>通过HTML原生属性设置的尺寸<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;img width="300" height="100"&gt;</span><br><span class="line">&lt;input type="file" size="30"&gt;</span><br><span class="line">&lt;textarea cols="20" rows="5"&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>CSS尺寸</strong><br>即元素的content box<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>优先级: CSS尺寸&gt;HTML尺寸&gt;固有尺寸</p>
+<h2 id="替换元素的object-fit"><a href="#替换元素的object-fit" class="headerlink" title="替换元素的object-fit"></a>替换元素的object-fit</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">img &#123;</span><br><span class="line">  object-fit: fill; /* 默认 */</span><br><span class="line">  object-fit: contain;</span><br><span class="line">  object-fit: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="替换元素与流动性"><a href="#替换元素与流动性" class="headerlink" title="替换元素与流动性"></a>替换元素与流动性</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">textarea</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-07-25T00:57:56.563Z" itemprop="dateUpdated">2018-07-25 08:57:56</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS新世界读书笔记/">CSS新世界读书笔记</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/07/19/新手指引/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">新手指引</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/07/12/流、元素与基本尺寸-下/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">流、元素与基本尺寸(下)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

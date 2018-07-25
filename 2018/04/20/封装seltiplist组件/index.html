@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="前端,Vue">
+    <meta name="description" content="1.编写组件1.清单依赖清单：  underscore.min.js JavaScript工具库  编写清单：  seltipoption.vue SelectTipOption，SelectTipList的子组件 seltiplist.vue  SelectTipList，SelectTipOption的父组件 emitter.js 用于父子组件通讯  2.seltipoption.vue12">
+<meta name="keywords" content="前端,Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="封装seltiplist组件">
+<meta property="og:url" content="http://www.lolimay.cn/2018/04/20/封装seltiplist组件/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="1.编写组件1.清单依赖清单：  underscore.min.js JavaScript工具库  编写清单：  seltipoption.vue SelectTipOption，SelectTipList的子组件 seltiplist.vue  SelectTipList，SelectTipOption的父组件 emitter.js 用于父子组件通讯  2.seltipoption.vue12">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-19T18:47:31.896Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="封装seltiplist组件">
+<meta name="twitter:description" content="1.编写组件1.清单依赖清单：  underscore.min.js JavaScript工具库  编写清单：  seltipoption.vue SelectTipOption，SelectTipList的子组件 seltiplist.vue  SelectTipList，SelectTipOption的父组件 emitter.js 用于父子组件通讯  2.seltipoption.vue12">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">封装seltiplist组件</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-04-20T15:36:26.000Z" itemprop="datePublished" class="page-time">
+  2018-04-20
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-编写组件"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.编写组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-清单"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.清单</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-seltipoption-vue"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.seltipoption.vue</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-seltiplist-vue"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3.seltiplist.vue</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-emitter-js"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4.emitter.js</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-使用组件"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.使用组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#App-vue"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">App.vue</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-代码解释"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.代码解释</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-两个组件"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1.两个组件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-实现自定义组件v-model数据双向绑定"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2.实现自定义组件v-model数据双向绑定</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-父子组件通讯"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3.父子组件通讯</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-seltipoption的选择状态判断"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">4.seltipoption的选择状态判断</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-为了判断两个value值是否相等"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">5.为了判断两个value值是否相等</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-封装seltiplist组件"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">封装seltiplist组件</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-04-20 23:36:26" datetime="2018-04-20T15:36:26.000Z"  itemprop="datePublished">2018-04-20</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <hr>
+<h1 id="1-编写组件"><a href="#1-编写组件" class="headerlink" title="1.编写组件"></a>1.编写组件</h1><h2 id="1-清单"><a href="#1-清单" class="headerlink" title="1.清单"></a>1.清单</h2><p>依赖清单：</p>
+<ul>
+<li><code>underscore.min.js</code> JavaScript工具库</li>
+</ul>
+<p>编写清单：</p>
+<ul>
+<li><code>seltipoption.vue</code> SelectTipOption，SelectTipList的子组件</li>
+<li><code>seltiplist.vue</code>  SelectTipList，SelectTipOption的父组件</li>
+<li><code>emitter.js</code> 用于父子组件通讯</li>
+</ul>
+<h2 id="2-seltipoption-vue"><a href="#2-seltipoption-vue" class="headerlink" title="2.seltipoption.vue"></a>2.<code>seltipoption.vue</code></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"tip"</span> @<span class="attr">click</span>=<span class="string">"selectOptionClick"</span> <span class="attr">:class</span>=<span class="string">"&#123;'active':itemSelected &#125;"</span>&gt;</span>&#123;&#123;currentLabel&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/ecmascript-6"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> Emitter <span class="keyword">from</span> <span class="string">'../util/emitter'</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> underscore = <span class="built_in">require</span>(<span class="string">'../lib/underscore.min'</span>)</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span><br><span class="line"><span class="undefined">  mixins: [Emitter],</span></span><br><span class="line"><span class="javascript">  componentName: <span class="string">'seltipoption'</span>,</span></span><br><span class="line"><span class="undefined">  props: &#123;</span></span><br><span class="line"><span class="undefined">    value: &#123;</span></span><br><span class="line"><span class="javascript">      required: <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="javascript">    label: [<span class="built_in">String</span>, <span class="built_in">Number</span>]</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  computed: &#123;</span></span><br><span class="line"><span class="undefined">    currentLabel () &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> <span class="keyword">this</span>.label || ((<span class="keyword">typeof</span> <span class="keyword">this</span>.value === <span class="string">'string'</span> || <span class="keyword">typeof</span> <span class="keyword">this</span>.value === <span class="string">'number'</span>) ? <span class="keyword">this</span>.value : <span class="string">''</span>)</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    parent () &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">let</span> result = <span class="keyword">this</span>.$parent</span></span><br><span class="line"><span class="javascript">      <span class="keyword">while</span> (!result.istipSelect) &#123;</span></span><br><span class="line"><span class="undefined">        result = result.$parent</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> result</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    itemSelected () &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">if</span> (!<span class="keyword">this</span>.parent.multiple) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> underscore._.isEqual(<span class="keyword">this</span>.parent.value, <span class="keyword">this</span>.value)</span></span><br><span class="line"><span class="javascript">      &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> isSelected = <span class="literal">false</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.parent.value.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">if</span> (underscore._.isEqual(item, <span class="keyword">this</span>.value)) &#123;</span></span><br><span class="line"><span class="javascript">            isSelected = <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">          &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> isSelected</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  methods: &#123;</span></span><br><span class="line"><span class="undefined">    selectOptionClick () &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.dispatch(<span class="string">'seltiplist'</span>, <span class="string">'handleOptionClick'</span>, <span class="keyword">this</span>.value)</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-seltiplist-vue"><a href="#3-seltiplist-vue" class="headerlink" title="3.seltiplist.vue"></a>3.<code>seltiplist.vue</code></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/ecmascript-6"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> Emitter <span class="keyword">from</span> <span class="string">'../util/emitter'</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> underscore = <span class="built_in">require</span>(<span class="string">'../lib/underscore.min'</span>)</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span><br><span class="line"><span class="undefined">  mixins: [Emitter],</span></span><br><span class="line"><span class="javascript">  componentName: <span class="string">'seltiplist'</span>,</span></span><br><span class="line"><span class="undefined">  data () &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">      istipSelect: <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  props: &#123;</span></span><br><span class="line"><span class="undefined">    value: &#123;&#125;,</span></span><br><span class="line"><span class="undefined">    multiple: &#123;</span></span><br><span class="line"><span class="javascript">      type: <span class="built_in">Boolean</span>,</span></span><br><span class="line"><span class="javascript">      <span class="keyword">default</span>: <span class="literal">false</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  mounted () &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">this</span>.$on(<span class="string">'handleOptionClick'</span>, <span class="keyword">this</span>.handleOptionSelect)</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  methods: &#123;</span></span><br><span class="line"><span class="undefined">    handleOptionSelect (val) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">if</span> (<span class="keyword">this</span>.multiple &amp;&amp; underscore._.isArray(<span class="keyword">this</span>.value)) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> optionIndex = <span class="keyword">this</span>.value.indexOf(val)</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.value.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">if</span> (underscore._.isEqual(item, val)) &#123;</span></span><br><span class="line"><span class="undefined">            optionIndex = index</span></span><br><span class="line"><span class="undefined">          &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (optionIndex &lt; <span class="number">0</span>) &#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">this</span>.value.push(val)</span></span><br><span class="line"><span class="javascript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">this</span>.value.splice(optionIndex, <span class="number">1</span>)</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">      &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (val !== <span class="keyword">this</span>.value) &#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">this</span>.$emit(<span class="string">'input'</span>, val)</span></span><br><span class="line"><span class="javascript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">this</span>.$emit(<span class="string">'input'</span>, <span class="string">''</span>)</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-emitter-js"><a href="#4-emitter-js" class="headerlink" title="4.emitter.js"></a>4.<code>emitter.js</code></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">broadcast</span> (<span class="params">componentName, eventName, params</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.$children.forEach(<span class="function"><span class="params">child</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> name = child.$options.componentName</span><br><span class="line">    <span class="keyword">if</span> (name === componentName) &#123;</span><br><span class="line">      child.$emit.apply(child, [eventName].concat(params))</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      broadcast.apply(child, [componentName, eventName].concat(params))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    dispatch (componentName, eventName, params) &#123;</span><br><span class="line">      <span class="keyword">var</span> parent = <span class="keyword">this</span>.$parent || <span class="keyword">this</span>.$root</span><br><span class="line">      <span class="keyword">var</span> name = parent.$options.componentName</span><br><span class="line"></span><br><span class="line">      <span class="keyword">while</span> (parent &amp;&amp; (!name || name !== componentName)) &#123;</span><br><span class="line">        parent = parent.$parent</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (parent) &#123;</span><br><span class="line">          name = parent.$options.componentName</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (parent) &#123;</span><br><span class="line">        parent.$emit.apply(parent, [eventName].concat(params))</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    broadcast (componentName, eventName, params) &#123;</span><br><span class="line">      broadcast.call(<span class="keyword">this</span>, componentName, eventName, params)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="2-使用组件"><a href="#2-使用组件" class="headerlink" title="2.使用组件"></a>2.使用组件</h1><h2 id="App-vue"><a href="#App-vue" class="headerlink" title="App.vue"></a><code>App.vue</code></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 1100px;margin: 40px auto"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"conditionbox"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"selectlist"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>地区<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"select-box"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">seltiplist</span>  <span class="attr">v-model</span>=<span class="string">"loacl_select"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">seltipoption</span> <span class="attr">v-for</span>=<span class="string">" item in local "</span> <span class="attr">:label</span>=<span class="string">"item.label"</span> <span class="attr">:value</span>=<span class="string">"item"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span><span class="tag">&lt;/<span class="name">seltipoption</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">seltiplist</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"selectlist"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>薪资要求<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"select-box"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">seltiplist</span>  <span class="attr">v-model</span>=<span class="string">"salary_select"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">seltipoption</span> <span class="attr">v-for</span>=<span class="string">" item in salary "</span> <span class="attr">:label</span>=<span class="string">"item.label"</span> <span class="attr">:value</span>=<span class="string">"item"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span><span class="tag">&lt;/<span class="name">seltipoption</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">seltiplist</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"selectlist"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>福利待遇<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"select-box"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">seltiplist</span> <span class="attr">:multiple</span>=<span class="string">"true"</span>  <span class="attr">v-model</span>=<span class="string">"treatment_select"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">seltipoption</span> <span class="attr">v-for</span>=<span class="string">" item in treatment "</span> <span class="attr">:label</span>=<span class="string">"item.label"</span> <span class="attr">:value</span>=<span class="string">"item"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span><span class="tag">&lt;/<span class="name">seltipoption</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">seltiplist</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"selectlist"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>已选条件<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"select-box"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"tip active"</span> <span class="attr">v-if</span>=<span class="string">"loacl_select"</span>&gt;</span>&#123;&#123;loacl_select.label&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"tip active"</span> <span class="attr">v-if</span>=<span class="string">"salary_select"</span>&gt;</span>&#123;&#123;salary_select.label&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"tip active"</span> <span class="attr">v-for</span>=<span class="string">"item in treatment_select"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span>&#123;&#123;item.label&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> seltiplist <span class="keyword">from</span> <span class="string">'./components/seltiplist.vue'</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> seltipoption <span class="keyword">from</span> <span class="string">'./components/seltipoption.vue'</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">  components: &#123;</span></span><br><span class="line"><span class="undefined">    seltiplist,</span></span><br><span class="line"><span class="undefined">    seltipoption</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  data () &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">      loacl_select: <span class="string">''</span>,</span></span><br><span class="line"><span class="undefined">      treatment_select: [</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 4,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'项目奖金'</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      ],</span></span><br><span class="line"><span class="javascript">      salary_select: <span class="string">''</span>,</span></span><br><span class="line"><span class="undefined">      local: [</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 1,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'北京'</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 2,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'安徽'</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 3,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'上海'</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 4,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'广州'</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 5,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'青岛'</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      ],</span></span><br><span class="line"><span class="undefined">      treatment: [</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 1,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'五险一金'</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 2,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'交通补助'</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 3,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'带薪年假'</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 4,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'项目奖金'</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      ],</span></span><br><span class="line"><span class="undefined">      salary: [</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 1,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'4000以下'</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 2,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'4000-6000'</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 3,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'6000-8000'</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">          id: 4,</span></span><br><span class="line"><span class="javascript">          label: <span class="string">'8000以上'</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      ]</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  methods: &#123;&#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">body,</span></span><br><span class="line"><span class="undefined">html &#123;</span></span><br><span class="line"><span class="undefined">  margin: 0;</span></span><br><span class="line"><span class="undefined">  padding: 0;</span></span><br><span class="line"><span class="undefined">  font-family: PingFang SC, Hiragino Sans GB, Microsoft Yahei, SimSun, Arial,</span></span><br><span class="line"><span class="undefined">    Helvetica Neue, Helvetica;</span></span><br><span class="line"><span class="undefined">  -webkit-font-smoothing: antialiased;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">line-height</span>: 1<span class="selector-class">.42857143</span>;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">color</span>: <span class="selector-id">#666</span>;</span></span><br><span class="line"><span class="undefined">  font-size: 14px;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">background</span>: <span class="selector-id">#fdfbfb</span>;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.conditionbox</span> &#123;</span></span><br><span class="line"><span class="undefined">  width: 100%;</span></span><br><span class="line"><span class="undefined">  margin-top: 10px;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">background</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="undefined">  padding: 20px;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.selectlist</span> &#123;</span></span><br><span class="line"><span class="undefined">  padding-top: 10px;</span></span><br><span class="line"><span class="undefined">  padding-bottom: 10px;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.selectlist</span> <span class="selector-class">.title</span> &#123;</span></span><br><span class="line"><span class="undefined">  display: inline-block;</span></span><br><span class="line"><span class="undefined">  width: 98px;</span></span><br><span class="line"><span class="undefined">  margin-left: 10px;</span></span><br><span class="line"><span class="undefined">  font-weight: 700;</span></span><br><span class="line"><span class="undefined">  font-size: 15px;</span></span><br><span class="line"><span class="undefined">  margin-top: 3px;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.selectlist</span> <span class="selector-class">.select-box</span> &#123;</span></span><br><span class="line"><span class="undefined">  width: 897px;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  position: relative;</span></span><br><span class="line"><span class="undefined">  display: inline-block;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">span</span><span class="selector-class">.tip</span> &#123;</span></span><br><span class="line"><span class="undefined">  padding: 3px 6px;</span></span><br><span class="line"><span class="undefined">  cursor: pointer;</span></span><br><span class="line"><span class="undefined">  border-radius: 3px;</span></span><br><span class="line"><span class="undefined">  font-weight: 600;</span></span><br><span class="line"><span class="undefined">  margin: 1px 2px;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">color</span>: <span class="selector-id">#465364</span>;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">span</span><span class="selector-class">.tip</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">background</span>: <span class="selector-id">#465364</span>;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">span</span><span class="selector-class">.tip</span><span class="selector-class">.active</span> &#123;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">background</span>: <span class="selector-id">#465364</span>;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-代码解释"><a href="#3-代码解释" class="headerlink" title="3.代码解释"></a>3.代码解释</h1><h2 id="1-两个组件"><a href="#1-两个组件" class="headerlink" title="1.两个组件"></a>1.两个组件</h2><p>一个标签组件<code>seltipoption</code>，方便<em>用v-for进行渲染</em></p>
+<p>一个父组件<code>seltiplist</code>，<em>管理v-model</em>、<em>接收<code>seltipoption</code>事件</em></p>
+<h2 id="2-实现自定义组件v-model数据双向绑定"><a href="#2-实现自定义组件v-model数据双向绑定" class="headerlink" title="2.实现自定义组件v-model数据双向绑定"></a>2.实现自定义组件<code>v-model</code>数据双向绑定</h2><p>如果要让组件的<code>v-model</code>生效，则这个组件它必须：</p>
+<ol>
+<li><p>接收一个<code>value</code>属性。</p>
+</li>
+<li><p>在有新的<code>value</code>时触发<code>input</code>事件，直接赋值给<code>this.value</code>是无效的，无法触发更新。</p>
+</li>
+<li><p>当为多选项时，更新<code>seltiplist</code>的value数组即可，但是当为单选项时，需要使用<code>this.$emit(&#39;input&#39;, val)</code>来触发更新</p>
+</li>
+</ol>
+<h2 id="3-父子组件通讯"><a href="#3-父子组件通讯" class="headerlink" title="3.父子组件通讯"></a>3.父子组件通讯</h2><p>当<code>seltipoption.vue</code>响应<code>click</code>事件后，通过<code>this.dispatch(&#39;seltiplist&#39;, &#39;handleOptionClick&#39;, this.value)</code>触发父组件<code>seltiplist.vue</code>的监听<code>this.$on(&#39;handleOptionSelect&#39;)</code>实现组件间的通讯。</p>
+<h2 id="4-seltipoption的选择状态判断"><a href="#4-seltipoption的选择状态判断" class="headerlink" title="4.seltipoption的选择状态判断"></a>4.<code>seltipoption</code>的选择状态判断</h2><ul>
+<li>当为单选时，判断<code>seltipoption</code>的<code>value</code>是都等于<code>seltiplist</code>的<code>value</code></li>
+<li>当为多选时，<code>seltipoption</code>的<code>value</code>存在<code>seltiplist</code>的<code>value</code>数组中</li>
+</ul>
+<h2 id="5-为了判断两个value值是否相等"><a href="#5-为了判断两个value值是否相等" class="headerlink" title="5.为了判断两个value值是否相等"></a>5.为了判断两个<code>value</code>值是否相等</h2><p>此处引入工具库<code>underscore.min.js</code></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-06-19T18:47:31.896Z" itemprop="dateUpdated">2018-06-20 02:47:31</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/04/21/ES6：export和import/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ES6：export和import</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/04/17/Shirt-Enter与Enter按键功能互换/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Shirt+Enter与Enter按键功能互换</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

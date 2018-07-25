@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hexo">
+    <meta name="description" content="这几天巨硬一直在催着我更新系统，一言不合就在后台自动下载好Win10易升，然后自动启动强制更新。尽管我尝试了各种方法去阻止这个易升自动弹出来强制更新：包括关闭更新服务，将易升文件夹的文件权限改为只有用户可以修改…无奈，所有的方法在巨硬面前都是弱鸡。算了，我还是妥协吧!其实最关键的是它易升无法自动完成升级(可能是我关闭自动更新太久的缘故/哭)，官方建议我直接用U盘重装系统。好在花了一天的时间，大概">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo迁移简单记录">
+<meta property="og:url" content="http://www.lolimay.cn/2018/03/07/Hexo迁移简单记录/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="这几天巨硬一直在催着我更新系统，一言不合就在后台自动下载好Win10易升，然后自动启动强制更新。尽管我尝试了各种方法去阻止这个易升自动弹出来强制更新：包括关闭更新服务，将易升文件夹的文件权限改为只有用户可以修改…无奈，所有的方法在巨硬面前都是弱鸡。算了，我还是妥协吧!其实最关键的是它易升无法自动完成升级(可能是我关闭自动更新太久的缘故/哭)，官方建议我直接用U盘重装系统。好在花了一天的时间，大概">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-07T10:06:10.259Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo迁移简单记录">
+<meta name="twitter:description" content="这几天巨硬一直在催着我更新系统，一言不合就在后台自动下载好Win10易升，然后自动启动强制更新。尽管我尝试了各种方法去阻止这个易升自动弹出来强制更新：包括关闭更新服务，将易升文件夹的文件权限改为只有用户可以修改…无奈，所有的方法在巨硬面前都是弱鸡。算了，我还是妥协吧!其实最关键的是它易升无法自动完成升级(可能是我关闭自动更新太久的缘故/哭)，官方建议我直接用U盘重装系统。好在花了一天的时间，大概">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hexo迁移简单记录</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-07T09:32:29.000Z" itemprop="datePublished" class="page-time">
+  2018-03-07
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Hexo/">Hexo</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-安装软件"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 安装软件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-nodejs"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. nodejs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-git"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. git</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-hexo"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. hexo</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-配置密钥"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 配置密钥</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-在本机上生成秘钥"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 在本机上生成秘钥</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-拷贝公钥到服务器上"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 拷贝公钥到服务器上</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-配置用户名和邮箱信息"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 配置用户名和邮箱信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-重启电脑"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. 重启电脑</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hexo迁移简单记录"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Hexo迁移简单记录</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-07 17:32:29" datetime="2018-03-07T09:32:29.000Z"  itemprop="datePublished">2018-03-07</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Hexo/">Hexo</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <hr>
+<p>这几天巨硬一直在催着我更新系统，一言不合就在后台自动下载好<strong>Win10易升</strong>，然后自动启动强制更新。尽管我尝试了各种方法去阻止这个<strong>易升</strong>自动弹出来强制更新：包括关闭更新服务，将易升文件夹的文件权限改为只有用户可以修改…无奈，所有的方法在巨硬面前都是弱鸡。算了，我还是妥协吧!其实最关键的是它易升无法自动完成升级(可能是我关闭自动更新太久的缘故/哭)，官方建议我直接用U盘重装系统。好在花了一天的时间，大概已经把我的电脑恢复之前使用的配置了(C盘剩余空间也因此大了20个G，也算是给我的唯一一丝慰藉吧~ /无奈)<a id="more"></a></p>
+<p>扯远了，下面简单记录一下自己迁移Hexo到新系统上的步骤：</p>
+<p><em>重要前提：</em> <strong>你的原来的Hexo目录必须还在</strong></p>
+<h1 id="1-安装软件"><a href="#1-安装软件" class="headerlink" title="1. 安装软件"></a>1. 安装软件</h1><p>首先安装自行安装好以下软件：</p>
+<h2 id="1-nodejs"><a href="#1-nodejs" class="headerlink" title="1. nodejs"></a>1. nodejs</h2><h2 id="2-git"><a href="#2-git" class="headerlink" title="2. git"></a>2. git</h2><h2 id="3-hexo"><a href="#3-hexo" class="headerlink" title="3. hexo"></a>3. hexo</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g</span><br><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>注：为保险起见，最好先cd到你的Hexo根目录下</p>
+<h1 id="2-配置密钥"><a href="#2-配置密钥" class="headerlink" title="2. 配置密钥"></a>2. 配置密钥</h1><h2 id="1-在本机上生成秘钥"><a href="#1-在本机上生成秘钥" class="headerlink" title="1. 在本机上生成秘钥"></a>1. 在本机上生成秘钥</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "your@email.com"</span><br></pre></td></tr></table></figure>
+<h2 id="2-拷贝公钥到服务器上"><a href="#2-拷贝公钥到服务器上" class="headerlink" title="2. 拷贝公钥到服务器上"></a>2. 拷贝公钥到服务器上</h2><p>将本机上<code>`~/.ssh/id_rsa.pub</code>文件中的内容拷贝到服务器<code>/home/git/.ssh/authorized_keys</code>文件中</p>
+<h1 id="3-配置用户名和邮箱信息"><a href="#3-配置用户名和邮箱信息" class="headerlink" title="3. 配置用户名和邮箱信息"></a>3. 配置用户名和邮箱信息</h1><p>在新系统上第一次使用<code>hexo d</code>命令将博客文件部署到服务器上时，服务器会问你<code>Who are you</code></p>
+<p>这时按照命令行的要求填写自己的用户名和邮箱就好，以后就不会再提示。</p>
+<h1 id="4-重启电脑"><a href="#4-重启电脑" class="headerlink" title="4. 重启电脑"></a>4. 重启电脑</h1><p>解决命令行找不到<code>Hexo</code>相关命令的错误，如果你可以直接<code>hexo d</code>上去了，就不用重启啦~</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-03-07T10:06:10.259Z" itemprop="dateUpdated">2018-03-07 18:06:10</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/03/07/使用AutoHotKey开发简单的GUI程序/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">使用AutoHotKey开发简单的GUI程序</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/03/04/CSS3学习笔记/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CSS3学习笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

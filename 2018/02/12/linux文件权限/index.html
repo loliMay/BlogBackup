@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Linux">
+    <meta name="description" content="linux中有三种文件权限: 读取 (read)、写入 (write) 和执行 (execute) . 它们的具体含义如下表:     权限 含义     读取 对文件而言, 具有读取文件内容的权限对目录来说, 具有浏览目录的权限   写入 对文件而言, 具有新增、修改文件内容的权限对目录来说, 具有删除、移动目录内文件的权限   执行 对文件而言, 具有执行文件的权限对目录来说, 该用户具有进">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux文件权限">
+<meta property="og:url" content="http://www.lolimay.cn/2018/02/12/linux文件权限/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="linux中有三种文件权限: 读取 (read)、写入 (write) 和执行 (execute) . 它们的具体含义如下表:     权限 含义     读取 对文件而言, 具有读取文件内容的权限对目录来说, 具有浏览目录的权限   写入 对文件而言, 具有新增、修改文件内容的权限对目录来说, 具有删除、移动目录内文件的权限   执行 对文件而言, 具有执行文件的权限对目录来说, 该用户具有进">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-15T09:59:09.788Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux文件权限">
+<meta name="twitter:description" content="linux中有三种文件权限: 读取 (read)、写入 (write) 和执行 (execute) . 它们的具体含义如下表:     权限 含义     读取 对文件而言, 具有读取文件内容的权限对目录来说, 具有浏览目录的权限   写入 对文件而言, 具有新增、修改文件内容的权限对目录来说, 具有删除、移动目录内文件的权限   执行 对文件而言, 具有执行文件的权限对目录来说, 该用户具有进">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Linux文件权限</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-02-12T08:50:42.000Z" itemprop="datePublished" class="page-time">
+  2018-02-12
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-linux文件权限"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Linux文件权限</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-02-12 16:50:42" datetime="2018-02-12T08:50:42.000Z"  itemprop="datePublished">2018-02-12</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <hr>
+<p>linux中有三种文件权限: <strong>读取 (read)、写入 (write) 和执行 (execute)</strong> .</p>
+<p>它们的具体含义如下表:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">权限</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">读取</td>
+<td style="text-align:center">对文件而言, 具有<strong>读取文件内容</strong>的权限<br>对目录来说, 具有<strong>浏览目录</strong>的权限</td>
+</tr>
+<tr>
+<td style="text-align:center">写入</td>
+<td style="text-align:center">对文件而言, 具有<strong>新增、修改文件内容</strong>的权限<br>对目录来说, 具有<strong>删除、移动目录内文件</strong>的权限</td>
+</tr>
+<tr>
+<td style="text-align:center">执行</td>
+<td style="text-align:center">对文件而言, 具有<strong>执行文件</strong>的权限<br>对目录来说, 该用户具有<strong>进入目录</strong>的权限</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a id="more"></a>文件权限可以用 <strong>3位数字</strong> 表示, 也可以用 <strong>9位字母表示</strong> , 1个数字等价于3个字母.</p>
+<p>下表是常用的linux文件权限:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数字表示</th>
+<th style="text-align:center">字母表示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">444</td>
+<td style="text-align:center">r--r--r--</td>
+</tr>
+<tr>
+<td style="text-align:center">600</td>
+<td style="text-align:center">rw-------</td>
+</tr>
+<tr>
+<td style="text-align:center">644</td>
+<td style="text-align:center">rw-r--r--</td>
+</tr>
+<tr>
+<td style="text-align:center">666</td>
+<td style="text-align:center">rw-rw-rw-</td>
+</tr>
+<tr>
+<td style="text-align:center">700</td>
+<td style="text-align:center">rwx--r--</td>
+</tr>
+<tr>
+<td style="text-align:center">744</td>
+<td style="text-align:center">rwxr-xr-x</td>
+</tr>
+<tr>
+<td style="text-align:center">755</td>
+<td style="text-align:center">rwxr-xr-x</td>
+</tr>
+<tr>
+<td style="text-align:center">777</td>
+<td style="text-align:center">rwxrwxrwx</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>其中</p>
+<ul>
+<li>第1位数字(1-3位字母) 代表 <strong>文件所有者 (User)</strong> 权限</li>
+<li>第2位数字(4-6位字母) 代表 <strong>同组用户 (Group)</strong> 权限</li>
+<li>第3位数字(7-9位字母) 代表 <strong>其他用户 (Other)</strong> 权限</li>
+</ul>
+<p>数字与字母权限的对应关系如下表所示:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">权限</th>
+<th style="text-align:center">数字表示</th>
+<th style="text-align:center">字母表示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">读取</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">r (read)</td>
+</tr>
+<tr>
+<td style="text-align:center">写入</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">w (write)</td>
+</tr>
+<tr>
+<td style="text-align:center">执行</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">x (execute)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>通过4、2、1的组合，可以得到以下几种权限</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">权限</th>
+<th style="text-align:center">数字表示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">读取+写入+执行 (rwx)</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:center">读取+写入 (rw-)</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center">读取+执行 (r-x)</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">读取 (r--)</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">没有权限 (---)</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>① 以 <strong>755 等价于 rwxr-xr-x</strong> 例：<br>1-3位 7 等于4+2+1, rwx, <strong>文件所有者 (User)</strong> 具有 <strong>读取+写入+执行</strong> 权限；<br>4-6位 5等于4+1+0, r-x，<strong>同组用户 (Group)</strong> 具有 <strong>读取+执行</strong> 权限但没有 <strong>写入</strong> 权限；<br>7-9位 5, 同上也是r-x, <strong>其他用户 (Other)</strong> 具有 <strong>读取+执行</strong> 权限但没有 <strong>写入</strong> 权限。</p>
+<p>② 设置文件权限的两种方式:</p>
+<ul>
+<li>chmod a=rwx filename 等价于 chmod 777 filename (<code>a=rwx</code>左边的<code>a</code>是All的缩写)</li>
+<li>chmod ug=rwx,o=x file 等价于 chmod 771 filename (<code>ug</code>是User和Group的缩写)</li>
+</ul>
+<p>③ 755和4755的区别:</p>
+<p>chmod 755 设置用户的权限为：<br>1.文件所有者可读可写可执行<br>2.与文件所有者同属一个用户组的其他用户可读可执行<br>3.其它用户组可读可执行<br><strong>chmod 4755与chmod 755 的区别在于开头多了一位, 这个4表示其他用户执行文件时，具有与所有者相当的权限</strong></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-02-15T09:59:09.788Z" itemprop="dateUpdated">2018-02-15 17:59:09</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/02/13/Hexo建博客踩坑总结/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hexo建博客踩坑总结</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/02/12/利用AutoHotkey禁用Windows键弹出菜单/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">利用AutoHotkey禁用Windows键弹出菜单</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

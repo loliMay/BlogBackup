@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="CSS,CSS世界读书笔记">
+    <meta name="description" content="替换元素与非替换元素之间的区别1. 只差一个src属性12&amp;lt;img alt=&quot;任意值&quot;&amp;gt; 非替换元素&amp;lt;img src=&quot;&quot; alt=&quot;任意值&quot;&amp;gt; 替换元素 1234img &amp;#123;  display: block; /* img的宽度是多少? */  outline: solid;&amp;#125; 2. 只差一个CSS content属性1234img &amp;#123; con">
+<meta name="keywords" content="CSS,CSS世界读书笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="content内容生成技术">
+<meta property="og:url" content="http://www.lolimay.cn/2018/07/21/content内容生成技术/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="替换元素与非替换元素之间的区别1. 只差一个src属性12&amp;lt;img alt=&quot;任意值&quot;&amp;gt; 非替换元素&amp;lt;img src=&quot;&quot; alt=&quot;任意值&quot;&amp;gt; 替换元素 1234img &amp;#123;  display: block; /* img的宽度是多少? */  outline: solid;&amp;#125; 2. 只差一个CSS content属性1234img &amp;#123; con">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-25T00:49:22.273Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="content内容生成技术">
+<meta name="twitter:description" content="替换元素与非替换元素之间的区别1. 只差一个src属性12&amp;lt;img alt=&quot;任意值&quot;&amp;gt; 非替换元素&amp;lt;img src=&quot;&quot; alt=&quot;任意值&quot;&amp;gt; 替换元素 1234img &amp;#123;  display: block; /* img的宽度是多少? */  outline: solid;&amp;#125; 2. 只差一个CSS content属性1234img &amp;#123; con">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">content内容生成技术</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-07-21T10:43:18.000Z" itemprop="datePublished" class="page-time">
+  2018-07-21
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#替换元素与非替换元素之间的区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">替换元素与非替换元素之间的区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-只差一个src属性"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 只差一个src属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-只差一个CSS-content属性"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 只差一个CSS content属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-content生成内容的特性"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. content生成内容的特性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-content生成的文本无法复制、无法选中"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">1. content生成的文本无法复制、无法选中</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-不能左右-empty伪类"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">2. 不能左右:empty伪类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-生成的图片获取不到链接-右击保存的仍是原有图片的链接-看前面的flag"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">3. 生成的图片获取不到链接(右击保存的仍是原有图片的链接)(看前面的flag)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#content内容生成技术-今天的重点"><span class="post-toc-number">2.</span> <span class="post-toc-text">content内容生成技术(今天的重点)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-content辅助元素生成"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.content辅助元素生成</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-content字符内容生成"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. content字符内容生成</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-content图片内容生成"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3. content图片内容生成</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-content属性值内容生成"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4. content属性值内容生成</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#★5-深入理解content计数器"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">★5.深入理解content计数器</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-content内容生成技术"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">content内容生成技术</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-07-21 18:43:18" datetime="2018-07-21T10:43:18.000Z"  itemprop="datePublished">2018-07-21</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="替换元素与非替换元素之间的区别"><a href="#替换元素与非替换元素之间的区别" class="headerlink" title="替换元素与非替换元素之间的区别"></a>替换元素与非替换元素之间的区别</h1><h2 id="1-只差一个src属性"><a href="#1-只差一个src属性" class="headerlink" title="1. 只差一个src属性"></a>1. 只差一个src属性</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img alt="任意值"&gt; 非替换元素</span><br><span class="line">&lt;img src="" alt="任意值"&gt; 替换元素</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block; <span class="comment">/* img的宽度是多少? */</span></span><br><span class="line">  <span class="attribute">outline</span>: solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-只差一个CSS-content属性"><a href="#2-只差一个CSS-content属性" class="headerlink" title="2. 只差一个CSS content属性"></a>2. 只差一个CSS content属性</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123; <span class="attribute">content</span>: <span class="built_in">url</span>(1.jpg) &#125;</span><br><span class="line">&lt;<span class="selector-tag">img</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;img src="1.jpg"&gt;</span><br></pre></td></tr></table></figure>
+<p>如果图片原来是有src属性，也可以通过content属性替换文件的内容<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src="laugh.jpg"&gt;</span><br><span class="line"><span class="selector-tag">img</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">url</span>(tear.jpg); <span class="comment">/* 这里立个flag */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>h1典型的非替换元素对吧，来我们给他加个content属性<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">h1 &#123;</span><br><span class="line">  content: url(logo.png) /* 光速变成一个替换元素 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-content生成内容的特性"><a href="#3-content生成内容的特性" class="headerlink" title="3. content生成内容的特性"></a>3. content生成内容的特性</h2><p>content属性生成的对象被称为”匿名替换元素”</p>
+<h3 id="1-content生成的文本无法复制、无法选中"><a href="#1-content生成的文本无法复制、无法选中" class="headerlink" title="1. content生成的文本无法复制、无法选中"></a>1. content生成的文本无法复制、无法选中</h3><h3 id="2-不能左右-empty伪类"><a href="#2-不能左右-empty伪类" class="headerlink" title="2. 不能左右:empty伪类"></a>2. 不能左右<code>:empty</code>伪类</h3><h3 id="3-生成的图片获取不到链接-右击保存的仍是原有图片的链接-看前面的flag"><a href="#3-生成的图片获取不到链接-右击保存的仍是原有图片的链接-看前面的flag" class="headerlink" title="3. 生成的图片获取不到链接(右击保存的仍是原有图片的链接)(看前面的flag)"></a>3. 生成的图片获取不到链接(右击保存的仍是原有图片的链接)(看前面的flag)</h3><p>总的来说，content内容生成的元素<strong>仅仅只是影响视觉呈现</strong>，并不能通过JavaScript获取得到content生成的内容对象。</p>
+<h1 id="content内容生成技术-今天的重点"><a href="#content内容生成技术-今天的重点" class="headerlink" title="content内容生成技术(今天的重点)"></a>content内容生成技术(今天的重点)</h1><p>因为content内容生成技术几乎都是用在伪元素<code>::before</code>和<code>::after</code>(mdn光速查询这个两个关键字)这两个伪元素中，因此content内容生成技术又被叫做<code>::before</code>和<code>::after</code>伪元素技术。</p>
+<h2 id="1-content辅助元素生成"><a href="#1-content辅助元素生成" class="headerlink" title="1.content辅助元素生成"></a>1.content辅助元素生成</h2><p>(用于辅助实现两端对齐、垂直居中、上边缘、下边缘等对齐效果)<br>由于内容太过深入…在此立个FLAG以后会深入讲</p>
+<h2 id="2-content字符内容生成"><a href="#2-content字符内容生成" class="headerlink" title="2. content字符内容生成"></a>2. content字符内容生成</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"icon-home"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">css:</span><br><span class="line">@font-face &#123; /* 定义自定义字体 */</span><br><span class="line">font-family: "myico"; /* 定义字体名 */</span><br><span class="line">src: url("myfont.woff") format("woff); /* 定义字体路径及格式 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.icon-home:before &#123;</span><br><span class="line">  font-size: 64px;</span><br><span class="line">  font-family: myicon;</span><br><span class="line">  content: "x";</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-content图片内容生成"><a href="#3-content图片内容生成" class="headerlink" title="3. content图片内容生成"></a>3. content图片内容生成</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">url</span>(1.jpg)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 其实不是很实用，content生成的图片不能控制大小 */</span></span><br><span class="line"><span class="comment">/* 所以一般用background代替 */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">'bg.ico1'</span>) <span class="number">50px</span> <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-content属性值内容生成"><a href="#4-content属性值内容生成" class="headerlink" title="4. content属性值内容生成"></a>4. content属性值内容生成</h2><p>动态生成一个元素的属性<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span><span class="selector-pseudo">::after</span> &#123; <span class="comment">/* Firefox下::before伪元素content值会被无视，尽量用::after */</span></span><br><span class="line"><span class="attribute">content</span>: <span class="built_in">attr</span>(alt); <span class="comment">/* 给img生成alt属性 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">attr</span>(data-title); <span class="comment">/* 也支持生成自定义属性 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="★5-深入理解content计数器"><a href="#★5-深入理解content计数器" class="headerlink" title="★5.深入理解content计数器"></a>★5.深入理解content计数器</h2><ul>
+<li>content计数器只支持整数</li>
+<li>支持负数</li>
+</ul>
+<ol>
+<li><p>属性 <strong>counter-reset</strong> 声明计数器并指定初始值(默认是0)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.cnt</span> &#123;</span><br><span class="line">  <span class="attribute">counter-reset</span>: wangxiaoer; <span class="comment">/* 声明计数器王小二 默认初始值为0 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.cnt</span> &#123;</span><br><span class="line">  <span class="attribute">counter-reset</span>: wangxiaoer <span class="number">2</span>; <span class="comment">/* 声明计数器王小二并指定初始值为2 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.cnt</span> &#123;</span><br><span class="line">  <span class="attribute">counter-reset</span>: wangxiaoer <span class="number">2</span> wangxiaosan <span class="number">3</span>;</span><br><span class="line">  <span class="comment">/* 也可以同时声明多个计数器 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>属性 <strong>counter-increment</strong> 计数器递增(默认递增1)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.cnt</span> &#123;</span><br><span class="line">  <span class="attribute">counter-reset</span>: wangxiaoer; <span class="comment">/* 声明计数器王小二 默认初始值为0 */</span></span><br><span class="line">  <span class="attribute">counter-increment</span>: wangxiaoer; <span class="comment">/* 计数器开始递增 默认递增1 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.cnt</span> &#123;</span><br><span class="line">  <span class="attribute">counter-reset</span>: wangxiaoer; <span class="comment">/* 声明计数器王小二 默认初始值为0 */</span></span><br><span class="line">  <span class="attribute">counter-increment</span>: wangxiaoer <span class="number">2</span>; <span class="comment">/* 计数器开始递增 每次递增2 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法 <strong>counter(name, style)</strong> 显示计数(支持级联)</p>
+</li>
+<li><p>方法 <strong>counters(name, string)</strong> 嵌套计数</p>
+</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-07-25T00:49:22.273Z" itemprop="dateUpdated">2018-07-25 08:49:22</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS世界读书笔记/">CSS世界读书笔记</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/07/24/温和的padding/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">温和的padding</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/07/19/新手指引/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">新手指引</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

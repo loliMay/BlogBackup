@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hexo,Algolia">
+    <meta name="description" content="从买域名到完成博客已经过去了好几天了,这几天也算是踩坑无数.其中,有很多坑是可以在网上搜到解决方案、也有好多坑是自己摸索填上的. 　　现在,我尽量写下自己还能记得的坑,以便能够帮助后来的人:">
+<meta name="keywords" content="Hexo,Algolia">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo建博客踩坑总结">
+<meta property="og:url" content="http://www.lolimay.cn/2018/02/13/Hexo建博客踩坑总结/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="从买域名到完成博客已经过去了好几天了,这几天也算是踩坑无数.其中,有很多坑是可以在网上搜到解决方案、也有好多坑是自己摸索填上的. 　　现在,我尽量写下自己还能记得的坑,以便能够帮助后来的人:">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-13/11391365.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-17/22331742.jpg">
+<meta property="og:updated_time" content="2018-02-16T16:29:56.129Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo建博客踩坑总结">
+<meta name="twitter:description" content="从买域名到完成博客已经过去了好几天了,这几天也算是踩坑无数.其中,有很多坑是可以在网上搜到解决方案、也有好多坑是自己摸索填上的. 　　现在,我尽量写下自己还能记得的坑,以便能够帮助后来的人:">
+<meta name="twitter:image" content="http://p40kjburh.bkt.clouddn.com/18-2-13/11391365.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hexo建博客踩坑总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-02-12T17:28:19.000Z" itemprop="datePublished" class="page-time">
+  2018-02-13
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Hexo/">Hexo</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#坑1-努力将Hexo部署在服务器上"><span class="post-toc-number">1.</span> <span class="post-toc-text">坑1 努力将Hexo部署在服务器上</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#坑2-使用Xshell去远程ssh登录"><span class="post-toc-number">2.</span> <span class="post-toc-text">坑2 使用Xshell去远程ssh登录</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#坑3-找不到nginx的默认部署目录"><span class="post-toc-number">3.</span> <span class="post-toc-text">坑3 找不到nginx的默认部署目录</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#坑4-在本地手动用git-bash-git-init了一下你的博客目录"><span class="post-toc-number">4.</span> <span class="post-toc-text">坑4 在本地手动用git bash git init了一下你的博客目录</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#坑5-使用algolia搜索-提示必须要在-config-yml文件中加上-indexName-‘xxx’-配置项"><span class="post-toc-number">5.</span> <span class="post-toc-text">坑5 使用algolia搜索: 提示必须要在_config.yml文件中加上 indexName: ‘xxx’ 配置项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#坑6-使用algolia搜索总是搜不到任何东西"><span class="post-toc-number">6.</span> <span class="post-toc-text">坑6 使用algolia搜索总是搜不到任何东西</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#坑7-点击algolia的搜索结果会打开一个莫名其妙地网站"><span class="post-toc-number">7.</span> <span class="post-toc-text">坑7 点击algolia的搜索结果会打开一个莫名其妙地网站:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#坑8-Hexo无法渲染出表格"><span class="post-toc-number">8.</span> <span class="post-toc-text">坑8 Hexo无法渲染出表格</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#坑9-因大小写导致的404问题"><span class="post-toc-number">9.</span> <span class="post-toc-text">坑9 因大小写导致的404问题</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hexo建博客踩坑总结"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Hexo建博客踩坑总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-02-13 01:28:19" datetime="2018-02-12T17:28:19.000Z"  itemprop="datePublished">2018-02-13</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Hexo/">Hexo</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <hr>
+<p>　　从买域名到完成博客已经过去了好几天了,这几天也算是踩坑无数.其中,有很多坑是可以在网上搜到解决方案、也有好多坑是自己摸索填上的.</p>
+<p>　　现在,我尽量写下自己还能记得的坑,以便能够帮助后来的人:<a id="more"></a></p>
+<h4 id="坑1-努力将Hexo部署在服务器上"><a href="#坑1-努力将Hexo部署在服务器上" class="headerlink" title="坑1 努力将Hexo部署在服务器上"></a><em>坑1</em> 努力将Hexo部署在服务器上</h4><p>　　首先,这样的想法是不恰当的. 如果将Hexo部署在服务器上,当你的文章很多的话, 渲染会很吃力, 如果你的服务器太渣的话, 可能一言不合就罢工. 所以在本地渲染好页面再git提交到服务器上才是正解.</p>
+<p>　　因此,网上大部分教程都是采用这种思路:</p>
+<p>​    <strong>本地: nodejs+Hexo+git</strong></p>
+<p>​    <strong>服务器: git+nginx</strong></p>
+<p>​    关于用Hexo建立博客的细节这里就不再赘述了,这里推荐几个我当初参考的教程:</p>
+<p>​    <a href="https://www.zhihu.com/question/60329559/answer/179892883" target="_blank" rel="noopener">如何使用阿里云+Hexo搭建个人静态博客?</a></p>
+<p>​    <a href="https://segmentfault.com/a/1190000009363890" target="_blank" rel="noopener">如何在服务器上搭建hexo博客</a></p>
+<p><a href="https://segmentfault.com/a/1190000010613172" target="_blank" rel="noopener">优化hexo访问速度-将hexo部署到云主机VPS</a></p>
+<h4 id="坑2-使用Xshell去远程ssh登录"><a href="#坑2-使用Xshell去远程ssh登录" class="headerlink" title="坑2 使用Xshell去远程ssh登录"></a><em>坑2</em> 使用Xshell去远程ssh登录</h4><p>　　注意! <strong>这是一个大坑</strong> , 在创建 服务器上创建git账户 那一步中要做到 不需要输入密码 自动使用公匙 即可连接至远程仓库. 但是我一开始使用 <strong>Xshell</strong>登录,却发现不管我怎么配置都需要输入密码. 后来我换<strong>git bash</strong>直接就可以免密登录. </p>
+<p>　　结论: <strong>千万不要使用Xshell作为你的ssh远程登录工具!</strong> </p>
+<p>　　推荐使用<strong>git bash</strong>去ssh远程登录你的服务器, 在任意界面输入<code>ssh 用户名@主机名IP</code>即可连接远程服务器.</p>
+<h4 id="坑3-找不到nginx的默认部署目录"><a href="#坑3-找不到nginx的默认部署目录" class="headerlink" title="坑3 找不到nginx的默认部署目录"></a><em>坑3</em> 找不到nginx的默认部署目录</h4><p>​    在教程<a href="https://www.zhihu.com/question/60329559/answer/179892883" target="_blank" rel="noopener">如何使用阿里云+Hexo搭建个人静态博客?</a>中,答主认为大部分的nginx的默认部署目录是:<code>/usr/share/nginx</code>  </p>
+<p>​    我个人实测, 使用<strong>宝塔面板</strong>自动安装的nginx的默认部署目录是<code>/www/server/nginx/html</code></p>
+<p>　　如果你没有找到nginx的默认部署目录的话, 建议你去看看 nginx.conf 的配置信息, 这里面保存了nginx的默认部署目录.</p>
+<h4 id="坑4-在本地手动用git-bash-git-init了一下你的博客目录"><a href="#坑4-在本地手动用git-bash-git-init了一下你的博客目录" class="headerlink" title="坑4 在本地手动用git bash git init了一下你的博客目录"></a><em>坑4</em> 在本地手动用<strong>git bash</strong> <code>git init</code>了一下你的博客目录</h4><p>　　这样做会把你博客目录下的所有文件全都<code>push</code>上去了,以至于网站根目录下没有发现index.html文件,服务器报403错误. 解决方案是,把你博客目录下的那个<strong>隐藏</strong>.git文件夹给删掉.</p>
+<h4 id="坑5-使用algolia搜索-提示必须要在-config-yml文件中加上-indexName-‘xxx’-配置项"><a href="#坑5-使用algolia搜索-提示必须要在-config-yml文件中加上-indexName-‘xxx’-配置项" class="headerlink" title="坑5 使用algolia搜索: 提示必须要在_config.yml文件中加上 indexName: ‘xxx’ 配置项"></a><em>坑5</em> 使用algolia搜索: 提示必须要在_config.yml文件中加上 indexName: ‘xxx’ 配置项</h4><p>​    然而事实是,我们明明已经在next目录下的_config.yml中 补充完整了这个配置项.</p>
+<p>​    解决方案: 将next目录下的_config.yml文件中的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">algolia:</span><br><span class="line">  applicationID: &apos;xxxxxxx&apos;</span><br><span class="line">  apiKey: &apos;xxxxxxxxxxxxxxxxxxxxxxxxxxx&apos;</span><br><span class="line">  adminApiKey: &apos;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&apos;</span><br><span class="line">  indexName: &apos;xxxxx&apos;</span><br><span class="line">  chunkSize: 5000</span><br></pre></td></tr></table></figure>
+<p>复制到hexo根目录下的原始_config.yml文件的末尾、即可.</p>
+<h4 id="坑6-使用algolia搜索总是搜不到任何东西"><a href="#坑6-使用algolia搜索总是搜不到任何东西" class="headerlink" title="坑6 使用algolia搜索总是搜不到任何东西"></a><em>坑6</em> 使用algolia搜索总是搜不到任何东西</h4><p>​    解决方案: 那是因为你未能成功<code>hexo algolia</code>每次网站更新很多文章后,要及时提交数据, 即执行:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export HEXO_ALGOLIA_INDEXING_KEY=你的唯一搜索Key</span><br><span class="line">hexo algolia</span><br></pre></td></tr></table></figure>
+<h4 id="坑7-点击algolia的搜索结果会打开一个莫名其妙地网站"><a href="#坑7-点击algolia的搜索结果会打开一个莫名其妙地网站" class="headerlink" title="坑7 点击algolia的搜索结果会打开一个莫名其妙地网站:"></a><em>坑7</em> 点击algolia的搜索结果会打开一个莫名其妙地网站:</h4><p>​    原因是, hexo根目录下的网站url未配置, 示例配置如下:</p>
+<p>​    <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/18-2-13/11391365.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>这里url的值既可以填你的网站的域名也可以填写IP地址.</p>
+<h4 id="坑8-Hexo无法渲染出表格"><a href="#坑8-Hexo无法渲染出表格" class="headerlink" title="坑8 Hexo无法渲染出表格"></a><em>坑8</em> Hexo无法渲染出表格</h4><p>解决方案: </p>
+<p>① <strong>表格要与上面的文本内容空一行</strong></p>
+<p>② <strong>表格前面不能有Tab或者空格</strong></p>
+<h4 id="坑9-因大小写导致的404问题"><a href="#坑9-因大小写导致的404问题" class="headerlink" title="坑9 因大小写导致的404问题"></a><em>坑9</em> 因大小写导致的404问题</h4><p>原因: <code>git默认不区分文件和文件夹名称的大小写, 但是url地址却对大小写敏感</code></p>
+<p>解决方案: </p>
+<p><em>Step1</em> 找到hexo中关于git的配置文件config</p>
+<p>　　　假设你的hexo根目录名为Blog则配置文件路径为<code>Blog\.deploy_git\.git\config</code><br><em>Step2</em> 编辑该文件</p>
+<p>　　　将<code>ignorecase = true</code>改为<code>ignorecase = false</code></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/18-2-17/22331742.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p><em>Step3</em> 重新在bash中执行<code>hexo g &amp;&amp; hexo d</code></p>
+<p>还有好多坑一会想不出来,以后想到再说吧~</p>
+<p>下面再推荐一些别人碰到的坑以及美化博客教程:</p>
+<p>​    <a href="https://www.jianshu.com/p/67c57c70f275" target="_blank" rel="noopener">hexo 部署至Git遇到的坑</a></p>
+<p>​    <a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">hexo的next主题个性化配置教程</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-02-16T16:29:56.129Z" itemprop="dateUpdated">2018-02-17 00:29:56</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algolia/">Algolia</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/02/14/CSS使用心得/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">CSS使用心得</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/02/12/linux文件权限/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Linux文件权限</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

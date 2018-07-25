@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="CSS,CSS读书笔记">
+    <meta name="description" content="在使用CSS的过程中，接触CSS属性的频率实在太高了，还是静下心来好好总结CSS那些属性的作用比较好，不然学了就忘其实没什么效果~这里先引用一段我在学习《CSS世界》的时候写的笔记。  1.布局更丰富:移动端的崛起，催生了CSS3媒介查询、许多响应式布局特性 盒子布局(flexible box layout) 布局(grid layout)2.视觉表现长足进步:圆角、阴影和渐变让元素更有质感tr">
+<meta name="keywords" content="CSS,CSS读书笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3学习笔记">
+<meta property="og:url" content="http://www.lolimay.cn/2018/03/04/CSS3学习笔记/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="在使用CSS的过程中，接触CSS属性的频率实在太高了，还是静下心来好好总结CSS那些属性的作用比较好，不然学了就忘其实没什么效果~这里先引用一段我在学习《CSS世界》的时候写的笔记。  1.布局更丰富:移动端的崛起，催生了CSS3媒介查询、许多响应式布局特性 盒子布局(flexible box layout) 布局(grid layout)2.视觉表现长足进步:圆角、阴影和渐变让元素更有质感tr">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-25T01:02:32.603Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3学习笔记">
+<meta name="twitter:description" content="在使用CSS的过程中，接触CSS属性的频率实在太高了，还是静下心来好好总结CSS那些属性的作用比较好，不然学了就忘其实没什么效果~这里先引用一段我在学习《CSS世界》的时候写的笔记。  1.布局更丰富:移动端的崛起，催生了CSS3媒介查询、许多响应式布局特性 盒子布局(flexible box layout) 布局(grid layout)2.视觉表现长足进步:圆角、阴影和渐变让元素更有质感tr">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CSS3学习笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-04T12:44:30.000Z" itemprop="datePublished" class="page-time">
+  2018-03-04
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/CSS/">CSS</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-圆角"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 圆角</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-属性值"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.属性值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-斜杠二组值"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.斜杠二组值</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-阴影"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 阴影</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-框阴影"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.框阴影</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-文本阴影"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.文本阴影</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-transform变换"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. transform变换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-2D变换"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 2D变换</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-CSS3学习笔记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CSS3学习笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-04 20:44:30" datetime="2018-03-04T12:44:30.000Z"  itemprop="datePublished">2018-03-04</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/CSS/">CSS</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <hr>
+<p>在使用CSS的过程中，接触CSS属性的频率实在太高了，还是静下心来好好总结CSS那些属性的作用比较好，不然学了就忘其实没什么效果~这里先引用一段我在学习《CSS世界》的时候写的笔记。</p>
+<blockquote>
+<p>1.布局更丰富:<br>移动端的崛起，催生了CSS3媒介查询、许多响应式布局特性<br> 盒子布局(flexible box layout)<br> 布局(grid layout)<br>2.视觉表现长足进步:<br>圆角、阴影和渐变让元素更有质感<br>transform变换让元素有更多可能<br>filter滤镜和混合模式让Web轻松变为在线的Photoshop<br>animation让动画变得简单</p>
+</blockquote>
+<p>下面我也就按照这个顺序好好了解一下这些属性(其实圆角、阴影和<code>transform:scale()</code>等属性我平时都已经用了很多次了)<a id="more"></a></p>
+<h1 id="1-圆角"><a href="#1-圆角" class="headerlink" title="1. 圆角"></a>1. 圆角</h1><p><code>border-radius</code>可以将元素的四个角设置成圆角</p>
+<h2 id="1-属性值"><a href="#1-属性值" class="headerlink" title="1.属性值"></a>1.属性值</h2><p><code>border-radius</code>最多支持使用四个属性值</p>
+<ul>
+<li><strong>一个值</strong> 如<code>border-radius:5px;</code> 则该元素的四个角都使用这个值</li>
+<li><strong>两个值</strong> 如<code>border-radius:20px 0px;</code> 则该元素的左上角和右下角使用第一个值，左下角和右上角使用第二个值</li>
+<li><strong>三个值</strong> 如<code>border-radius:1px 2px 3px;</code> 则该元素左上角使用第一个值，左下角和右上角使用第二个值，右下角使用第三个值</li>
+<li><strong>四个值</strong> 如<code>border:1px 2px 3px 4px;</code> 则依次对应左上角、右上角、右下角、左下角(即从左上角开始顺时钟绕一圈)</li>
+</ul>
+<h2 id="2-斜杠二组值"><a href="#2-斜杠二组值" class="headerlink" title="2.斜杠二组值"></a>2.斜杠二组值</h2><p><code>border-radius</code>支持单独设置每个圆角的水平半径和垂直半径，第一组值表示水平半径，第二组值表示垂直半径</p>
+<p>如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 50px 30px 20px 10px / 20px 30px 20px 30px;</span><br></pre></td></tr></table></figure>
+<p><em>技巧：</em>使用<code>border-radius:50%;</code>将一个正方形元素变成圆形</p>
+<h1 id="2-阴影"><a href="#2-阴影" class="headerlink" title="2. 阴影"></a>2. 阴影</h1><h2 id="1-框阴影"><a href="#1-框阴影" class="headerlink" title="1.框阴影"></a>1.框阴影</h2><p><code>box-shadow</code>属性可以向框添加一个或多个阴影</p>
+<p>语法：<code>box-shadow: h-shdow v-shadow blur spread color inset;</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">值</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">h-shadow</td>
+<td style="text-align:center"><code>必需</code>水平阴影的位置 允许负值</td>
+</tr>
+<tr>
+<td style="text-align:center">v-shadow</td>
+<td style="text-align:center"><code>必需</code>垂直阴影的位置 允许负值</td>
+</tr>
+<tr>
+<td style="text-align:center">blur</td>
+<td style="text-align:center"><code>可选</code>模糊距离</td>
+</tr>
+<tr>
+<td style="text-align:center">spread</td>
+<td style="text-align:center"><code>可选</code>阴影尺寸</td>
+</tr>
+<tr>
+<td style="text-align:center">color</td>
+<td style="text-align:center"><code>可选</code>阴影颜色</td>
+</tr>
+<tr>
+<td style="text-align:center">inset</td>
+<td style="text-align:center"><code>可选</code>将外部阴影 (outset) 改为内部阴影</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="2-文本阴影"><a href="#2-文本阴影" class="headerlink" title="2.文本阴影"></a>2.文本阴影</h2><p><code>text-shadow</code>属性可以向文本添加一个或多个阴影</p>
+<p>语法：<code>text-shadow: h-shadow v-shadow blur color</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">值</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">h-shadow</td>
+<td style="text-align:center"><code>必需</code>水平阴影的位置 允许负值</td>
+</tr>
+<tr>
+<td style="text-align:center">v-shadow</td>
+<td style="text-align:center"><code>必需</code>垂直阴影的位置 允许负值</td>
+</tr>
+<tr>
+<td style="text-align:center">blur</td>
+<td style="text-align:center"><code>可选</code>模糊距离</td>
+</tr>
+<tr>
+<td style="text-align:center">color</td>
+<td style="text-align:center"><code>可选</code>阴影颜色</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="3-transform变换"><a href="#3-transform变换" class="headerlink" title="3. transform变换"></a>3. transform变换</h1><h2 id="1-2D变换"><a href="#1-2D变换" class="headerlink" title="1. 2D变换"></a>1. 2D变换</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>translate(left,top)</code></td>
+<td style="text-align:center">平移变换</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>rotate(degree)</code></td>
+<td style="text-align:center">旋转变换</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>scale()</code></td>
+<td style="text-align:center">伸缩变换</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>skew()</code></td>
+<td style="text-align:center">翻转变换</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>matrix()</code></td>
+<td style="text-align:center">组合变换</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-07-25T01:02:32.603Z" itemprop="dateUpdated">2018-07-25 09:02:32</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS读书笔记/">CSS读书笔记</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/03/07/Hexo迁移简单记录/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hexo迁移简单记录</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/03/03/C-项目实战-NewArticle/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">C#项目实战：NewArticle</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

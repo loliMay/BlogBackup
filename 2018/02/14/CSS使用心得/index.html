@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="CSS">
+    <meta name="description" content="这篇文章主要记录自己在使用CSS过程中的一些心得,会不断更新 ! 内容有摘抄的也有自己原创的~">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS使用心得">
+<meta property="og:url" content="http://www.lolimay.cn/2018/02/14/CSS使用心得/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="这篇文章主要记录自己在使用CSS过程中的一些心得,会不断更新 ! 内容有摘抄的也有自己原创的~">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-14/60880003.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-14/81588783.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-14/99131551.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-14/74926245.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-14/43994999.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-14/49176608.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-16/58017517.jpg">
+<meta property="og:updated_time" content="2018-02-16T17:06:59.244Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS使用心得">
+<meta name="twitter:description" content="这篇文章主要记录自己在使用CSS过程中的一些心得,会不断更新 ! 内容有摘抄的也有自己原创的~">
+<meta name="twitter:image" content="http://p40kjburh.bkt.clouddn.com/18-2-14/60880003.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CSS使用心得</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-02-13T16:13:04.000Z" itemprop="datePublished" class="page-time">
+  2018-02-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/CSS/">CSS</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#伸缩变换"><span class="post-toc-number">1.</span> <span class="post-toc-text">伸缩变换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#居中"><span class="post-toc-number">2.</span> <span class="post-toc-text">居中</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#选择器"><span class="post-toc-number">3.</span> <span class="post-toc-text">选择器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#阴影"><span class="post-toc-number">4.</span> <span class="post-toc-text">阴影</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文本溢出"><span class="post-toc-number">5.</span> <span class="post-toc-text">文本溢出</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#伪元素伪类"><span class="post-toc-number">6.</span> <span class="post-toc-text">伪元素伪类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文本阴影"><span class="post-toc-number">7.</span> <span class="post-toc-text">文本阴影</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#字体"><span class="post-toc-number">8.</span> <span class="post-toc-text">字体</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#堆叠顺序"><span class="post-toc-number">9.</span> <span class="post-toc-text">堆叠顺序</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#行高"><span class="post-toc-number">10.</span> <span class="post-toc-text">行高</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-CSS使用心得"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CSS使用心得</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-02-14 00:13:04" datetime="2018-02-13T16:13:04.000Z"  itemprop="datePublished">2018-02-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/CSS/">CSS</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <hr>
+<p>这篇文章主要记录自己在使用CSS过程中的一些心得,会不断更新 !</p>
+<p>内容有摘抄的也有自己原创的~<a id="more"></a></p>
+<ol>
+<li><h4 id="伸缩变换"><a href="#伸缩变换" class="headerlink" title="伸缩变换"></a>伸缩变换</h4><p>代码示例: <code>transform:scale(1.1);</code></p>
+<p>对<strong>block元素</strong>进行伸缩变换</p>
+<p>注意: 此标记对<strong>行内元素无效</strong> (如a标签、sapn标签等)</p>
+</li>
+<li><h4 id="居中"><a href="#居中" class="headerlink" title="居中"></a>居中</h4><p>① 对<strong>block元素</strong>居中:<code>margin:0 auto;</code></p>
+<p>② 对<strong>行内元素</strong>居中: <code>text-align:center;</code></p>
+</li>
+<li><h4 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h4><p>① <em>子元素选择器</em> : 只选择某个元素的子元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &gt; <span class="selector-tag">strong</span> &#123;<span class="attribute">color</span>:red;&#125;	<span class="comment">/* 只让h1的子元素strong的文本变为红色 */</span></span><br></pre></td></tr></table></figure>
+<p>② <em>后代选择器</em> : 只选择某个元素的后代元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> <span class="selector-tag">em</span> &#123;<span class="attribute">color</span>:red;&#125;	<span class="comment">/* 只让h1的后代元素中的em的文本变为红色 */</span></span><br></pre></td></tr></table></figure>
+<p>③ <em>选择器分组</em> : 将多个元素样式分为一组,统一配置样式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">p</span> &#123;<span class="attribute">color</span>:red;&#125; <span class="comment">/* 让h1和p标签中的文本颜色为红色 */</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h4><p>语法: <code>box-shadow: h-shadow v-shadow blur spread color inset;</code></p>
+<p><img src="http://p40kjburh.bkt.clouddn.com/18-2-14/60880003.jpg" alt=""></p>
+</li>
+<li><h4 id="文本溢出"><a href="#文本溢出" class="headerlink" title="文本溢出"></a>文本溢出</h4><p><img src="http://p40kjburh.bkt.clouddn.com/18-2-14/81588783.jpg" alt=""></p>
+</li>
+<li><h4 id="伪元素伪类"><a href="#伪元素伪类" class="headerlink" title="伪元素伪类"></a>伪元素伪类</h4><p><em>伪元素和伪类用于向某些选择器添加特殊的效果</em></p>
+<p>(一) <strong>伪元素</strong></p>
+<p><img src="http://p40kjburh.bkt.clouddn.com/18-2-14/99131551.jpg" alt=""></p>
+<p>(二) 伪类</p>
+<p><img src="http://p40kjburh.bkt.clouddn.com/18-2-14/74926245.jpg" alt=""></p>
+</li>
+<li><h4 id="文本阴影"><a href="#文本阴影" class="headerlink" title="文本阴影"></a>文本阴影</h4><p><img src="http://p40kjburh.bkt.clouddn.com/18-2-14/43994999.jpg" alt=""></p>
+</li>
+<li><h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><p><img src="http://p40kjburh.bkt.clouddn.com/18-2-14/49176608.jpg" alt=""></p>
+</li>
+<li><h4 id="堆叠顺序"><a href="#堆叠顺序" class="headerlink" title="堆叠顺序"></a>堆叠顺序</h4><p>利用 <code>z-index</code>属性改变元素的堆叠顺序. <strong>其默认值是0</strong>, 数值越大则元素离用户越近.</p>
+<p><em>注意: 该属性仅对定位元素有效(如: <code>position: relative;</code>)</em></p>
+<p>用法示例:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="行高"><a href="#行高" class="headerlink" title="行高"></a>行高</h4><p>可以利用: <code>line-height</code> 属性设置行间的距离(行高).</p>
+<p><img src="http://p40kjburh.bkt.clouddn.com/18-2-16/58017517.jpg" alt=""></p>
+</li>
+</ol>
+<pre><code>我们可以利用**行高**实现垂直对齐.
+</code></pre>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-02-16T17:06:59.244Z" itemprop="dateUpdated">2018-02-17 01:06:59</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/02/14/Bat脚本笔记/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Bat脚本笔记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/02/13/Hexo建博客踩坑总结/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Hexo建博客踩坑总结</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

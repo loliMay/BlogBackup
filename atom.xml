@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LoliMay&#39;s Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.lolimay.cn/"/>
+  <updated>2018-07-24T13:37:43.748Z</updated>
+  <id>http://www.lolimay.cn/</id>
+  
+  <author>
+    <name>LoliMay</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>温和的padding</title>
+    <link href="http://www.lolimay.cn/2018/07/24/%E6%B8%A9%E5%92%8C%E7%9A%84padding/"/>
+    <id>http://www.lolimay.cn/2018/07/24/温和的padding/</id>
+    <published>2018-07-24T12:47:58.000Z</published>
+    <updated>2018-07-24T13:37:43.748Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="padding的百分比值"><a href="#padding的百分比值" class="headerlink" title="padding的百分比值"></a>padding的百分比值</h1><p><strong>与height等属性的百分比计算规则不一样, padding百分比值无论是水平方向还是垂直方向都是相对于<em>宽度</em>计算的。</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">50%</span>; <span class="comment">/* 正方形 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">25%</span> <span class="number">50%</span>; <span class="comment">/* 宽髙比2:1的矩形 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h1 id="内联元素与padding"><a href="#内联元素与padding" class="headerlink" title="内联元素与padding"></a>内联元素与padding</h1><h2 id="内联元素垂直padding的层叠现象"><a href="#内联元素垂直padding的层叠现象" class="headerlink" title="内联元素垂直padding的层叠现象"></a>内联元素垂直padding的层叠现象</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">50px</span>; <span class="comment">/* 真的是纯视觉层叠吗? */</span></span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a&#123;这是一个padding&#125;*50</span><br></pre></td></tr></table></figure><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><ul><li>增加链接点击区域的大小</li></ul><h2 id="CSS中几种层叠现象总结"><a href="#CSS中几种层叠现象总结" class="headerlink" title="CSS中几种层叠现象总结"></a>CSS中几种层叠现象总结</h2><h3 id="纯视觉层叠-不影响外部尺寸"><a href="#纯视觉层叠-不影响外部尺寸" class="headerlink" title="纯视觉层叠(不影响外部尺寸)"></a>纯视觉层叠(不影响外部尺寸)</h3><ol><li>box-shadow 盒装阴影</li><li>outline 轮廓<h3 id="视觉层叠-影响外部尺寸"><a href="#视觉层叠-影响外部尺寸" class="headerlink" title="视觉层叠(影响外部尺寸)"></a>视觉层叠(影响外部尺寸)</h3></li><li>inline元素的垂直padding</li></ol><p><strong>判断依据:</strong> 层叠区域超出父容器后会不会出现滚动条</p><h2 id="内联元素padding的换行现象"><a href="#内联元素padding的换行现象" class="headerlink" title="内联元素padding的换行现象"></a>内联元素padding的换行现象</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> dashed <span class="number">#cd0000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="幽灵空白结点-strut-与内联元素的padding"><a href="#幽灵空白结点-strut-与内联元素的padding" class="headerlink" title="幽灵空白结点(strut)与内联元素的padding"></a>幽灵空白结点(strut)与内联元素的padding</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="comment">/* font-size: 0; */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="实战-利用padding绘制图形"><a href="#实战-利用padding绘制图形" class="headerlink" title="实战: 利用padding绘制图形"></a>实战: 利用padding绘制图形</h2><h3 id="绘制”三道杠”"><a href="#绘制”三道杠”" class="headerlink" title="绘制”三道杠”"></a>绘制”三道杠”</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon-menu</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">140px</span>; <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">35px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">10px</span> solid;</span><br><span class="line">    <span class="attribute">background-color</span>: currentColor;</span><br><span class="line">    <span class="attribute">background-clip</span>: content-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="绘制双层圆点"><a href="#绘制双层圆点" class="headerlink" title="绘制双层圆点"></a>绘制双层圆点</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon-dot</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid;    </span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: currentColor;</span><br><span class="line">    <span class="attribute">background-clip</span>: content-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;padding的百分比值&quot;&gt;&lt;a href=&quot;#padding的百分比值&quot; class=&quot;headerlink&quot; title=&quot;padding的百分比值&quot;&gt;&lt;/a&gt;padding的百分比值&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;与height等属性的百分比计算规则不一样,
+      
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://www.lolimay.cn/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>content内容生成技术</title>
+    <link href="http://www.lolimay.cn/2018/07/21/content%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF/"/>
+    <id>http://www.lolimay.cn/2018/07/21/content内容生成技术/</id>
+    <published>2018-07-21T10:43:18.000Z</published>
+    <updated>2018-07-25T00:49:22.273Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="替换元素与非替换元素之间的区别"><a href="#替换元素与非替换元素之间的区别" class="headerlink" title="替换元素与非替换元素之间的区别"></a>替换元素与非替换元素之间的区别</h1><h2 id="1-只差一个src属性"><a href="#1-只差一个src属性" class="headerlink" title="1. 只差一个src属性"></a>1. 只差一个src属性</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img alt="任意值"&gt; 非替换元素</span><br><span class="line">&lt;img src="" alt="任意值"&gt; 替换元素</span><br></pre></td></tr></table></figure><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block; <span class="comment">/* img的宽度是多少? */</span></span><br><span class="line">  <span class="attribute">outline</span>: solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="2-只差一个CSS-content属性"><a href="#2-只差一个CSS-content属性" class="headerlink" title="2. 只差一个CSS content属性"></a>2. 只差一个CSS content属性</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123; <span class="attribute">content</span>: <span class="built_in">url</span>(1.jpg) &#125;</span><br><span class="line">&lt;<span class="selector-tag">img</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;img src="1.jpg"&gt;</span><br></pre></td></tr></table></figure><p>如果图片原来是有src属性，也可以通过content属性替换文件的内容<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src="laugh.jpg"&gt;</span><br><span class="line"><span class="selector-tag">img</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">url</span>(tear.jpg); <span class="comment">/* 这里立个flag */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>h1典型的非替换元素对吧，来我们给他加个content属性<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">h1 &#123;</span><br><span class="line">  content: url(logo.png) /* 光速变成一个替换元素 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="3-content生成内容的特性"><a href="#3-content生成内容的特性" class="headerlink" title="3. content生成内容的特性"></a>3. content生成内容的特性</h2><p>content属性生成的对象被称为”匿名替换元素”</p><h3 id="1-content生成的文本无法复制、无法选中"><a href="#1-content生成的文本无法复制、无法选中" class="headerlink" title="1. content生成的文本无法复制、无法选中"></a>1. content生成的文本无法复制、无法选中</h3><h3 id="2-不能左右-empty伪类"><a href="#2-不能左右-empty伪类" class="headerlink" title="2. 不能左右:empty伪类"></a>2. 不能左右<code>:empty</code>伪类</h3><h3 id="3-生成的图片获取不到链接-右击保存的仍是原有图片的链接-看前面的flag"><a href="#3-生成的图片获取不到链接-右击保存的仍是原有图片的链接-看前面的flag" class="headerlink" title="3. 生成的图片获取不到链接(右击保存的仍是原有图片的链接)(看前面的flag)"></a>3. 生成的图片获取不到链接(右击保存的仍是原有图片的链接)(看前面的flag)</h3><p>总的来说，content内容生成的元素<strong>仅仅只是影响视觉呈现</strong>，并不能通过JavaScript获取得到content生成的内容对象。</p><h1 id="content内容生成技术-今天的重点"><a href="#content内容生成技术-今天的重点" class="headerlink" title="content内容生成技术(今天的重点)"></a>content内容生成技术(今天的重点)</h1><p>因为content内容生成技术几乎都是用在伪元素<code>::before</code>和<code>::after</code>(mdn光速查询这个两个关键字)这两个伪元素中，因此content内容生成技术又被叫做<code>::before</code>和<code>::after</code>伪元素技术。</p><h2 id="1-content辅助元素生成"><a href="#1-content辅助元素生成" class="headerlink" title="1.content辅助元素生成"></a>1.content辅助元素生成</h2><p>(用于辅助实现两端对齐、垂直居中、上边缘、下边缘等对齐效果)<br>由于内容太过深入…在此立个FLAG以后会深入讲</p><h2 id="2-content字符内容生成"><a href="#2-content字符内容生成" class="headerlink" title="2. content字符内容生成"></a>2. content字符内容生成</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"icon-home"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">css:</span><br><span class="line">@font-face &#123; /* 定义自定义字体 */</span><br><span class="line">font-family: "myico"; /* 定义字体名 */</span><br><span class="line">src: url("myfont.woff") format("woff); /* 定义字体路径及格式 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.icon-home:before &#123;</span><br><span class="line">  font-size: 64px;</span><br><span class="line">  font-family: myicon;</span><br><span class="line">  content: "x";</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="3-content图片内容生成"><a href="#3-content图片内容生成" class="headerlink" title="3. content图片内容生成"></a>3. content图片内容生成</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">url</span>(1.jpg)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 其实不是很实用，content生成的图片不能控制大小 */</span></span><br><span class="line"><span class="comment">/* 所以一般用background代替 */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">'bg.ico1'</span>) <span class="number">50px</span> <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="4-content属性值内容生成"><a href="#4-content属性值内容生成" class="headerlink" title="4. content属性值内容生成"></a>4. content属性值内容生成</h2><p>动态生成一个元素的属性<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span><span class="selector-pseudo">::after</span> &#123; <span class="comment">/* Firefox下::before伪元素content值会被无视，尽量用::after */</span></span><br><span class="line"><span class="attribute">content</span>: <span class="built_in">attr</span>(alt); <span class="comment">/* 给img生成alt属性 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">attr</span>(data-title); <span class="comment">/* 也支持生成自定义属性 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="★5-深入理解content计数器"><a href="#★5-深入理解content计数器" class="headerlink" title="★5.深入理解content计数器"></a>★5.深入理解content计数器</h2><ul><li>content计数器只支持整数</li><li>支持负数</li></ul><ol><li><p>属性 <strong>counter-reset</strong> 声明计数器并指定初始值(默认是0)</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.cnt</span> &#123;</span><br><span class="line">  <span class="attribute">counter-reset</span>: wangxiaoer; <span class="comment">/* 声明计数器王小二 默认初始值为0 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.cnt</span> &#123;</span><br><span class="line">  <span class="attribute">counter-reset</span>: wangxiaoer <span class="number">2</span>; <span class="comment">/* 声明计数器王小二并指定初始值为2 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.cnt</span> &#123;</span><br><span class="line">  <span class="attribute">counter-reset</span>: wangxiaoer <span class="number">2</span> wangxiaosan <span class="number">3</span>;</span><br><span class="line">  <span class="comment">/* 也可以同时声明多个计数器 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>属性 <strong>counter-increment</strong> 计数器递增(默认递增1)</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.cnt</span> &#123;</span><br><span class="line">  <span class="attribute">counter-reset</span>: wangxiaoer; <span class="comment">/* 声明计数器王小二 默认初始值为0 */</span></span><br><span class="line">  <span class="attribute">counter-increment</span>: wangxiaoer; <span class="comment">/* 计数器开始递增 默认递增1 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.cnt</span> &#123;</span><br><span class="line">  <span class="attribute">counter-reset</span>: wangxiaoer; <span class="comment">/* 声明计数器王小二 默认初始值为0 */</span></span><br><span class="line">  <span class="attribute">counter-increment</span>: wangxiaoer <span class="number">2</span>; <span class="comment">/* 计数器开始递增 每次递增2 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>方法 <strong>counter(name, style)</strong> 显示计数(支持级联)</p></li><li><p>方法 <strong>counters(name, string)</strong> 嵌套计数</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;替换元素与非替换元素之间的区别&quot;&gt;&lt;a href=&quot;#替换元素与非替换元素之间的区别&quot; class=&quot;headerlink&quot; title=&quot;替换元素与非替换元素之间的区别&quot;&gt;&lt;/a&gt;替换元素与非替换元素之间的区别&lt;/h1&gt;&lt;h2 id=&quot;1-只差一个src属性&quot;&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://www.lolimay.cn/tags/CSS/"/>
+    
+      <category term="CSS世界读书笔记" scheme="http://www.lolimay.cn/tags/CSS%E4%B8%96%E7%95%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新手指引</title>
+    <link href="http://www.lolimay.cn/2018/07/19/%E6%96%B0%E6%89%8B%E6%8C%87%E5%BC%95/"/>
+    <id>http://www.lolimay.cn/2018/07/19/新手指引/</id>
+    <published>2018-07-19T03:53:11.000Z</published>
+    <updated>2018-07-19T04:23:15.072Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">点击查看教程</a></p><h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ol><li>了解git是什么、用途是什么</li><li>学会git的基本用法</li></ol><h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><p><a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;tn=baidu&amp;wd=github" target="_blank" rel="noopener">点击查看教程</a></p><h2 id="要求-1"><a href="#要求-1" class="headerlink" title="要求"></a>要求</h2><ol><li>了解github</li><li>学会使用github</li></ol><h1 id="加入我们的Organizations-CurdBin"><a href="#加入我们的Organizations-CurdBin" class="headerlink" title="加入我们的Organizations - CurdBin"></a>加入我们的Organizations - CurdBin</h1><p>里面有一堆共享的学习资源哦~</p><p><a href="https://github.com/curdbin" target="_blank" rel="noopener">点击加入</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Git&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/0013739516305929606dd183
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="http://www.lolimay.cn/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>替换元素与非替换元素</title>
+    <link href="http://www.lolimay.cn/2018/07/14/%E6%9B%BF%E6%8D%A2%E5%85%83%E7%B4%A0%E4%B8%8E%E9%9D%9E%E6%9B%BF%E6%8D%A2%E5%85%83%E7%B4%A0/"/>
+    <id>http://www.lolimay.cn/2018/07/14/替换元素与非替换元素/</id>
+    <published>2018-07-14T04:59:58.000Z</published>
+    <updated>2018-07-25T00:57:56.563Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="content与替换元素"><a href="#content与替换元素" class="headerlink" title="content与替换元素"></a>content与替换元素</h1><p>替换元素(replaced element): <strong>元素内容是否可替换。</strong></p><p>根据外在盒子是内联还是块级我们可以把元素分为内联元素还是块级元素，而根据元素内容是否可替换，把元素分为替换元素和非替换元素。</p><p>如:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">img</span>&gt;、&lt;<span class="selector-tag">object</span>&gt;、&lt;<span class="selector-tag">video</span>&gt;、&lt;<span class="selector-tag">iframe</span>&gt;、&lt;<span class="selector-tag">textarea</span>&gt;、&lt;<span class="selector-tag">input</span>&gt;、&lt;<span class="selector-tag">select</span>&gt;</span><br></pre></td></tr></table></figure></p><h2 id="替换元素的性质"><a href="#替换元素的性质" class="headerlink" title="替换元素的性质"></a>替换元素的性质</h2><ul><li><p>内容的外观不受页面上的CSS的影响</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type='checkbox']</span></span><br></pre></td></tr></table></figure></li><li><p>有自己的尺寸</p></li></ul><p>大部分替换元素的默认尺寸是<strong>300x150px</strong>，少部分替换元素的默认尺寸为<strong>0x0px</strong>，表单替换元素的尺寸则和浏览器有关。</p><ul><li>在很多CSS属性上有自己的一套表现规则<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">bottom</span>; <span class="comment">/* 基线是元素的下边缘 */</span></span><br></pre></td></tr></table></figure></li></ul><h1 id="替换元素的尺寸计算规则"><a href="#替换元素的尺寸计算规则" class="headerlink" title="替换元素的尺寸计算规则"></a>替换元素的尺寸计算规则</h1><p>内联替换元素和块级替换元素使用一下同一套尺寸计算规则。</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://p40kjburh.bkt.clouddn.com/18-7-14/44203237.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><ul><li><strong>固有尺寸</strong></li></ul><p>替换内容原本的尺寸(图片、视频原本的尺寸、表单元素的固有尺寸由浏览器定义)</p><ul><li><strong>HTML尺寸</strong></li></ul><p>通过HTML原生属性设置的尺寸<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;img width="300" height="100"&gt;</span><br><span class="line">&lt;input type="file" size="30"&gt;</span><br><span class="line">&lt;textarea cols="20" rows="5"&gt;</span><br></pre></td></tr></table></figure></p><ul><li><strong>CSS尺寸</strong><br>即元素的content box<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><p>优先级: CSS尺寸&gt;HTML尺寸&gt;固有尺寸</p><h2 id="替换元素的object-fit"><a href="#替换元素的object-fit" class="headerlink" title="替换元素的object-fit"></a>替换元素的object-fit</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">img &#123;</span><br><span class="line">  object-fit: fill; /* 默认 */</span><br><span class="line">  object-fit: contain;</span><br><span class="line">  object-fit: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="替换元素与流动性"><a href="#替换元素与流动性" class="headerlink" title="替换元素与流动性"></a>替换元素与流动性</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">textarea</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;content与替换元素&quot;&gt;&lt;a href=&quot;#content与替换元素&quot; class=&quot;headerlink&quot; title=&quot;content与替换元素&quot;&gt;&lt;/a&gt;content与替换元素&lt;/h1&gt;&lt;p&gt;替换元素(replaced element): &lt;stron
+      
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://www.lolimay.cn/tags/CSS/"/>
+    
+      <category term="CSS新世界读书笔记" scheme="http://www.lolimay.cn/tags/CSS%E6%96%B0%E4%B8%96%E7%95%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>流、元素与基本尺寸(下)</title>
+    <link href="http://www.lolimay.cn/2018/07/12/%E6%B5%81%E3%80%81%E5%85%83%E7%B4%A0%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%B0%BA%E5%AF%B8-%E4%B8%8B/"/>
+    <id>http://www.lolimay.cn/2018/07/12/流、元素与基本尺寸-下/</id>
+    <published>2018-07-11T18:21:58.000Z</published>
+    <updated>2018-07-25T00:57:12.189Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="min-width-max-width-min-height-max-height"><a href="#min-width-max-width-min-height-max-height" class="headerlink" title="min-width/max-width/min-height/max-height"></a>min-width/max-width/min-height/max-height</h1><h2 id="为流体而生的min-width-max-width"><a href="#为流体而生的min-width-max-width" class="headerlink" title="为流体而生的min-width/max-width"></a>为流体而生的min-width/max-width</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">1200px</span>;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">1400px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="超越-important"><a href="#超越-important" class="headerlink" title="超越 !important"></a>超越 !important</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src="1.jpg" style="width:480px!important"&gt;</span><br><span class="line"><span class="selector-tag">img</span> &#123; <span class="attribute">max-width</span>: <span class="number">256px</span>; &#125;</span><br></pre></td></tr></table></figure><h2 id="超越最大"><a href="#超越最大" class="headerlink" title="超越最大"></a>超越最大</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  min-width: 1400px;</span><br><span class="line">  max-width: 1200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="再谈内联元素"><a href="#再谈内联元素" class="headerlink" title="再谈内联元素"></a>再谈内联元素</h1><p>外在盒子是内联盒子的元素称为内联元素</p><h2 id="内联盒模型"><a href="#内联盒模型" class="headerlink" title="内联盒模型"></a>内联盒模型</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;这是一行普通的文字，这里有个 &lt;em&gt;em&lt;/em&gt; 标签。&lt;/p&gt;</span><br></pre></td></tr></table></figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://p40kjburh.bkt.clouddn.com/18-7-12/11993312.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h3 id="1-内容区域-content-area"><a href="#1-内容区域-content-area" class="headerlink" title="1. 内容区域(content area)"></a>1. 内容区域(content area)</h3><p>通常情况下，文字的选中背景可以反映出内容区域的范围(排除垂直padding的情况)。</p><h3 id="2-内联盒子-inline-box"><a href="#2-内联盒子-inline-box" class="headerlink" title="2. 内联盒子(inline box)"></a>2. 内联盒子(inline box)</h3><p>内联盒子不会让内容成块显示，而是排成一行，直到这行空间不够再换行。</p><ul><li>内联盒子</li><li>匿名内联盒子(光秃秃的文字)<h3 id="3-行框盒子-line-box"><a href="#3-行框盒子-line-box" class="headerlink" title="3. 行框盒子(line box)"></a>3. 行框盒子(line box)</h3>每一行就是一个行框盒子<h3 id="4-包含块-containing-box"><a href="#4-包含块-containing-box" class="headerlink" title="4. 包含块(containing box)"></a>4. 包含块(containing box)</h3>包含块由一个或多个行框盒子组成，这里的包含块就是<code>&lt;p&gt;</code>标签</li></ul><h2 id="幽灵空白结点-特别重要"><a href="#幽灵空白结点-特别重要" class="headerlink" title="幽灵空白结点(特别重要)"></a>幽灵空白结点(特别重要)</h2><blockquote><p>Each line box starts with a zero-width inline box with the element’s font and line height properties. We call that imaginary box a “strut”.</p></blockquote><p>每个行框盒子的前面有一个空白结点，这个空白结点永远透明，不占据任何宽度，看不见也无法通过脚本获取。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&gt;<span class="selector-tag">span</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#666</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;min-width-max-width-min-height-max-height&quot;&gt;&lt;a href=&quot;#min-width-max-width-min-height-max-height&quot; class=&quot;headerlink&quot; title=&quot;min-width/
+      
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://www.lolimay.cn/tags/CSS/"/>
+    
+      <category term="CSS读书笔记" scheme="http://www.lolimay.cn/tags/CSS%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>流、元素与基本尺寸(中)</title>
+    <link href="http://www.lolimay.cn/2018/07/10/%E6%B5%81%E3%80%81%E5%85%83%E7%B4%A0%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%B0%BA%E5%AF%B8-%E4%B8%AD/"/>
+    <id>http://www.lolimay.cn/2018/07/10/流、元素与基本尺寸-中/</id>
+    <published>2018-07-10T12:21:07.000Z</published>
+    <updated>2018-07-25T00:57:04.339Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="流、元素与基本尺寸-中"><a href="#流、元素与基本尺寸-中" class="headerlink" title="流、元素与基本尺寸(中)"></a>流、元素与基本尺寸(中)</h1><h2 id="深入最大宽度"><a href="#深入最大宽度" class="headerlink" title="深入最大宽度"></a>深入最大宽度</h2><p>最大宽度就是元素可以有的最大宽度，也就是连续内联盒子的宽度。</p><p><a href="http://yun.lolimay.cn/index.php?user/publicLink&amp;fid=99b0Qq1-AnD0zi5a29mYCnEIF4fWoAziR6Yla8vgdbhtT6OqxsYKBAARn_9s23yn4vSL8AYq7taBmnKwHyA2zjnXqfbzaJXS1ETIycmsYjY6&amp;file_name=/%E6%9C%80%E5%A4%A7%E5%AE%BD%E5%BA%A6.html" target="_blank" rel="noopener">演示页面</a></p><h2 id="流动性与无宽度准则"><a href="#流动性与无宽度准则" class="headerlink" title="流动性与无宽度准则"></a>流动性与无宽度准则</h2><p>无宽度准则就是说，尽可能不要为元素设置宽度，否则会造成流动性丢失。</p><h3 id="1-width-auto-等价于-width-100"><a href="#1-width-auto-等价于-width-100" class="headerlink" title="1. width:auto 等价于 width:100% ?"></a>1. width:auto 等价于 width:100% ?</h3><p>对于块级元素而言，width:auto 指的是 content内容区域充分利用剩余水平空间、width:100% 指的是 content内容区域 占容器(父元素的content区域就是容器) 宽度的100%</p><p><a href="http://yun.lolimay.cn/index.php?user/publicLink&amp;fid=98abmgZzwoVVhfHNboH_jzfKTQojpaNuglWBtKY6DCLp5nZvedIki9wmTGJtFljBTUe8OIEQCbfwC27kdS4vAk_4a5r6IpJ7MPcu64Uu&amp;file_name=/%E6%97%A0%E5%AE%BD%E5%BA%A6.html" target="_blank" rel="noopener">演示页面</a></p><h3 id="2-再谈流动性"><a href="#2-再谈流动性" class="headerlink" title="2. 再谈流动性"></a>2. 再谈流动性</h3><p>所谓流动性，指的是块级元素的 content内容区域对<strong>剩余可用宽度</strong>的充分利用。(即<code>width:auto</code>的特性一：充分利用可用空间的特性)</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://p40kjburh.bkt.clouddn.com/18-7-10/85874366.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h3 id="3-宽度分离原则"><a href="#3-宽度分离原则" class="headerlink" title="3. 宽度分离原则"></a>3. 宽度分离原则</h3><p>即用父元素去限制宽度，子元素设置内外边距以及边框。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">120px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123; <span class="comment">/* 利用子元素 content 的流动性 */</span></span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="4-box-sizing"><a href="#4-box-sizing" class="headerlink" title="4. box-sizing"></a>4. box-sizing</h3><p>box-sizing用于改变width/height的作用细节<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123; <span class="attribute">box-sizing</span>: content-box; &#125; <span class="comment">/* 默认值 */</span></span><br><span class="line"><span class="selector-class">.box</span> &#123; <span class="attribute">box-sizing</span>: border-box; &#125;</span><br></pre></td></tr></table></figure></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://p40kjburh.bkt.clouddn.com/18-7-10/46702420.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h2 id="CSS中的高度"><a href="#CSS中的高度" class="headerlink" title="CSS中的高度"></a>CSS中的高度</h2><p>CSS默认的文档流是水平方向的，宽度是稀缺的，高度是无限的。</p><h3 id="1-相对单纯的-height-auto"><a href="#1-相对单纯的-height-auto" class="headerlink" title="1. 相对单纯的 height:auto"></a>1. 相对单纯的 height:auto</h3><p>height:auto 即是元素的默认高度</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://p40kjburh.bkt.clouddn.com/18-7-10/162917.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>一个div高50px，三个div叠起来多少px? 150px。</p><h3 id="2-关于height-100"><a href="#2-关于height-100" class="headerlink" title="2. 关于height:100%"></a>2. 关于height:100%</h3><p>和width:100%不同，<strong>当父元素的高度为auto时，子元素的height:100%无效</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;流、元素与基本尺寸-中&quot;&gt;&lt;a href=&quot;#流、元素与基本尺寸-中&quot; class=&quot;headerlink&quot; title=&quot;流、元素与基本尺寸(中)&quot;&gt;&lt;/a&gt;流、元素与基本尺寸(中)&lt;/h1&gt;&lt;h2 id=&quot;深入最大宽度&quot;&gt;&lt;a href=&quot;#深入最大宽度&quot; c
+      
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://www.lolimay.cn/tags/CSS/"/>
+    
+      <category term="CSS读书笔记" scheme="http://www.lolimay.cn/tags/CSS%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使路由器支持IPV6</title>
+    <link href="http://www.lolimay.cn/2018/07/09/%E4%BD%BF%E8%B7%AF%E7%94%B1%E5%99%A8%E6%94%AF%E6%8C%81IPV6/"/>
+    <id>http://www.lolimay.cn/2018/07/09/使路由器支持IPV6/</id>
+    <published>2018-07-09T04:25:55.000Z</published>
+    <updated>2018-07-24T16:11:08.573Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="原理-NAT6"><a href="#原理-NAT6" class="headerlink" title="原理 NAT6"></a>原理 NAT6</h1><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h3 id="预热"><a href="#预热" class="headerlink" title="预热"></a>预热</h3><ol><li>为固件刷上<code>openwrt</code>或基于<code>openwrt</code>的固件(如潘多拉、<code>lede</code>等)</li><li>地址栏输入<code>192.168.1.1</code>配置好后台密码并开启<code>ssh</code></li><li>在终端中<code>ssh root@192.168.1.1</code>连接进<code>openwrt</code></li></ol><h3 id="安装kmod-iptnat6"><a href="#安装kmod-iptnat6" class="headerlink" title="安装kmod-iptnat6"></a>安装<code>kmod-iptnat6</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg update &amp;&amp; opkg install kmod-ipt-nat6</span><br></pre></td></tr></table></figure><h3 id="将IPv6-ULA-Prefix由f改为d"><a href="#将IPv6-ULA-Prefix由f改为d" class="headerlink" title="将IPv6 ULA Prefix由f改为d"></a>将<code>IPv6 ULA Prefix</code>由<code>f</code>改为<code>d</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uci <span class="built_in">set</span> network.globals.ula_prefix=<span class="string">"<span class="variable">$(uci get network.globals.ula_prefix | sed 's/^./d/')</span>"</span> &amp;&amp; uci commit network</span><br></pre></td></tr></table></figure><h3 id="将DHCP服务器设置为总是广播默认路由"><a href="#将DHCP服务器设置为总是广播默认路由" class="headerlink" title="将DHCP服务器设置为总是广播默认路由"></a>将DHCP服务器设置为<strong>总是广播默认路由</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uci <span class="built_in">set</span> dhcp.lan.ra_default=<span class="string">'1'</span> &amp;&amp; uci commit dhcp</span><br></pre></td></tr></table></figure><h3 id="生成NAT6脚本"><a href="#生成NAT6脚本" class="headerlink" title="生成NAT6脚本"></a>生成<code>NAT6</code>脚本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch /etc/init.d/nat6 &amp;&amp; vi /etc/init.d/nat6</span><br></pre></td></tr></table></figure><p>将<a href="http://p40kjburh.bkt.clouddn.com/nat6" target="_blank" rel="noopener"><strong>链接</strong></a>中的内容复制进去并保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /etc/init.d/nat6 &amp;&amp; /etc/init.d/nat6 <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></p><h3 id="防火墙配置Allow-ICMPv6-Forward"><a href="#防火墙配置Allow-ICMPv6-Forward" class="headerlink" title="防火墙配置Allow-ICMPv6-Forward"></a>防火墙配置<code>Allow-ICMPv6-Forward</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uci <span class="built_in">set</span> firewall.@rule[<span class="string">"<span class="variable">$(uci show firewall | grep 'Allow-ICMPv6-Forward' | cut -d'[' -f2 | cut -d']' -f1)</span>"</span>].enabled=<span class="string">'0'</span> &amp;&amp; uci commit firewall</span><br></pre></td></tr></table></figure><h3 id="接收广播并开启IPv6转发"><a href="#接收广播并开启IPv6转发" class="headerlink" title="接收广播并开启IPv6转发"></a>接收广播并开启IPv6转发</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysctl.conf</span><br></pre></td></tr></table></figure><p>修改<code>/etc/sysctl.conf</code>文件, 把文件中相关内容改为以下内容，没有的话就添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">net.ipv6.conf.default.forwarding=2 </span><br><span class="line">net.ipv6.conf.all.forwarding=2 </span><br><span class="line">net.ipv6.conf.default.accept_ra=2 </span><br><span class="line">net.ipv6.conf.all.accept_ra=2</span><br></pre></td></tr></table></figure></p><h3 id="加入转发规则"><a href="#加入转发规则" class="headerlink" title="加入转发规则"></a>加入转发规则</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/firewall.user</span><br></pre></td></tr></table></figure><p>修改<code>/etc/firewall.user</code>文件, 末尾添加一下内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip6tables -t nat -I POSTROUTING -s $(uci get network.globals.ula_prefix) -j MASQUERADE</span><br></pre></td></tr></table></figure></p><h3 id="设置每日定时重启-可选"><a href="#设置每日定时重启-可选" class="headerlink" title="设置每日定时重启(可选)"></a>设置每日定时重启(可选)</h3><p>由于路由器每过一段时间LAN口和wifi会打不开IPv6站点, 重启后恢复。(目前不知道原因, 知道原因的也可评论告知我, 万分感谢), 所以需要设置每日定时重启<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br><span class="line">30 4 * * * sleep 1m &amp;&amp; touch /etc/banner &amp;&amp; reboot -f 2&gt;/dev/null</span><br></pre></td></tr></table></figure></p><h3 id="重启路由器"><a href="#重启路由器" class="headerlink" title="重启路由器"></a>重启路由器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure><p>此时你的手机连上wifi后应该能连上六维空间等IPv6站点了, 恭喜折腾成功!</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;原理-NAT6&quot;&gt;&lt;a href=&quot;#原理-NAT6&quot; class=&quot;headerlink&quot; title=&quot;原理 NAT6&quot;&gt;&lt;/a&gt;原理 NAT6&lt;/h1&gt;&lt;h1 id=&quot;步骤&quot;&gt;&lt;a href=&quot;#步骤&quot; class=&quot;headerlink&quot; title=&quot;步
+      
+    
+    </summary>
+    
+    
+      <category term="路由器" scheme="http://www.lolimay.cn/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>流、元素与基本尺寸(上)</title>
+    <link href="http://www.lolimay.cn/2018/07/09/%E6%B5%81%E3%80%81%E5%85%83%E7%B4%A0%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%B0%BA%E5%AF%B8-%E4%B8%8A/"/>
+    <id>http://www.lolimay.cn/2018/07/09/流、元素与基本尺寸-上/</id>
+    <published>2018-07-09T02:21:07.000Z</published>
+    <updated>2018-07-25T00:56:47.603Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://p40kjburh.bkt.clouddn.com/18-7-25/42494587.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                   
+      
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://www.lolimay.cn/tags/CSS/"/>
+    
+      <category term="CSS新世界读书笔记" scheme="http://www.lolimay.cn/tags/CSS%E6%96%B0%E4%B8%96%E7%95%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AHK模板文件的路径</title>
+    <link href="http://www.lolimay.cn/2018/07/01/AHK%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6%E7%9A%84%E8%B7%AF%E5%BE%84/"/>
+    <id>http://www.lolimay.cn/2018/07/01/AHK模板文件的路径/</id>
+    <published>2018-07-01T13:37:20.000Z</published>
+    <updated>2018-07-01T13:38:54.912Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>C:\Windows\ShellNew</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;code&gt;C:\Windows\ShellNew&lt;/code&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="AutoHotKey" scheme="http://www.lolimay.cn/tags/AutoHotKey/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何去除Linux文件的^M字符</title>
+    <link href="http://www.lolimay.cn/2018/06/25/%E5%A6%82%E4%BD%95%E5%8E%BB%E9%99%A4Linux%E6%96%87%E4%BB%B6%E7%9A%84M%E5%AD%97%E7%AC%A6/"/>
+    <id>http://www.lolimay.cn/2018/06/25/如何去除Linux文件的M字符/</id>
+    <published>2018-06-25T06:20:25.000Z</published>
+    <updated>2018-06-25T06:22:47.919Z</updated>
+    
+    <content type="html"><![CDATA[<p>命令行输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dos2unix filename</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;命令行输入&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pr
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="http://www.lolimay.cn/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript中如何实现深复制</title>
+    <link href="http://www.lolimay.cn/2018/06/21/JavaScript%E4%B8%AD%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B7%B1%E5%A4%8D%E5%88%B6/"/>
+    <id>http://www.lolimay.cn/2018/06/21/JavaScript中如何实现深复制/</id>
+    <published>2018-06-21T09:17:21.000Z</published>
+    <updated>2018-06-21T09:31:28.701Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="浅复制只复制一层对象的属性，修改新的对象的属性也会影响原来的对象。"><a href="#浅复制只复制一层对象的属性，修改新的对象的属性也会影响原来的对象。" class="headerlink" title="浅复制只复制一层对象的属性，修改新的对象的属性也会影响原来的对象。"></a>浅复制只复制一层对象的属性，修改新的对象的属性也会影响原来的对象。</h2><p>JavaScript中最常见的赋值操作就是浅复制。</p><h2 id="深复制则递归复制了原有对象所有层级，修改新的对象不会影响原来的对象。"><a href="#深复制则递归复制了原有对象所有层级，修改新的对象不会影响原来的对象。" class="headerlink" title="深复制则递归复制了原有对象所有层级，修改新的对象不会影响原来的对象。"></a>深复制则递归复制了原有对象所有层级，修改新的对象不会影响原来的对象。</h2><p>可以通过下面的方法实现深复制：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newObj = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(originObj))</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;浅复制只复制一层对象的属性，修改新的对象的属性也会影响原来的对象。&quot;&gt;&lt;a href=&quot;#浅复制只复制一层对象的属性，修改新的对象的属性也会影响原来的对象。&quot; class=&quot;headerlink&quot; title=&quot;浅复制只复制一层对象的属性，修改新的对象的属性也会影
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://www.lolimay.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JavaScript" scheme="http://www.lolimay.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery插件的编写和使用</title>
+    <link href="http://www.lolimay.cn/2018/06/20/jQuery%E6%8F%92%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
+    <id>http://www.lolimay.cn/2018/06/20/jQuery插件的编写和使用/</id>
+    <published>2018-06-20T13:28:15.000Z</published>
+    <updated>2018-06-20T14:57:01.786Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、背景知识"><a href="#一、背景知识" class="headerlink" title="一、背景知识"></a>一、背景知识</h1><h4 id="编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发效率。"><a href="#编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发效率。" class="headerlink" title="编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发效率。"></a>编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发效率。</h4><h4 id="jQuery-的插件一共分为-3-种类型"><a href="#jQuery-的插件一共分为-3-种类型" class="headerlink" title="jQuery 的插件一共分为 3 种类型"></a>jQuery 的插件一共分为 3 种类型</h4><ol><li>封装对象方法的插件(最常见的一种插件)</li><li>封装全局函数的插件</li><li>选择器插件</li></ol><h1 id="二、编写插件"><a href="#二、编写插件" class="headerlink" title="二、编写插件"></a>二、编写插件</h1><h2 id="1-编写插件应在闭包中进行"><a href="#1-编写插件应在闭包中进行" class="headerlink" title="1. 编写插件应在闭包中进行"></a>1. 编写插件应在闭包中进行</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//此处将$作为匿名函数的形参</span></span><br><span class="line">  <span class="comment">/* 这里放置插件的代码 */</span></span><br><span class="line">&#125;)(jQuery); <span class="comment">//这里将jQuery作为实参传递给匿名函数</span></span><br></pre></td></tr></table></figure><h2 id="2-jQuery-插件的机制"><a href="#2-jQuery-插件的机制" class="headerlink" title="2. jQuery 插件的机制"></a>2. jQuery 插件的机制</h2><h3 id="1-jQuery提供的两个方法"><a href="#1-jQuery提供的两个方法" class="headerlink" title="(1) jQuery提供的两个方法"></a>(1) jQuery提供的两个方法</h3><p>jQuery 提供两个用于扩展 jQuery 功能的方法,<code>jQuery.fn.extend()</code>方法和<code>jQuery.extend()</code>方法。</p><ul><li>jQuery.fn.extend() 用于拓展 jQuery 第一类插件，即封装对象方法的插件</li><li>jQuery.extend() 用于拓展 jQuery 后两类插件，即封装全局函数的插件和选择器插件。</li></ul><p>这两个方法都接受一个参数，类型为Object，Object对象的”名/值对”分别代表”函数或方法名/函数主体”。</p><h3 id="2-jQuery-extend-方法"><a href="#2-jQuery-extend-方法" class="headerlink" title="(2) jQuery.extend()方法"></a>(2) jQuery.extend()方法</h3><p>jQuery.extend()方法除了可以用于拓展 jQuery 对象之外，还有一个很强大的功能，就是用于拓展已有的 Object 对象。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jQuery.extend(target, obj1, obj2, ..., objn)</span><br></pre></td></tr></table></figure><p><strong>例</strong> 合并 settings 对象和 options 对象，修改并返回 settings 对象</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> settings  = &#123; <span class="attr">validate</span>: <span class="literal">false</span>, <span class="attr">limit</span>: <span class="number">5</span> , <span class="attr">name</span>: <span class="string">'foo'</span> &#125;</span><br><span class="line"><span class="keyword">var</span> options = &#123; <span class="attr">validate</span>: <span class="literal">true</span>, <span class="attr">name</span>: <span class="string">'bar'</span> &#125;</span><br><span class="line"><span class="keyword">var</span> newOptions = jQuery.extend(settings, options)</span><br><span class="line"><span class="comment">// 结果: newOptions = &#123; validate: true, limit: 5, name: 'bar' &#125;</span></span><br></pre></td></tr></table></figure><p><strong>因此，jQuery.extend()方法经常被用于设置插件方法的一系列默认参数：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">  options = jQuery.extend(&#123;</span><br><span class="line">    name: <span class="string">'bar'</span>,</span><br><span class="line">    length: <span class="number">5</span>,</span><br><span class="line">    dataType: <span class="string">'xml'</span> <span class="comment">/* 默认参数 */</span></span><br><span class="line">  &#125;, options) <span class="comment">/* options为传递的传递的参数 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 用户调用 foo()方法的时候，在传递的参数options对象中设置了相应的值</span></span><br><span class="line"><span class="comment">// 那么就使用设置的值，否则使用默认值</span></span><br></pre></td></tr></table></figure></p><h2 id="3-编写封装对象方法的插件"><a href="#3-编写封装对象方法的插件" class="headerlink" title="3. 编写封装对象方法的插件"></a>3. 编写封装对象方法的插件</h2><ul><li>编写设置和获取颜色的插件</li><li>待实现功能：</li></ul><ol><li>设置匹配元素的颜色</li><li>获取匹配的第一个元素的颜色</li></ol><h3 id="1-代码模板"><a href="#1-代码模板" class="headerlink" title="(1) 代码模板"></a>(1) 代码模板</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</span><br><span class="line">  $.fn.extend(&#123;</span><br><span class="line">    color(value) &#123;</span><br><span class="line">      <span class="comment">// 这里编写插件代码</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)(jQuery)</span><br><span class="line"><span class="comment">// 这里给这个方法提供一个参数value, 如果调用方法的时候传递了value这个参数, 那么就是用这个</span></span><br><span class="line"><span class="comment">// 值来设置字体颜色; 否则就是获取匹配元素字体颜色的值</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;一、背景知识&quot;&gt;&lt;a href=&quot;#一、背景知识&quot; class=&quot;headerlink&quot; title=&quot;一、背景知识&quot;&gt;&lt;/a&gt;一、背景知识&lt;/h1&gt;&lt;h4 id=&quot;编写插件的目的是给已有的一系列方法或函数做一个封装，以便在其他地方重复使用，方便后期维护和提供开发
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://www.lolimay.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="jQuery" scheme="http://www.lolimay.cn/tags/jQuery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Epside1-时间复杂度的计算</title>
+    <link href="http://www.lolimay.cn/2018/06/20/Epside1-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97/"/>
+    <id>http://www.lolimay.cn/2018/06/20/Epside1-时间复杂度的计算/</id>
+    <published>2018-06-20T04:35:10.000Z</published>
+    <updated>2018-06-20T06:03:33.616Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="算法的时间复杂度等于该算法中所有语句频度之和的同数量阶。"><a href="#算法的时间复杂度等于该算法中所有语句频度之和的同数量阶。" class="headerlink" title="算法的时间复杂度等于该算法中所有语句频度之和的同数量阶。"></a>算法的时间复杂度等于该算法中所有语句频度之和的同数量阶。</h3><p><strong>例1</strong> 设n为3的倍数，请仔细阅读以下算法，<strong>分析</strong>其时间复杂度。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Fun</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i,j,x,y;</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">if</span>(<span class="number">3</span>*i&lt;=n)</span><br><span class="line">      <span class="keyword">for</span>(j=<span class="number">3</span>*i;j&lt;=n;j++)</span><br><span class="line">      &#123;</span><br><span class="line">        x++;</span><br><span class="line">        y=<span class="number">3</span>*x+<span class="number">2</span>;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><strong>解</strong></p><p>注意本题重点是分析时间复杂度，不能直接给出答案O(<img src="http://latex.codecogs.com/svg.latex?\small&space;n^2" title="\small n^2">)，下面给出分析过程：</p><p>所有语句频度之和为<br><img src="http://p40kjburh.bkt.clouddn.com/18-6-20/59342875.jpg" width="650"><br>故该算法的时间复杂度为O(<img src="http://latex.codecogs.com/svg.latex?\small&space;n^2" title="\small n^2">).</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;算法的时间复杂度等于该算法中所有语句频度之和的同数量阶。&quot;&gt;&lt;a href=&quot;#算法的时间复杂度等于该算法中所有语句频度之和的同数量阶。&quot; class=&quot;headerlink&quot; title=&quot;算法的时间复杂度等于该算法中所有语句频度之和的同数量阶。&quot;&gt;&lt;/a&gt;算法
+      
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="http://www.lolimay.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iframe中引用外部元素以及在外部引用iframe内部元素</title>
+    <link href="http://www.lolimay.cn/2018/06/20/%E5%9C%A8iframe%E4%B8%AD%E5%BC%95%E7%94%A8%E5%A4%96%E9%83%A8%E5%85%83%E7%B4%A0%E4%BB%A5%E5%8F%8A%E5%9C%A8%E5%A4%96%E9%83%A8%E5%BC%95%E7%94%A8iframe%E5%86%85%E9%83%A8%E5%85%83%E7%B4%A0/"/>
+    <id>http://www.lolimay.cn/2018/06/20/在iframe中引用外部元素以及在外部引用iframe内部元素/</id>
+    <published>2018-06-19T16:01:44.000Z</published>
+    <updated>2018-06-19T18:26:36.084Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-在外部引用iframe内部元素"><a href="#1-在外部引用iframe内部元素" class="headerlink" title="1.在外部引用iframe内部元素"></a>1.在外部引用iframe内部元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementById(<span class="string">'iframeName'</span>)</span><br><span class="line"><span class="keyword">var</span> iframeDoc = iframe.contentDocument || iframe.contentWindow.document</span><br></pre></td></tr></table></figure><h2 id="2-在iframe中引用外部元素"><a href="#2-在iframe中引用外部元素" class="headerlink" title="2.在iframe中引用外部元素"></a>2.在iframe中引用外部元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> outerDoc = parent.document</span><br></pre></td></tr></table></figure><p><strong>注意：以上适用于同域名同端口下的相互调用，不支持跨域请求。</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-在外部引用iframe内部元素&quot;&gt;&lt;a href=&quot;#1-在外部引用iframe内部元素&quot; class=&quot;headerlink&quot; title=&quot;1.在外部引用iframe内部元素&quot;&gt;&lt;/a&gt;1.在外部引用iframe内部元素&lt;/h2&gt;&lt;figure class
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://www.lolimay.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows美化踩坑</title>
+    <link href="http://www.lolimay.cn/2018/05/28/windows%E7%BE%8E%E5%8C%96/"/>
+    <id>http://www.lolimay.cn/2018/05/28/windows美化/</id>
+    <published>2018-05-28T06:16:38.000Z</published>
+    <updated>2018-06-19T18:42:34.813Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p><code>windows</code>主题路径位置</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\Resources\Themes</span><br></pre></td></tr></table></figure></li><li><p>用<code>Resource Hacker</code>替换资源文件需要同名</p></li></ol><h2 id="3-diffTool-exe"><a href="#3-diffTool-exe" class="headerlink" title="3. diffTool.exe"></a>3. diffTool.exe</h2><p><code>diffTool</code>可用于比较两个<code>.msstyles</code>文件的不同，从而可以为主题制作者借鉴其它主题中的闪光点。</p><p>diffTool比较后会输出一个<code>different.txt</code>文件，这个文件可读性比较差。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;windows&lt;/code&gt;主题路径位置&lt;/p&gt;
+&lt;figure class=&quot;highlight powershell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/spa
+      
+    
+    </summary>
+    
+    
+      <category term="美化" scheme="http://www.lolimay.cn/tags/%E7%BE%8E%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搬瓦工ssh连接不上的原因</title>
+    <link href="http://www.lolimay.cn/2018/05/26/%E6%90%AC%E7%93%A6%E5%B7%A5ssh%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8A%E7%9A%84%E5%8E%9F%E5%9B%A0/"/>
+    <id>http://www.lolimay.cn/2018/05/26/搬瓦工ssh连接不上的原因/</id>
+    <published>2018-05-26T14:04:51.000Z</published>
+    <updated>2018-06-19T18:45:54.699Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>原因是搬瓦工服务器的<code>ssh</code>默认端口不是22</p><p><strong>解决方案：</strong></p><p>网页登录搬瓦工后台控制面板-&gt;打开交互式命令终端-&gt;输入以下命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure><p>查看配置文件，找到以下内容：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://p40kjburh.bkt.clouddn.com/18-5-26/76713367.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>将端口号修改成<code>22</code>即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;原因是搬瓦工服务器的&lt;code&gt;ssh&lt;/code&gt;默认端口不是22&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方案：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;网页登录搬瓦工后台控制面板-&amp;gt;打开交互式命令终端-&amp;gt;输入以下命令&lt;/p&gt;
+&lt;figure class=&quot;hi
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://www.lolimay.cn/tags/Linux/"/>
+    
+      <category term="服务器" scheme="http://www.lolimay.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux常用命令</title>
+    <link href="http://www.lolimay.cn/2018/05/26/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://www.lolimay.cn/2018/05/26/linux常用命令/</id>
+    <published>2018-05-26T11:05:03.000Z</published>
+    <updated>2018-06-19T18:56:21.776Z</updated>
+    
+    <content type="html"><![CDATA[<hr><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir ;新建文件夹</span><br><span class="line">touch ;新建文件</span><br><span class="line">chmod  777 path ;修改path的权限为777</span><br><span class="line"><span class="built_in">export</span> GOOGLE_APPLICATION_CREDENTIALS=<span class="string">"[PATH]"</span> ;设置环境变量</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span c
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://www.lolimay.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用git cz取代传统的git commit</title>
+    <link href="http://www.lolimay.cn/2018/05/26/git%20cz/"/>
+    <id>http://www.lolimay.cn/2018/05/26/git cz/</id>
+    <published>2018-05-26T08:13:23.000Z</published>
+    <updated>2018-06-19T18:44:50.043Z</updated>
+    
+    <content type="html"><![CDATA[<p>算了，直接盗官方的图吧<span style="height:25px;width:25px;margin:0 5px;padding:0;border-color:#fff!important;display:inline-block;background:url('http://p40kjburh.bkt.clouddn.com/18-5-26/95367844.jpg') 0 0/25px 25px;"></span><br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://p40kjburh.bkt.clouddn.com/18-5-26/91752769.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><br>看完是不是很心动呢? 什么! 你竟然没看懂什么意思…那我还是建议你先把<code>git</code>学会了再看我这篇教程吧…</p><p>推荐学习一个<code>git</code>的网址：<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/" target="_blank" rel="noopener">git教程by廖雪峰</a></p><p>简而言之，<code>git commit</code> 就是你在做一次修改后类似于写一个备注，现在安装了<code>commitizen</code>后，你可以使用<code>git cz</code>取代<code>git commit</code>，每次提交的时候可以选择本次<code>commit</code>的类型，这样<code>commit</code>的文本会更具有可读性。</p><p><code>commitizen</code>官方<code>repo</code>的<code>commit</code>就是基于<code>commitizen</code>构建的：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://p40kjburh.bkt.clouddn.com/18-5-26/12683809.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>是不是很有逼格!所以就赶紧安装使用吧~</p><p>最后，附上<code>commitizen</code>的<code>github</code>地址：<a href="https://github.com/commitizen/cz-cli" target="_blank" rel="noopener">commitizen</a></p><p><em>最后的最后（特别重要)，附上我的踩坑记录：</em></p><p>注意，在<code>Windows</code>环境下这段命令是不能正常运行的：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://p40kjburh.bkt.clouddn.com/18-5-26/79358789.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p><code>Windows</code>没有<code>home</code>路径，所有必须要走<code>Windows</code>的特色主义道路啦~</p><p><strong>解决方案：</strong></p><p><em>Step1</em> 打开资源管理器，在地址栏输入</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">C</span>:\<span class="selector-tag">Users</span>\%<span class="selector-tag">username</span>%</span><br></pre></td></tr></table></figure><p>回车，进入<strong>当前用户文件夹根目录</strong></p><p><em>Step2</em> 新建一个<code>.czrc</code>文件</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://p40kjburh.bkt.clouddn.com/18-5-26/31614880.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>文件内容为</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">"path"</span>: <span class="string">"cz-conventional-changelog"</span> &#125;</span><br></pre></td></tr></table></figure><p>然后保存即可</p><p><strong>其它步骤按照官方教程走即可…</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;算了，直接盗官方的图吧&lt;span style=&quot;height:25px;width:25px;margin:0 5px;padding:0;border-color:#fff!important;display:inline-block;background:url(&#39;ht
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="http://www.lolimay.cn/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>H5全屏api</title>
+    <link href="http://www.lolimay.cn/2018/05/20/H5%E5%85%A8%E5%B1%8Fapi/"/>
+    <id>http://www.lolimay.cn/2018/05/20/H5全屏api/</id>
+    <published>2018-05-19T17:57:07.000Z</published>
+    <updated>2018-06-19T18:43:44.964Z</updated>
+    
+    <content type="html"><![CDATA[<hr><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">requestFullScreen</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> de = <span class="built_in">document</span>.querySelector(element) || <span class="built_in">document</span>.documentElement;</span><br><span class="line">    <span class="keyword">if</span> (de.requestFullscreen) &#123;</span><br><span class="line">        de.requestFullscreen();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (de.mozRequestFullScreen) &#123;</span><br><span class="line">        de.mozRequestFullScreen();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (de.webkitRequestFullScreen) &#123;</span><br><span class="line">        de.webkitRequestFullScreen();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://www.lolimay.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自定义vue-cli模板</title>
+    <link href="http://www.lolimay.cn/2018/05/19/%E8%87%AA%E5%AE%9A%E4%B9%89vue-cli%E6%A8%A1%E6%9D%BF/"/>
+    <id>http://www.lolimay.cn/2018/05/19/自定义vue-cli模板/</id>
+    <published>2018-05-19T14:57:00.000Z</published>
+    <updated>2018-06-19T18:44:15.071Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="1-使手机支持实时预览"><a href="#1-使手机支持实时预览" class="headerlink" title="1.使手机支持实时预览"></a>1.使手机支持实时预览</h2><p>修改<code>config/index.js</code>下的<code>localhost</code>为<code>0.0.0.0</code>，即可支持手机预览</p><h1 id="必备插件"><a href="#必备插件" class="headerlink" title="必备插件"></a>必备插件</h1><h2 id="1-安装stylus-loader"><a href="#1-安装stylus-loader" class="headerlink" title="1.安装stylus-loader"></a>1.安装<code>stylus-loader</code></h2><p>① npm安装stylus-loader</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i stylus stylus-loader --save-dev</span><br></pre></td></tr></table></figure><p>② 修改<code>.vue</code>组件样式标签</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">'stylus'</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    ...</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="2-导入normalize-css"><a href="#2-导入normalize-css" class="headerlink" title="2.导入normalize.css"></a>2.导入<code>normalize.css</code></h2><p>① npm安装<code>normalize.css</code></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i normalize.css</span><br></pre></td></tr></table></figure><p>② 在<code>main.js</code>中全局导入<code>normalize.css</code></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import 'normalize.css'</span><br></pre></td></tr></table></figure><h1 id="3-使用模板"><a href="#3-使用模板" class="headerlink" title="3.使用模板"></a>3.使用模板</h1><p>删除<code>node_modules</code>文件夹后，将项目文件夹放在一个<code>template</code>文件夹下</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h1 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h1&gt;&lt;h2 id=&quot;1-使手机支持实时预览&quot;&gt;&lt;a href=&quot;#1-使手机支持实时预览&quot; class=&quot;headerlin
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://www.lolimay.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="http://www.lolimay.cn/tags/Vue/"/>
+    
+  </entry>
+  
+</feed>

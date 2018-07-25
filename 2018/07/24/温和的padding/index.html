@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="CSS">
+    <meta name="description" content="padding的百分比值与height等属性的百分比计算规则不一样, padding百分比值无论是水平方向还是垂直方向都是相对于宽度计算的。123456div &amp;#123;  padding: 50%; /* 正方形 */&amp;#125;div &amp;#123;  padding: 25% 50%; /* 宽髙比2:1的矩形 */&amp;#125; 内联元素与padding内联元素垂直padding的层叠现象1">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="温和的padding">
+<meta property="og:url" content="http://www.lolimay.cn/2018/07/24/温和的padding/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="padding的百分比值与height等属性的百分比计算规则不一样, padding百分比值无论是水平方向还是垂直方向都是相对于宽度计算的。123456div &amp;#123;  padding: 50%; /* 正方形 */&amp;#125;div &amp;#123;  padding: 25% 50%; /* 宽髙比2:1的矩形 */&amp;#125; 内联元素与padding内联元素垂直padding的层叠现象1">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-24T13:37:43.748Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="温和的padding">
+<meta name="twitter:description" content="padding的百分比值与height等属性的百分比计算规则不一样, padding百分比值无论是水平方向还是垂直方向都是相对于宽度计算的。123456div &amp;#123;  padding: 50%; /* 正方形 */&amp;#125;div &amp;#123;  padding: 25% 50%; /* 宽髙比2:1的矩形 */&amp;#125; 内联元素与padding内联元素垂直padding的层叠现象1">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">温和的padding</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-07-24T12:47:58.000Z" itemprop="datePublished" class="page-time">
+  2018-07-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#padding的百分比值"><span class="post-toc-number">1.</span> <span class="post-toc-text">padding的百分比值</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#内联元素与padding"><span class="post-toc-number">2.</span> <span class="post-toc-text">内联元素与padding</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内联元素垂直padding的层叠现象"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">内联元素垂直padding的层叠现象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">应用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CSS中几种层叠现象总结"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">CSS中几种层叠现象总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#纯视觉层叠-不影响外部尺寸"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">纯视觉层叠(不影响外部尺寸)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#视觉层叠-影响外部尺寸"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">视觉层叠(影响外部尺寸)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内联元素padding的换行现象"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">内联元素padding的换行现象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#幽灵空白结点-strut-与内联元素的padding"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">幽灵空白结点(strut)与内联元素的padding</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实战-利用padding绘制图形"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">实战: 利用padding绘制图形</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#绘制”三道杠”"><span class="post-toc-number">2.5.1.</span> <span class="post-toc-text">绘制”三道杠”</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#绘制双层圆点"><span class="post-toc-number">2.5.2.</span> <span class="post-toc-text">绘制双层圆点</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-温和的padding"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">温和的padding</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-07-24 20:47:58" datetime="2018-07-24T12:47:58.000Z"  itemprop="datePublished">2018-07-24</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="padding的百分比值"><a href="#padding的百分比值" class="headerlink" title="padding的百分比值"></a>padding的百分比值</h1><p><strong>与height等属性的百分比计算规则不一样, padding百分比值无论是水平方向还是垂直方向都是相对于<em>宽度</em>计算的。</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">50%</span>; <span class="comment">/* 正方形 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">25%</span> <span class="number">50%</span>; <span class="comment">/* 宽髙比2:1的矩形 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="内联元素与padding"><a href="#内联元素与padding" class="headerlink" title="内联元素与padding"></a>内联元素与padding</h1><h2 id="内联元素垂直padding的层叠现象"><a href="#内联元素垂直padding的层叠现象" class="headerlink" title="内联元素垂直padding的层叠现象"></a>内联元素垂直padding的层叠现象</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">50px</span>; <span class="comment">/* 真的是纯视觉层叠吗? */</span></span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a&#123;这是一个padding&#125;*50</span><br></pre></td></tr></table></figure>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><ul>
+<li>增加链接点击区域的大小</li>
+</ul>
+<h2 id="CSS中几种层叠现象总结"><a href="#CSS中几种层叠现象总结" class="headerlink" title="CSS中几种层叠现象总结"></a>CSS中几种层叠现象总结</h2><h3 id="纯视觉层叠-不影响外部尺寸"><a href="#纯视觉层叠-不影响外部尺寸" class="headerlink" title="纯视觉层叠(不影响外部尺寸)"></a>纯视觉层叠(不影响外部尺寸)</h3><ol>
+<li>box-shadow 盒装阴影</li>
+<li>outline 轮廓<h3 id="视觉层叠-影响外部尺寸"><a href="#视觉层叠-影响外部尺寸" class="headerlink" title="视觉层叠(影响外部尺寸)"></a>视觉层叠(影响外部尺寸)</h3></li>
+<li>inline元素的垂直padding</li>
+</ol>
+<p><strong>判断依据:</strong> 层叠区域超出父容器后会不会出现滚动条</p>
+<h2 id="内联元素padding的换行现象"><a href="#内联元素padding的换行现象" class="headerlink" title="内联元素padding的换行现象"></a>内联元素padding的换行现象</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> dashed <span class="number">#cd0000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="幽灵空白结点-strut-与内联元素的padding"><a href="#幽灵空白结点-strut-与内联元素的padding" class="headerlink" title="幽灵空白结点(strut)与内联元素的padding"></a>幽灵空白结点(strut)与内联元素的padding</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="comment">/* font-size: 0; */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="实战-利用padding绘制图形"><a href="#实战-利用padding绘制图形" class="headerlink" title="实战: 利用padding绘制图形"></a>实战: 利用padding绘制图形</h2><h3 id="绘制”三道杠”"><a href="#绘制”三道杠”" class="headerlink" title="绘制”三道杠”"></a>绘制”三道杠”</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon-menu</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">140px</span>; <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">35px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">10px</span> solid;</span><br><span class="line">    <span class="attribute">background-color</span>: currentColor;</span><br><span class="line">    <span class="attribute">background-clip</span>: content-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="绘制双层圆点"><a href="#绘制双层圆点" class="headerlink" title="绘制双层圆点"></a>绘制双层圆点</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon-dot</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid;    </span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: currentColor;</span><br><span class="line">    <span class="attribute">background-clip</span>: content-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-07-24T13:37:43.748Z" itemprop="dateUpdated">2018-07-24 21:37:43</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/07/21/content内容生成技术/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">content内容生成技术</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

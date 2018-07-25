@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="路由器">
+    <meta name="description" content="0.前言刷路由器固件刷的就是心跳，刷好了可以体验一些第三方的路由器系统，使用一些更为高级的功能；刷坏了，那心情可真是复杂无比。看着自己亲手把一个好好的路由器给弄坏，感觉自己整个人都棒棒哒！前几个月的我就经历了这个惨痛的教训，固件刷好了，指示灯不亮了。 一般而言，路由器刷一些第三方的固件就算是刷出问题来，只要他灯还亮，就可以通过一些常规的救砖方法修复的（这些方法网上一搜一大堆，这里就不再赘述了）。但">
+<meta name="keywords" content="路由器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="终极修复变砖的小米路由器mini">
+<meta property="og:url" content="http://www.lolimay.cn/2018/07/05/终极修复变砖的小米路由器mini/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="0.前言刷路由器固件刷的就是心跳，刷好了可以体验一些第三方的路由器系统，使用一些更为高级的功能；刷坏了，那心情可真是复杂无比。看着自己亲手把一个好好的路由器给弄坏，感觉自己整个人都棒棒哒！前几个月的我就经历了这个惨痛的教训，固件刷好了，指示灯不亮了。 一般而言，路由器刷一些第三方的固件就算是刷出问题来，只要他灯还亮，就可以通过一些常规的救砖方法修复的（这些方法网上一搜一大堆，这里就不再赘述了）。但">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-7-5/17991789.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-7-5/40495807.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-7-5/27168522.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-7-5/50288195.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-7-5/27512891.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-7-5/19466925.jpg">
+<meta property="og:updated_time" content="2018-07-04T19:03:51.232Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="终极修复变砖的小米路由器mini">
+<meta name="twitter:description" content="0.前言刷路由器固件刷的就是心跳，刷好了可以体验一些第三方的路由器系统，使用一些更为高级的功能；刷坏了，那心情可真是复杂无比。看着自己亲手把一个好好的路由器给弄坏，感觉自己整个人都棒棒哒！前几个月的我就经历了这个惨痛的教训，固件刷好了，指示灯不亮了。 一般而言，路由器刷一些第三方的固件就算是刷出问题来，只要他灯还亮，就可以通过一些常规的救砖方法修复的（这些方法网上一搜一大堆，这里就不再赘述了）。但">
+<meta name="twitter:image" content="http://p40kjburh.bkt.clouddn.com/18-7-5/17991789.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">终极修复变砖的小米路由器mini</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-07-04T16:21:57.000Z" itemprop="datePublished" class="page-time">
+  2018-07-05
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#0-前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">0.前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-准备材料"><span class="post-toc-number">2.</span> <span class="post-toc-text">1.准备材料</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（1）硬件"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">（1）硬件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（2）需要的软件"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">（2）需要的软件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-开始修复"><span class="post-toc-number">3.</span> <span class="post-toc-text">2.开始修复</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（1）拆开路由器"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">（1）拆开路由器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（2）组装烧录夹、转接板和编程器"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">（2）组装烧录夹、转接板和编程器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（3）用烧录夹夹住路由器的Flash芯片，并将编程器插入到电脑上"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">（3）用烧录夹夹住路由器的Flash芯片，并将编程器插入到电脑上</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（4）用编程器向路由器Flash刷写breed"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">（4）用编程器向路由器Flash刷写breed</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-终极修复变砖的小米路由器mini"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">终极修复变砖的小米路由器mini</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-07-05 00:21:57" datetime="2018-07-04T16:21:57.000Z"  itemprop="datePublished">2018-07-05</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0.前言"></a>0.前言</h1><p>刷路由器固件刷的就是心跳，刷好了可以体验一些第三方的路由器系统，使用一些更为高级的功能；刷坏了，那心情可真是复杂无比。看着自己亲手把一个好好的路由器给弄坏，感觉自己整个人都棒棒哒！<br>前几个月的我就经历了这个惨痛的教训，固件刷好了，指示灯不亮了。<br><img src="http://p40kjburh.bkt.clouddn.com/18-7-5/17991789.jpg" height="300" align="center"></p>
+<p>一般而言，路由器刷一些第三方的固件就算是刷出问题来，只要他灯还亮，就可以通过一些常规的救砖方法修复的（这些方法网上一搜一大堆，这里就不再赘述了）。但是，碰到像我这样连灯都不亮的，就只能采用以下的终极修复方法：<strong>编程器重刷路由器Flash芯片法。</strong></p>
+<p>详细修复步骤如下：</p>
+<h1 id="1-准备材料"><a href="#1-准备材料" class="headerlink" title="1.准备材料"></a>1.准备材料</h1><h2 id="（1）硬件"><a href="#（1）硬件" class="headerlink" title="（1）硬件"></a>（1）硬件</h2><ul>
+<li>被刷坏的小米路由器mini　　一只</li>
+<li>CH341A编程器　　　　　　 一个</li>
+<li>SOP8烧录夹　　　　　　　 一个</li>
+<li>转接板　　　　　　　　　　一个</li>
+<li>十字螺丝刀　　　　　　　　一支</li>
+<li>翘片（或一字螺丝刀）　　　一支</li>
+</ul>
+<p>备注：CH341A编程器 和 SOP8编程夹 <strong>需要自己从淘宝上购买</strong>，价格大概30块钱左右。转接板是买编程器或者烧录夹的时候都会送，所以不需要单独购买。CH341A编程器、SOP8编程夹和转接板的具体样子如下图所示：</p>
+<p><img src="http://p40kjburh.bkt.clouddn.com/18-7-5/40495807.jpg" height="400"><br><img src="http://p40kjburh.bkt.clouddn.com/18-7-5/27168522.jpg" height="400"></p>
+<p>而十字螺丝刀则是用来拧下路由器背部的两枚螺丝，翘片是用来撬开路由器的后壳的（如果找不到翘片也可以用较薄的一字螺丝刀代替）。</p>
+<h2 id="（2）需要的软件"><a href="#（2）需要的软件" class="headerlink" title="（2）需要的软件"></a>（2）需要的软件</h2><ul>
+<li>CH341A编程器配套软件 <code>CH341A.exe</code></li>
+<li>小米breed文件 <code>breed.bin</code></li>
+<li>小米固件 <code>firmware.bin</code></li>
+</ul>
+<p><strong><a href="http://p40kjburh.bkt.clouddn.com/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1mini%E4%BF%AE%E5%A4%8D%E5%8C%85.rar" target="_blank" rel="noopener">点击下载</a></strong> （如果左边链接失效可以尝试通过 QQ1404363070 联系我索取资源）</p>
+<h1 id="2-开始修复"><a href="#2-开始修复" class="headerlink" title="2.开始修复"></a>2.开始修复</h1><h2 id="（1）拆开路由器"><a href="#（1）拆开路由器" class="headerlink" title="（1）拆开路由器"></a>（1）拆开路由器</h2><p><img src="http://p40kjburh.bkt.clouddn.com/18-7-5/50288195.jpg" height="400"></p>
+<p>先用十字螺丝刀拧开路由器背部的两枚螺丝，再用翘片（我这里用的是一字螺丝刀）从路由器背部下面的缝隙处开始翘。因为路由器采用的是卡扣式设计，所以翘开路由器还是比较费力气的，耐心点就好。</p>
+<h2 id="（2）组装烧录夹、转接板和编程器"><a href="#（2）组装烧录夹、转接板和编程器" class="headerlink" title="（2）组装烧录夹、转接板和编程器"></a>（2）组装烧录夹、转接板和编程器</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/18-7-5/27512891.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="（3）用烧录夹夹住路由器的Flash芯片，并将编程器插入到电脑上"><a href="#（3）用烧录夹夹住路由器的Flash芯片，并将编程器插入到电脑上" class="headerlink" title="（3）用烧录夹夹住路由器的Flash芯片，并将编程器插入到电脑上"></a>（3）用烧录夹夹住路由器的Flash芯片，并将编程器插入到电脑上</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/18-7-5/19466925.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="（4）用编程器向路由器Flash刷写breed"><a href="#（4）用编程器向路由器Flash刷写breed" class="headerlink" title="（4）用编程器向路由器Flash刷写breed"></a>（4）用编程器向路由器Flash刷写breed</h2><p>路由器的breed就相当于路由器的恢复系统，刷了它之后，路由器在刷固件的过程中出了问题导致路由器出错，还可以进breed重新刷固件。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2018-07-04T19:03:51.232Z" itemprop="dateUpdated">2018-07-05 03:03:51</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/路由器/">路由器</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/07/04/路由器折腾记/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">路由器折腾记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

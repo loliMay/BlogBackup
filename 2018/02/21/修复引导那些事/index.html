@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?d4b36582a914965460c04d267e5339df"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LoliMay's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="重装系统">
+    <meta name="description" content="最近折腾Windows 10和Linux双系统，后来Linux系统不想用了，就直接进PE把Linux那块分区给格掉了。这不格式化还好，一个格式化电脑开机就直接进入grub rescue&amp;gt; 不是吧，这么背！百度一波，原来是磁盘丢失引导导致的问题。抱着折腾不死那就往死里折腾的心态，我开始走上强制关机、进PE修复引导的不归路……">
+<meta name="keywords" content="重装系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修复引导那些事">
+<meta property="og:url" content="http://www.lolimay.cn/2018/02/21/修复引导那些事/index.html">
+<meta property="og:site_name" content="LoliMay&#39;s Blog">
+<meta property="og:description" content="最近折腾Windows 10和Linux双系统，后来Linux系统不想用了，就直接进PE把Linux那块分区给格掉了。这不格式化还好，一个格式化电脑开机就直接进入grub rescue&amp;gt; 不是吧，这么背！百度一波，原来是磁盘丢失引导导致的问题。抱着折腾不死那就往死里折腾的心态，我开始走上强制关机、进PE修复引导的不归路……">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-21/45511853.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-21/27000428.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-21/18830852.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-21/29763001.jpg">
+<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-2-21/34475319.jpg">
+<meta property="og:updated_time" content="2018-02-21T02:17:24.158Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="修复引导那些事">
+<meta name="twitter:description" content="最近折腾Windows 10和Linux双系统，后来Linux系统不想用了，就直接进PE把Linux那块分区给格掉了。这不格式化还好，一个格式化电脑开机就直接进入grub rescue&amp;gt; 不是吧，这么背！百度一波，原来是磁盘丢失引导导致的问题。抱着折腾不死那就往死里折腾的心态，我开始走上强制关机、进PE修复引导的不归路……">
+<meta name="twitter:image" content="http://p40kjburh.bkt.clouddn.com/18-2-21/45511853.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LoliMay</h5>
+          <a href="mailto:生命太短暂，不要去做一些根本没有人想要的东西。" title="生命太短暂，不要去做一些根本没有人想要的东西。" class="mail">生命太短暂，不要去做一些根本没有人想要的东西。</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lolimay" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+          <li id="zhihuItem" class="waves-block waves-effect">
+            <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              知乎
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">修复引导那些事</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="??????">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <div class="container">
+        
+        <h5 class="subtitle">
+            
+                <time datetime="2018-02-20T19:02:09.000Z" itemprop="datePublished" class="page-time">
+  2018-02-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/重装系统/">重装系统</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#相关概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">相关概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#引导过程"><span class="post-toc-number">2.</span> <span class="post-toc-text">引导过程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修复方法"><span class="post-toc-number">3.</span> <span class="post-toc-text">修复方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-修复引导那些事"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">修复引导那些事</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-02-21 03:02:09" datetime="2018-02-20T19:02:09.000Z"  itemprop="datePublished">2018-02-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/重装系统/">重装系统</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <hr>
+<p>　　最近折腾Windows 10和Linux双系统，后来Linux系统不想用了，就直接进PE把Linux那块分区给格掉了。这不格式化还好，一个格式化电脑开机就直接进入<code>grub rescue&gt;</code> 不是吧，这么背！百度一波，原来是磁盘丢失引导导致的问题。抱着折腾不死那就往死里折腾的心态，我开始走上<strong>强制关机</strong>、<strong>进PE修复引导</strong>的不归路……<a id="more"></a></p>
+<p><em>剧情1</em> <strong>从<code>grub rescue&gt;</code>入手</strong></p>
+<p>参考资料：</p>
+<blockquote>
+<p>grub(GRand Unified Bootload) 是一个来自GUN项目的<strong>多操作系统启动程序</strong></p>
+</blockquote>
+<p>从<code>grub rescue&gt;</code>的字面意思可以知道，我们可以通过这个程序手动进入操作系统</p>
+<p><em>Step1</em> 输入<code>ls</code>回车列出所有分区</p>
+<p>如：<code>(hd0)(hd0,msdos1)(hd1)(hd1,msdos3)(hd1,msdos2)(hd1,msdos1)</code></p>
+<p>解释一下：</p>
+<p><code>hd</code>是<code>hard disk</code>（硬盘）的缩写</p>
+<p><code>msdos</code>全称是<code>Microsoft Disk Operation Syatem</code> ，是一种供微软操作系统使用的分区格式，以前是FAT，现在普遍是NTFS. 这里可以理解成<strong>分区</strong></p>
+<p><em>Step2</em> 接着我们要找出是那个分区安装里面安装系统</p>
+<p>输入</p>
+<p><code>ls (hd0，msdos1)/boot/grub</code></p>
+<p><code>ls (hd1,msdos3)/boot/grub</code></p>
+<p>……</p>
+<p>把所有分区都尝试一遍，直到返回内容不再是：<code>error:unknown filesystem</code>为止</p>
+<p><em>Step3</em> 假设输入<code>ls (hd1,msdos1)/boot/grub</code> 后出现类似以下内容</p>
+<p><code>./ ../ gfxblacklist.txt ubuntu_kylin_grub_bg.tga i386-pc/ locale/ fonts/ grubenv grub.cfg</code></p>
+<p>则说明，你已经找到了操作系统所在分区</p>
+<p><em>Step4</em> 进行相关配置</p>
+<p>输入以下命令: </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set root=(hd1,msdos1)/boot/grub</span><br><span class="line">set prefix=(hd1,msdos1)/boot/grub</span><br><span class="line">insmod normal</span><br><span class="line">normal</span><br></pre></td></tr></table></figure>
+<p>normal执行之后即进入选择启动项的界面</p>
+<hr>
+<p>然而，我在Step2就失败了，试遍了所有分区，全都显示<code>error:unknown filesystem</code>  此法不通，就只好换一种方法了~</p>
+<p><em>剧情2</em> <strong>了解操作系统引导的整个过程</strong></p>
+<p>我觉得这样下去不是办法，<strong> 只有初步了解操作系统引导的整个过程</strong>才能让我在重装系统方面有更高的造诣~以便以后遇到这方面的问题的才能够更加从容，更重要的是帮妹子装电脑的时候能够更加淡定…　　（逃</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/18-2-21/45511853.jpg" alt="硬盘示意图" title="">
+                </div>
+                <div class="image-caption">硬盘示意图</div>
+            </figure>
+<p align="center">**硬盘示意图**</p>
+
+<h3 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h3><p><em>1. MBR (主引导记录)</em></p>
+<p>每块独立的硬盘都只有一个<strong>主引导记录MBR(Main Boot  Record，512字节)</strong> ，记录着<strong>硬盘分区</strong>的信息。</p>
+<blockquote>
+<p>主引导记录（MBR，Main Boot Record）是<strong>位于磁盘最前边的一段引导（Loader）代码</strong>。它负责磁盘操作系统(DOS)对磁盘进行读写时<strong>分区合法性的判别、分区引导信息的定位</strong>，它由磁盘操作系统(DOS)在对硬盘进行初始化时产生的。</p>
+</blockquote>
+<p><strong>MBR</strong> 包括 <strong>BOOT LOADER（主引导程序，446字节）、DPT（硬盘分区表，64字节）、MN（结束标志，2字节）</strong></p>
+<p>MBR不属于任何操作系统，它先于所有操作系统被调用内存，并发挥作用，然后才将控制权交给<strong>主分区（活动分区）</strong>内的操作系统。</p>
+<p>（1）BOOT LOADER </p>
+<blockquote>
+<p>Bootloader是嵌入式系统在加电后执行的第一段代码，在它完成CPU和相关硬件的初始化之后，再将操作系统映像或固化的嵌入式应用程序装在到内存中<strong>然后跳转到操作系统所在的空间，启动操作系统运行</strong>。</p>
+</blockquote>
+<p>（2）DPT</p>
+<blockquote>
+<p>MBR模式磁盘：<strong>最多4个主分区, 或3个主分区+1个扩展分区</strong>，扩展分区又可以分32个逻辑分区。</p>
+<p>在DPT共64个字节中，以16个字节为分区表项单位描述一个分区的属性。</p>
+</blockquote>
+<p>（3）MN</p>
+<blockquote>
+<p>结束标志字55 AA（偏移1FEH－偏移1FFH）最后两个字节，是检验主引导记录是否有效的标志。</p>
+</blockquote>
+<p><em>2. PBR(分区引导记录)</em></p>
+<p>PBR (Partition Boot Record) 分区引导记录，是操作系统的引导过程的一个环节。</p>
+<blockquote>
+<p>PBR内的DOS引导代码读取操作系统的引导程序</p>
+</blockquote>
+<p><em>3. BCD</em></p>
+<p>BCD（BCD=Boot Configuration Data ）即<strong>启动配置文件</strong></p>
+<blockquote>
+<p>在有vista或windows7的多重操作系统中，系统通过<a href="https://baike.baidu.com/item/bootmgr" target="_blank" rel="noopener">bootmgr</a>程序导入BCD文件完成启动菜单的引导。</p>
+</blockquote>
+<h3 id="引导过程"><a href="#引导过程" class="headerlink" title="引导过程"></a>引导过程</h3><p><em>1. Windows</em></p>
+<p>　　电脑加电后，首先<strong>启动BIOS</strong>，BIOS自检完毕后，找到硬盘上的<strong>MBR</strong>，<strong>MBR读取DPT</strong>，从中找出活动的主分区，然后<strong>读取活动主分区的PBR（分区引导记录，也叫DBR）</strong>，<strong>PBR再搜寻分区内的引导程序bootmgr</strong>，在bootmgr被找到后，控制权就交给了bootmgr。<strong>bootmgr读取\boot\bcd文件</strong>，如果存在着多个操作系统并且选择操作系 统的等待时间不为0的话，这时就会在显示器上显示操作系统的选择界面。在我们选择启动Windows 后，<strong>bootmgr就会去[启动盘寻找 WINDOWS\system32\winload.exe</strong>，然后<strong>通过winload.exe加载Windows内核</strong>，从而<strong>启动整个Windows系统</strong>。</p>
+<p>简单概括就是：BIOS—MBR—PBR—Bootmgr—bcd—Winload.exe—内核加载—整个Windows系统</p>
+<p><em>2. Linux</em></p>
+<p>区别在于引导程序，Linux的引导程序一般是<strong>grub</strong></p>
+<p>简单概括就是： BIOS—MBR—PBR—grub—grub.conf、menu.lst、grub.cfg等配置文件—内核</p>
+<h3 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h3><p>差点跑题了，说一说自己最后怎么解决的：</p>
+<p>But,在说自己解决问题之前，还是要先谈谈为什么装了<strong>Windows和Linux双系统</strong> 后直接删了Linux分区会出现<code>grub rescue&gt;</code>，实际上grub是分两部分的，一部分在mbr中，一部分在Linux分区的<code>/boot/grub/</code>目录下（grub的一些配置文件类似bootmgr的BCD文件），grub启动Windows的原理是调用bootmagr引导程序。</p>
+<p>我们在PE或Windows中格式化Linux分区，<strong>就相当于直接删除了<code>/boot/grub/</code>目录下的grub配置文件</strong>，所以当然无法正常引导Windows了~</p>
+<p>在理解了<strong>系统引导过程</strong>后，我们的解决方案也就明确了，重写mgr直接清除grub就好了。</p>
+<p>下面介绍常见PE系统（U深度、老毛桃等）自带的四款引导修复工具：</p>
+<ul>
+<li><p>DiskGenius  —<strong>可用于重建主引导记录（MBR）</strong></p>
+</li>
+<li><p>BCDrepair　—<strong>可用于修复BCD</strong></p>
+</li>
+<li><p>Bootice　　—<strong>可用于重建MBR、PBR、手动编辑BCD文件等</strong></p>
+</li>
+<li><p>NTBoot　　—<strong>可用于自动、手动修复引导记录</strong></p>
+<p>​</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/18-2-21/27000428.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/18-2-21/18830852.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>上述4个引导修复工具不能乱用，乱用是没有效果的，下面分享我修复引导的方法：</p>
+<p><em>1. 使用Bootice重写主引导记录MBR（选择Windows NT 5.x/6.x MBR)</em></p>
+<p>   <img src="http://p40kjburh.bkt.clouddn.com/18-2-21/29763001.jpg" alt=""></p>
+<p><em>2. 使用Bootice重写分区引导记录PBR（选择BOOTMGR 引导程序)</em></p>
+<p>   （其实就是为PBR指定引导程序）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p40kjburh.bkt.clouddn.com/18-2-21/34475319.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p><em>3. 使用BCDrepair修复自动修复BCD文件</em></p>
+<p>   这样我们就手动把引导过程中的3个关键环节（MBR-PBR-BCD）给手动修复了，想不成功都不行！</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>（1）Windows引导过程的3个关键步骤：</p>
+<ol>
+<li><p>MBR（Windows NT 5.x/6.x）读取活动主分区的PBR</p>
+</li>
+<li><p>PBR调用引导程序（Bootmgr)</p>
+</li>
+<li><p>Bootmgr读取BCD配置文件</p>
+</li>
+</ol>
+<p>（2）Grub引导Windows的步骤</p>
+<ol>
+<li><p>MBR（grub）读取活动主分区的PBR</p>
+</li>
+<li><p>PBR调用引导程序（Bootmgr）</p>
+</li>
+<li><p>Bootmgr读取BCD配置文件</p>
+<p>​</p>
+<p>参考资料：</p>
+</li>
+<li><p><a href="https://jingyan.baidu.com/article/c85b7a640cd7d6003bac95f8.html" target="_blank" rel="noopener">开机启动遇到grub rescue，无法启动系统怎么办</a></p>
+</li>
+<li><p><a href="https://baike.baidu.com/item/主引导记录/7612638?fr=aladdin&amp;fromid=10473976&amp;fromtitle=mbr" target="_blank" rel="noopener">MBR-百度百科</a></p>
+</li>
+<li><p><a href="https://baike.baidu.com/item/BootLoader" target="_blank" rel="noopener">BOOTLOADER-百度百科</a></p>
+</li>
+<li><p><a href="http://www.360doc.com/content/16/0716/10/8226206_575894110.shtml" target="_blank" rel="noopener">电脑开机的整个过程</a></p>
+</li>
+<li><p><a href="https://zhidao.baidu.com/question/1447071933383813860.html" target="_blank" rel="noopener">电脑最多能分多少个磁盘(区)</a></p>
+</li>
+<li><p><a href="http://www.cnblogs.com/jarryhua/p/5625511.html" target="_blank" rel="noopener">硬盘分区表知识——详解硬盘MBR (转)</a></p>
+</li>
+<li><p><a href="https://baike.baidu.com/item/PBR/6348246" target="_blank" rel="noopener">PBR-百度百科</a></p>
+</li>
+<li><p><a href="https://baike.baidu.com/item/bcd/3243224" target="_blank" rel="noopener">BCD-百度百科</a></p>
+</li>
+<li><p><a href="http://bbs.51cto.com/thread-799671-1.html" target="_blank" rel="noopener">从系统启动原理分析怎样修复多系统引导 </a></p>
+</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-02-21T02:17:24.158Z" itemprop="dateUpdated">2018-02-21 10:17:24</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.lolimay.cn">
+            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            LoliMay
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/重装系统/">重装系统</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/02/21/深度启动盘制作工具无法识别出U盘/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">深度启动盘制作工具无法识别出U盘</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/02/17/鼠标悬停显示图片/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">鼠标悬停显示图片</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LoliMay &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备18003618号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+    <script>
+        if(!device.desktop()) {
+            var myStyle=document.createElement("style")
+            myStyle.appendChild(document.createTextNode(".baiduSearch{display:none!important;}"
+            + '.content-header{padding:0!important;}'))
+            document.body.appendChild(myStyle)
+        }
+    </script>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = "LoliMay's Blog";
+            clearTimeout(titleTime);
+        } else {
+            document.title = "LoliMay's Blog";
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
