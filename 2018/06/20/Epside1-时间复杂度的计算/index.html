@@ -35,9 +35,9 @@
 <meta property="og:description" content="算法的时间复杂度等于该算法中所有语句频度之和的同数量阶。例1 设n为3的倍数，请仔细阅读以下算法，分析其时间复杂度。1234567891011void Fun(int n)&amp;#123;  int i,j,x,y;  for(i=1;i&amp;lt;=n;i++)    if(3*i&amp;lt;=n)      for(j=3*i;j&amp;lt;=n;j++)      &amp;#123;        x++;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://latex.codecogs.com/svg.latex?\small&space;n^2">
-<meta property="og:image" content="http://p40kjburh.bkt.clouddn.com/18-6-20/59342875.jpg">
+<meta property="og:image" content="http://images.lolimay.cn/18-6-20/59342875.jpg">
 <meta property="og:image" content="http://latex.codecogs.com/svg.latex?\small&space;n^2">
-<meta property="og:updated_time" content="2018-06-20T06:03:33.616Z">
+<meta property="og:updated_time" content="2018-07-27T16:20:32.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Epside1-时间复杂度的计算">
 <meta name="twitter:description" content="算法的时间复杂度等于该算法中所有语句频度之和的同数量阶。例1 设n为3的倍数，请仔细阅读以下算法，分析其时间复杂度。1234567891011void Fun(int n)&amp;#123;  int i,j,x,y;  for(i=1;i&amp;lt;=n;i++)    if(3*i&amp;lt;=n)      for(j=3*i;j&amp;lt;=n;j++)      &amp;#123;        x++;">
@@ -45,7 +45,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
     
-    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="shortcut icon" href="http://images.lolimay.cn/18-6-16/43465550.jpg">
     <link rel="stylesheet" href="/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
@@ -65,7 +65,7 @@
     <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
-          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+          <img src="http://images.lolimay.cn/18-6-16/43465550.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">LoliMay</h5>
@@ -99,8 +99,8 @@
         
           <li id="zhihuItem" class="waves-block waves-effect">
             <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
-              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
-              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://images.lolimay.cn/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://images.lolimay.cn/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://images.lolimay.cn/18-6-21/82304713.jpg"}</script>
               知乎
             </a>
           </li>
@@ -182,7 +182,7 @@
             <h3 id="算法的时间复杂度等于该算法中所有语句频度之和的同数量阶。"><a href="#算法的时间复杂度等于该算法中所有语句频度之和的同数量阶。" class="headerlink" title="算法的时间复杂度等于该算法中所有语句频度之和的同数量阶。"></a>算法的时间复杂度等于该算法中所有语句频度之和的同数量阶。</h3><p><strong>例1</strong> 设n为3的倍数，请仔细阅读以下算法，<strong>分析</strong>其时间复杂度。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Fun</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i,j,x,y;</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">if</span>(<span class="number">3</span>*i&lt;=n)</span><br><span class="line">      <span class="keyword">for</span>(j=<span class="number">3</span>*i;j&lt;=n;j++)</span><br><span class="line">      &#123;</span><br><span class="line">        x++;</span><br><span class="line">        y=<span class="number">3</span>*x+<span class="number">2</span>;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>解</strong></p>
 <p>注意本题重点是分析时间复杂度，不能直接给出答案O(<img src="http://latex.codecogs.com/svg.latex?\small&space;n^2" title="\small n^2">)，下面给出分析过程：</p>
-<p>所有语句频度之和为<br><img src="http://p40kjburh.bkt.clouddn.com/18-6-20/59342875.jpg" width="650"><br>故该算法的时间复杂度为O(<img src="http://latex.codecogs.com/svg.latex?\small&space;n^2" title="\small n^2">).</p>
+<p>所有语句频度之和为<br><img src="http://images.lolimay.cn/18-6-20/59342875.jpg" width="650"><br>故该算法的时间复杂度为O(<img src="http://latex.codecogs.com/svg.latex?\small&space;n^2" title="\small n^2">).</p>
 
         </div>
 
@@ -191,7 +191,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-06-20T06:03:33.616Z" itemprop="dateUpdated">2018-06-20 14:03:33</time>
+    Last updated: <time datetime="2018-07-27T16:20:32.967Z" itemprop="dateUpdated">2018-07-28 00:20:32</time>
 </span><br>
 
 
@@ -200,7 +200,7 @@
     
     <footer>
         <a href="http://www.lolimay.cn">
-            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            <img src="http://images.lolimay.cn/18-6-16/43465550.jpg" alt="LoliMay">
             LoliMay
         </a>
     </footer>

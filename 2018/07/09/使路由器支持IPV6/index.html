@@ -34,14 +34,14 @@
 <meta property="og:site_name" content="LoliMay&#39;s Blog">
 <meta property="og:description" content="原理 NAT6步骤预热 为固件刷上openwrt或基于openwrt的固件(如潘多拉、lede等) 地址栏输入192.168.1.1配置好后台密码并开启ssh 在终端中ssh root@192.168.1.1连接进openwrt  安装kmod-iptnat61opkg update &amp;amp;&amp;amp; opkg install kmod-ipt-nat6 将IPv6 ULA Prefix由f改">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-24T16:11:08.573Z">
+<meta property="og:updated_time" content="2018-07-27T16:20:33.078Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使路由器支持IPV6">
 <meta name="twitter:description" content="原理 NAT6步骤预热 为固件刷上openwrt或基于openwrt的固件(如潘多拉、lede等) 地址栏输入192.168.1.1配置好后台密码并开启ssh 在终端中ssh root@192.168.1.1连接进openwrt  安装kmod-iptnat61opkg update &amp;amp;&amp;amp; opkg install kmod-ipt-nat6 将IPv6 ULA Prefix由f改">
     
         <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
     
-    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="shortcut icon" href="http://images.lolimay.cn/18-6-16/43465550.jpg">
     <link rel="stylesheet" href="/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
@@ -61,7 +61,7 @@
     <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
-          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+          <img src="http://images.lolimay.cn/18-6-16/43465550.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">LoliMay</h5>
@@ -95,8 +95,8 @@
         
           <li id="zhihuItem" class="waves-block waves-effect">
             <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
-              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
-              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://images.lolimay.cn/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://images.lolimay.cn/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://images.lolimay.cn/18-6-21/82304713.jpg"}</script>
               知乎
             </a>
           </li>
@@ -151,7 +151,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#原理-NAT6"><span class="post-toc-number">1.</span> <span class="post-toc-text">原理 NAT6</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">2.</span> <span class="post-toc-text">步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#预热"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">预热</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装kmod-iptnat6"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">安装kmod-iptnat6</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将IPv6-ULA-Prefix由f改为d"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">将IPv6 ULA Prefix由f改为d</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将DHCP服务器设置为总是广播默认路由"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">将DHCP服务器设置为总是广播默认路由</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生成NAT6脚本"><span class="post-toc-number">2.0.5.</span> <span class="post-toc-text">生成NAT6脚本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#防火墙配置Allow-ICMPv6-Forward"><span class="post-toc-number">2.0.6.</span> <span class="post-toc-text">防火墙配置Allow-ICMPv6-Forward</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#接收广播并开启IPv6转发"><span class="post-toc-number">2.0.7.</span> <span class="post-toc-text">接收广播并开启IPv6转发</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加入转发规则"><span class="post-toc-number">2.0.8.</span> <span class="post-toc-text">加入转发规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置每日定时重启-可选"><span class="post-toc-number">2.0.9.</span> <span class="post-toc-text">设置每日定时重启(可选)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重启路由器"><span class="post-toc-number">2.0.10.</span> <span class="post-toc-text">重启路由器</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#原理-NAT6"><span class="post-toc-number">1.</span> <span class="post-toc-text">原理 NAT6</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#预热"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">预热</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装kmod-iptnat6"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">安装kmod-iptnat6</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将IPv6-ULA-Prefix由f改为d"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">将IPv6 ULA Prefix由f改为d</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将DHCP服务器设置为总是广播默认路由"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">将DHCP服务器设置为总是广播默认路由</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生成NAT6脚本"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">生成NAT6脚本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#防火墙配置Allow-ICMPv6-Forward"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">防火墙配置Allow-ICMPv6-Forward</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#接收广播并开启IPv6转发"><span class="post-toc-number">1.1.7.</span> <span class="post-toc-text">接收广播并开启IPv6转发</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加入转发规则"><span class="post-toc-number">1.1.8.</span> <span class="post-toc-text">加入转发规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置每日定时重启-可选"><span class="post-toc-number">1.1.9.</span> <span class="post-toc-text">设置每日定时重启(可选)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重启路由器"><span class="post-toc-number">1.1.10.</span> <span class="post-toc-text">重启路由器</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#踩坑记录"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">踩坑记录</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -175,7 +175,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="原理-NAT6"><a href="#原理-NAT6" class="headerlink" title="原理 NAT6"></a>原理 NAT6</h1><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h3 id="预热"><a href="#预热" class="headerlink" title="预热"></a>预热</h3><ol>
+            <h1 id="原理-NAT6"><a href="#原理-NAT6" class="headerlink" title="原理 NAT6"></a>原理 NAT6</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="预热"><a href="#预热" class="headerlink" title="预热"></a>预热</h3><ol>
 <li>为固件刷上<code>openwrt</code>或基于<code>openwrt</code>的固件(如潘多拉、<code>lede</code>等)</li>
 <li>地址栏输入<code>192.168.1.1</code>配置好后台密码并开启<code>ssh</code></li>
 <li>在终端中<code>ssh root@192.168.1.1</code>连接进<code>openwrt</code></li>
@@ -184,7 +184,7 @@
 <h3 id="将IPv6-ULA-Prefix由f改为d"><a href="#将IPv6-ULA-Prefix由f改为d" class="headerlink" title="将IPv6 ULA Prefix由f改为d"></a>将<code>IPv6 ULA Prefix</code>由<code>f</code>改为<code>d</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uci <span class="built_in">set</span> network.globals.ula_prefix=<span class="string">"<span class="variable">$(uci get network.globals.ula_prefix | sed 's/^./d/')</span>"</span> &amp;&amp; uci commit network</span><br></pre></td></tr></table></figure>
 <h3 id="将DHCP服务器设置为总是广播默认路由"><a href="#将DHCP服务器设置为总是广播默认路由" class="headerlink" title="将DHCP服务器设置为总是广播默认路由"></a>将DHCP服务器设置为<strong>总是广播默认路由</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uci <span class="built_in">set</span> dhcp.lan.ra_default=<span class="string">'1'</span> &amp;&amp; uci commit dhcp</span><br></pre></td></tr></table></figure>
 <h3 id="生成NAT6脚本"><a href="#生成NAT6脚本" class="headerlink" title="生成NAT6脚本"></a>生成<code>NAT6</code>脚本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch /etc/init.d/nat6 &amp;&amp; vi /etc/init.d/nat6</span><br></pre></td></tr></table></figure>
-<p>将<a href="http://p40kjburh.bkt.clouddn.com/nat6" target="_blank" rel="noopener"><strong>链接</strong></a>中的内容复制进去并保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /etc/init.d/nat6 &amp;&amp; /etc/init.d/nat6 <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></p>
+<p>将<a href="http://images.lolimay.cn/nat6" target="_blank" rel="noopener"><strong>链接</strong></a>中的内容复制进去并保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /etc/init.d/nat6 &amp;&amp; /etc/init.d/nat6 <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="防火墙配置Allow-ICMPv6-Forward"><a href="#防火墙配置Allow-ICMPv6-Forward" class="headerlink" title="防火墙配置Allow-ICMPv6-Forward"></a>防火墙配置<code>Allow-ICMPv6-Forward</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uci <span class="built_in">set</span> firewall.@rule[<span class="string">"<span class="variable">$(uci show firewall | grep 'Allow-ICMPv6-Forward' | cut -d'[' -f2 | cut -d']' -f1)</span>"</span>].enabled=<span class="string">'0'</span> &amp;&amp; uci commit firewall</span><br></pre></td></tr></table></figure>
 <h3 id="接收广播并开启IPv6转发"><a href="#接收广播并开启IPv6转发" class="headerlink" title="接收广播并开启IPv6转发"></a>接收广播并开启IPv6转发</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysctl.conf</span><br></pre></td></tr></table></figure>
 <p>修改<code>/etc/sysctl.conf</code>文件, 把文件中相关内容改为以下内容，没有的话就添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">net.ipv6.conf.default.forwarding=2 </span><br><span class="line">net.ipv6.conf.all.forwarding=2 </span><br><span class="line">net.ipv6.conf.default.accept_ra=2 </span><br><span class="line">net.ipv6.conf.all.accept_ra=2</span><br></pre></td></tr></table></figure></p>
@@ -193,6 +193,13 @@
 <h3 id="设置每日定时重启-可选"><a href="#设置每日定时重启-可选" class="headerlink" title="设置每日定时重启(可选)"></a>设置每日定时重启(可选)</h3><p>由于路由器每过一段时间LAN口和wifi会打不开IPv6站点, 重启后恢复。(目前不知道原因, 知道原因的也可评论告知我, 万分感谢), 所以需要设置每日定时重启<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br><span class="line">30 4 * * * sleep 1m &amp;&amp; touch /etc/banner &amp;&amp; reboot -f 2&gt;/dev/null</span><br></pre></td></tr></table></figure></p>
 <h3 id="重启路由器"><a href="#重启路由器" class="headerlink" title="重启路由器"></a>重启路由器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
 <p>此时你的手机连上wifi后应该能连上六维空间等IPv6站点了, 恭喜折腾成功!</p>
+<h2 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h2><ol>
+<li>collected errors<br>原因是软件源里面没有此包, 解决方法: 找到你的固件的软件包仓库, 例如我的路由器是小米mini,架构是<code>mipsel_24kc</code>则根据它的的仓库是<blockquote>
+<p><a href="http://downloads.lede-project.org/snapshots/targets/ramips/mt7621/packages/" target="_blank" rel="noopener">http://downloads.lede-project.org/snapshots/targets/ramips/mt7621/packages/</a></p>
+</blockquote>
+</li>
+</ol>
+<p>在后台Software-&gt;Config更新opkg的源就好了.</p>
 
         </div>
 
@@ -201,7 +208,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-07-24T16:11:08.573Z" itemprop="dateUpdated">2018-07-25 00:11:08</time>
+    Last updated: <time datetime="2018-07-27T16:20:33.078Z" itemprop="dateUpdated">2018-07-28 00:20:33</time>
 </span><br>
 
 
@@ -210,7 +217,7 @@
     
     <footer>
         <a href="http://www.lolimay.cn">
-            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            <img src="http://images.lolimay.cn/18-6-16/43465550.jpg" alt="LoliMay">
             LoliMay
         </a>
     </footer>

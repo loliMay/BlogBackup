@@ -36,7 +36,7 @@
 </head>
 <body>
     <div class="baidu-search">
-        <img src="http://p40kjburh.bkt.clouddn.com/18-6-19/97629440.jpg" alt="">
+        <img src="http://images.lolimay.cn/18-6-19/97629440.jpg" alt="">
         <input id="key" />
     </div>
     <style>
@@ -60,16 +60,13 @@
         document.onkeydown=function(event){
                 var e = event || window.event;
                 if(e && e.keyCode==13){ // enter 键
-                    top.location='https://www.baidu.com/s?wd=' + baidu.value
+                    top.location='https://www.baidu.com/s?wd=' + encodeURIComponent(baidu.value)
                 }
         }
 
         var baiduInput = document.getElementById('key')
         baiduInput.onclick = function(){
             parent.document.getElementById('baiduSearch').style.zIndex = '10'
-            parent.document.getElementById('baiduSearch').height = '350px'
-        }
-        baidu.onfocus = function(){
             parent.document.getElementById('baiduSearch').height = '350px'
         }
         parent.document.getElementsByClassName('content-header')[0].onmouseleave = function(){

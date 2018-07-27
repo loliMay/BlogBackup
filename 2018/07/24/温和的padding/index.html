@@ -25,23 +25,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="CSS">
+    <meta name="keywords" content="CSS,CSS读书笔记">
     <meta name="description" content="padding的百分比值与height等属性的百分比计算规则不一样, padding百分比值无论是水平方向还是垂直方向都是相对于宽度计算的。123456div &amp;#123;  padding: 50%; /* 正方形 */&amp;#125;div &amp;#123;  padding: 25% 50%; /* 宽髙比2:1的矩形 */&amp;#125; 内联元素与padding内联元素垂直padding的层叠现象1">
-<meta name="keywords" content="CSS">
+<meta name="keywords" content="CSS,CSS读书笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="温和的padding">
 <meta property="og:url" content="http://www.lolimay.cn/2018/07/24/温和的padding/index.html">
 <meta property="og:site_name" content="LoliMay&#39;s Blog">
 <meta property="og:description" content="padding的百分比值与height等属性的百分比计算规则不一样, padding百分比值无论是水平方向还是垂直方向都是相对于宽度计算的。123456div &amp;#123;  padding: 50%; /* 正方形 */&amp;#125;div &amp;#123;  padding: 25% 50%; /* 宽髙比2:1的矩形 */&amp;#125; 内联元素与padding内联元素垂直padding的层叠现象1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-24T13:37:43.748Z">
+<meta property="og:updated_time" content="2018-07-25T02:06:56.330Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="温和的padding">
 <meta name="twitter:description" content="padding的百分比值与height等属性的百分比计算规则不一样, padding百分比值无论是水平方向还是垂直方向都是相对于宽度计算的。123456div &amp;#123;  padding: 50%; /* 正方形 */&amp;#125;div &amp;#123;  padding: 25% 50%; /* 宽髙比2:1的矩形 */&amp;#125; 内联元素与padding内联元素垂直padding的层叠现象1">
     
         <link rel="alternate" type="application/atom+xml" title="LoliMay&#39;s Blog" href="/atom.xml">
     
-    <link rel="shortcut icon" href="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+    <link rel="shortcut icon" href="http://images.lolimay.cn/18-6-16/43465550.jpg">
     <link rel="stylesheet" href="/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
@@ -61,7 +61,7 @@
     <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="http://www.lolimay.cn/archives/" class="avatar waves-effect waves-circle waves-light">
-          <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg">
+          <img src="http://images.lolimay.cn/18-6-16/43465550.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">LoliMay</h5>
@@ -95,8 +95,8 @@
         
           <li id="zhihuItem" class="waves-block waves-effect">
             <a href="https://www.zhihu.com/people/www.lolimay.cn/activities" target="_blank" >
-              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"></i>
-              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://p40kjburh.bkt.clouddn.com/18-6-21/82304713.jpg"}</script>
+              <i class="icon icon-lg"><img id="zhihuIcon" height="22" width="24" style="margin-left:-2px;margin-top:-5px;" src="http://images.lolimay.cn/18-6-21/82304713.jpg"></i>
+              <script>var zhihuIcon = document.getElementById('zhihuIcon');var zhihuItem = document.getElementById('zhihuItem');zhihuItem.onmousemove = function(){zhihuIcon.src="http://images.lolimay.cn/18-6-21/45871827.jpg"};zhihuItem.onmouseleave = function(){zhihuIcon.src="http://images.lolimay.cn/18-6-21/82304713.jpg"}</script>
               知乎
             </a>
           </li>
@@ -182,7 +182,9 @@
 </ul>
 <h2 id="CSS中几种层叠现象总结"><a href="#CSS中几种层叠现象总结" class="headerlink" title="CSS中几种层叠现象总结"></a>CSS中几种层叠现象总结</h2><h3 id="纯视觉层叠-不影响外部尺寸"><a href="#纯视觉层叠-不影响外部尺寸" class="headerlink" title="纯视觉层叠(不影响外部尺寸)"></a>纯视觉层叠(不影响外部尺寸)</h3><ol>
 <li>box-shadow 盒装阴影</li>
-<li>outline 轮廓<h3 id="视觉层叠-影响外部尺寸"><a href="#视觉层叠-影响外部尺寸" class="headerlink" title="视觉层叠(影响外部尺寸)"></a>视觉层叠(影响外部尺寸)</h3></li>
+<li>outline 轮廓</li>
+</ol>
+<h3 id="视觉层叠-影响外部尺寸"><a href="#视觉层叠-影响外部尺寸" class="headerlink" title="视觉层叠(影响外部尺寸)"></a>视觉层叠(影响外部尺寸)</h3><ol>
 <li>inline元素的垂直padding</li>
 </ol>
 <p><strong>判断依据:</strong> 层叠区域超出父容器后会不会出现滚动条</p>
@@ -198,7 +200,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-07-24T13:37:43.748Z" itemprop="dateUpdated">2018-07-24 21:37:43</time>
+    Last updated: <time datetime="2018-07-25T02:06:56.330Z" itemprop="dateUpdated">2018-07-25 10:06:56</time>
 </span><br>
 
 
@@ -207,7 +209,7 @@
     
     <footer>
         <a href="http://www.lolimay.cn">
-            <img src="http://p40kjburh.bkt.clouddn.com/18-6-16/43465550.jpg" alt="LoliMay">
+            <img src="http://images.lolimay.cn/18-6-16/43465550.jpg" alt="LoliMay">
             LoliMay
         </a>
     </footer>
@@ -218,7 +220,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS读书笔记/">CSS读书笔记</a></li></ul>
 
 
             
@@ -228,7 +230,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/07/25/chrome插件分享/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">chrome插件分享</h4>
+      </a>
+    </div>
   
 
   
